@@ -1,2 +1,4 @@
 # The Plus Operator
 Binary operator တစ်ခုဖြစ်တဲ့ + operator ဟာ
+- numeric operand တွေကို add လုပ်ပေးသလို
+- string operand တွေကို concatenate လုပ်ပေးပါတယ်။

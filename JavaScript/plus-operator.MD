@@ -21,19 +21,18 @@ operand တွေက string-like မဟုတ်ဘူးဆိုရင်တ�
 - ဒီလိုမှ မဟုတ်ရင်တော့ operand ၂ ခုလုံးကို number တွေအဖြစ် (ဒါမှမဟုတ် NaN) အဖြစ် convert လုပ်ပြီး addition ကို perform လုပ်ပါတယ်။
 
 ### More Examples
-
 `"1" + "2"` // => '12'
 တစ်ဖက် string ဖြစ်နေတာကြောင့် concatenation ကို perform လုပ်ပါတယ်။
----
+
 `1 + {}` // => `1[object Object]`
 { } ကို object-to-primitive နဲ့ convert လုပ်တော့ [object Object] ထွက်တာကြောင့် concatenation ကိုပဲ perform လုပ်ပါတယ်။
----
+
 `true + true` // => 2
 true က boolean truthy value : 1 ဖြစ်တာကြောင့် 1 + 1 = 2 ၊ addition ကို perform လုပ်ပါတယ်။
----
+
 `2 + null` // => 2
 ဒါက နည်းနည်းကြောင်ပါတယ်။ null က 0 အဖြစ် convert လုပ်တာကြောင့် 2 + 0 addition perform လုပ်ပြီး 2 ထွက်ပါတယ်။
----
+
 `2 + undefined` // => NaN
 undefined ကို convert လုပ်တော့ NaN ထွက်တာကြောင့် 2 + NaN addition မှာ အဖြေက NaN ထွက်လာပါတယ်။
 

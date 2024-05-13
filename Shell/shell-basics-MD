@@ -2,7 +2,23 @@
 
 The `$` symbol in front of the word indicates that it is a shell variable.
 
-It's `cd ..` not `cd..`
+---
 
-`;` lets you write 2 commands on the same line.  
-  cd .. ; ls
+It's `cd ..` not `cd..`.  
+If the director name has space in it use `''`
+
+---
+
+`;` lets you write 2 commands on the same line.  Shell would run them in order. 
+
+    cd .. ; ls
+
+---
+
+The command ls `Dropbox/../Dropbox` works the same as `ls Dropbox` because `..` represents the parent directory. When you use `..` in a file path, it refers to the directory one level above the current directory.
+
+In this case, `Dropbox/../Dropbox` is equivalent to `Dropbox/..` which is the parent directory of the Dropbox directory. So, when you run `ls Dropbox/../Dropbox`, it is essentially the same as running `ls Dropbox`, as both commands list the contents of the Dropbox directory.
+
+---
+
+`ls ~` is a shortcut, which stands for my home directory.

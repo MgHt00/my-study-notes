@@ -28,3 +28,14 @@
 
         :is(ol, ul) :is(ol, ul) li {...}
 
+ဒီနေရာမှာ စာအုပ်ထဲက[^2] example ကို ကြည့်ပြီး နည်းနည်းကြောင်သွားပါတယ်။  ရှုပ်လာရင် list ကို html code အတိုင်း မကြည့်ပဲ tree အနေနဲ့ ဆွဲချလိုက်ရင် ရှင်းသွားပါတယ်။ အပေါ်က `:is()` snippet `li` က `:is()` condition နဲ့ ညီနေတဲ့ decendent ဖြစ်နေသရွေ့ မှန်နေတာကြောင့် 2nd level မှာရှိတဲ့ `li` မှာတင် ရပ်နေမှာ မဟုတ်ပဲ ထပ်ပြီး deep ဖြစ်သွားရင်လဲ 3rd level, 4th level က `li` တွေကိုပဲ select လုပ်နေမှာပါ။
+
+`:is()` ကို ဒီလောက်နဲ့တင်ရပ်မနေပဲ ပိုပြီး complex ဖြစ်တဲ့ situation တွေမှာလဲ သုံးလို့ရပါတယ်။  ဥပမာအားဖြင့်-
+1. `header`သို့မဟုတ် `section`သို့မဟုတ် `.container` အောက်မှာရှိတဲ့
+2. `ul` ဒါမှမဟုတ် `ol` အောက်မှာရှိတဲ့
+3. `href` attribute ရှိတဲ့ `a` တိုင်းကို select လုပ်ချင်တယ်ဆိုရင်-
+
+
+       :is(header, section, .container) :is(ul, ol) a[href] {..}
+
+[1^]: ဒီ post က ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် note တစ်ခုသာဖြစ်ပြီး [JavaScript: The Definitive Guide, 7th Edition by David Flanagan](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/) စာအုပ်ကို refer လုပ်ထားပါတယ်ဗျာ။  

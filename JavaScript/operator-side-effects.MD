@@ -49,7 +49,7 @@ Array မှာဆိုရင်လဲ
 Function invocation နဲ့ object creation expression တွေကလဲ သူတို့ရဲ့ function သို့မဟုတ် constructor body မှာပါတဲ့ operator တွေမှာ side effect တွေပါလာရင် သူတို့ဟာလဲ side effect ဖြစ်ပါတယ် (အကယ်လို့ function ဖြစ်လျက်နဲ့ side effect တစ်ခုမှ မပါဘူးဆိုရင်လဲ ဘာလုပ်ဖို့ function ကို call နေအုံးမှာလဲလေ)[^4]။ 
 
 
-[^1]: ဒီ post က ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် note တစ်ခုသာဖြစ်ပြီး [JavaScript: The Definitive Guide, 7th Edition by David Flanagan](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/) စာအုပ်ကို refer လုပ်ထားပါတယ်ဗျာ။  
+[^1]: ဒီ note က ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် note တစ်ခုသာဖြစ်ပြီး [JavaScript: The Definitive Guide, 7th Edition by David Flanagan](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/) စာအုပ်ကို refer လုပ်ထားပါတယ်ဗျာ။  
 [^2]: JavaScript: The Definitive Guide, 7th Edition - page 71  
 [^3]: JavaScript: The Definitive Guide, 7th Edition - page 94  
 [^4]: JavaScript: The Definitive Guide, 7th Edition - page 98

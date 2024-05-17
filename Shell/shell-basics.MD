@@ -35,14 +35,23 @@ Project" in it.
 
 The touch command is a simple way to create an empty file.
 
-		touch filename
+	touch filename
 
 ---
 
-		nano filename
+	nano filename
 
 This opens the nano editor with a new file named filename. You can then 
 type your content, save it with Ctrl+o (the letter o not zero), and exit 
 with Ctrl+x.
 
+Use Ctrl + K to cut a line and Ctrl + U to uncut (paste) a line.
 
+---
+
+The mv command not only moves files but also allows you to rename them by 
+specifying the new name.
+
+	mv current_filename new_filename
+
+---

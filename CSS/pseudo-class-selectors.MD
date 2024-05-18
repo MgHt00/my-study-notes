@@ -1,8 +1,8 @@
 # Pseudo-Class Selectors
 
-Pseudo-class selector တွေက phantom (not real; illusory) class တွေပါ။[^1] အဓိကအချက်က pesudo-class တွေက သူတို့ attached လုပ်ထားတဲ့ element တွေကိုပဲ refer လုပ်ပြီး သူတို့ရဲ့ decendent element တွေကို refer လုပ်တာမဟုတ်ဘူးဆိုတာပါ။ ဥပမာ - 
+Pseudo-class selector တွေက phantom (not real; illusory) class တွေပါ။[^1] အဓိကအချက်က pesudo-class တွေက သူတို့ attached လုပ်ထားတဲ့ element တွေကိုပဲ refer လုပ်ပြီး သူတို့ရဲ့ decendent element တွေကို refer လုပ်တာမဟုတ်ပါဘူး။ ဥပမာ - 
 
-    p:firt-child {...}
+    p:first-child {...}
 
 မှာ `first-child` ဖြစ်တဲ့ `p` ကို ရည်ညွှန်းတာဖြစ်ပြီး `p` ရဲ့ `first-child` ကို ရည်ညွှန်းတာ မဟုတ်ပါဘူး။ 
 
@@ -51,7 +51,7 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - `:indeterminate`
 - `:default`
 - `:autofill`
-- `placeholder-shown`
+- `:placeholder-shown`
 - `:valid`
 - `:invalid`
 - `:in-range`
@@ -93,7 +93,34 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 2. sibiling တွေပေါ်မူတည်ပြီး select လုပ်လို့ရသလို
 3. ancestry chain အဝေးကြီးထိလိုက်ပြီး select လုပ်လို့ရပါတယ်။ 
 
+ဥပမာ - 
 
+        section:has(table) {...}
+
+ဒါဆိုရင် table ပါတဲ့ section ကို select လုပ်ပါမယ်။ parent selection ပေ့ါ။
+
+---
+
+        section:has(+ h2 em)
+
+ဒါဆိုရင် အတွင်းမှာ `em` ပါတဲ့ `h2` ကပ်လိုက်နေတဲ့ section ကို select လုပ်မယ်။ 
+
+        <section>....<section>
+        <h2>... <em>...</em></h2>
+
+sibling ပေါ်မူတည်ပြီး select လုပ်တာပေ့ါ။
+
+---
+
+        section:has(ol ul ol ol) {...}
+
+ဒါဆိုရင် ဟိုး...ဘိုးဘေးဘီဘင် `section` ကို select လုပ်မယ့် ancestry chain ပါ။ 
+
+ရှုပ်ရှုပ်ထွေးထွေးလေးကို ရှင်းရှင်းလင်းလင်း select လုပ်ချင်ရင် ဒီလိုလဲ ရပါတယ်။ 
+
+        :is(h1, h2, h3, h4, h5, h6):not(:has(img))[^10]
+
+h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မျိုးလုံးအောက်မှာ `img` မပါတဲ့ heading တွေကို select လုပ်မှာပါ။
 
 [^1]: ဒီ note က [CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
 [^2]: page 71
@@ -104,3 +131,4 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 [^7]: page 84
 [^8]: page 85
 [^9]: page 89
+[^10]: page 93

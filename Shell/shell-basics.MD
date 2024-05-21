@@ -55,3 +55,16 @@ specifying the new name.
 	mv current_filename new_filename
 
 ---
+
+`mv` will overwrite it without any warning. Use the `-i` option to be prompted before overwriting:
+
+	mv -i oldfile.txt newfile.txt
+
+---
+
+It’s often a good idea to create a backup before renaming important files.
+
+	cp oldfile.txt oldfile_backup.txt  
+	mv oldfile.txt newfile.txt
+
+---

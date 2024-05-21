@@ -68,3 +68,7 @@ It’s often a good idea to create a backup before renaming important files.
 	mv oldfile.txt newfile.txt
 
 ---
+
+	mkdir -p parent/child/grandchild
+
+This will create the parent directory, the child directory inside parent, and the grandchild directory inside child if they do not already exist.

@@ -55,7 +55,7 @@ Attribute မှာ certain value ပါတဲ့ element တွေကိုပ�
 </table>
 
 ### `|=` Examples
-ဥပမာ - lang attribute က <em>equal to en</em> ဒါမှမဟုတ် <em>en-</em> ဖြစ်တဲ့ element ကို select လုပ်မယ်ဆိုရင် ဒီ attribute selector က အသုံးတည့်ပါပြီ။ [^4] 
+ဥပမာ - lang attribute က <em>equal to en</em> ဒါမှမဟုတ် <em>en-</em> ဖြစ်တဲ့ element ကို select လုပ်မယ်ဆိုရင် ဒီ attribute selector က အသုံးတည့်ပါပြီ။ [^5] 
 
     <h1 lang="en">Hello!</h1>
     <p lang="en-us">Greetings!</p>
@@ -98,7 +98,7 @@ Attribute value ရဲ့ portion တစ်စိတ်တစ်ပိုင်�
 
     img[src*="space"] {...}
 
-Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့ element ကို select လုပ်မယ်ဆိုရင်[^5]
+Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့ element ကို select လုပ်မယ်ဆိုရင်[^6]
 
     <button class="btn-small-arrow-active">Click Me</button>
 
@@ -127,7 +127,7 @@ Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့
 
     a[href$=".pdf"] {...}
 
-## The Case-Insensitivity Identifier [^6]
+## The Case-Insensitivity Identifier [^7]
 `.pdf` နဲ့ ဆုံးတဲ့နေရာမှာ link က `.pdf` ဖြစ်မလား ၊ `.PDF` ဖြစ်မလား ကြိုမသိနိုင်ရင် 
 
     a[href$=".pdf" i] {...}
@@ -136,9 +136,10 @@ Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့
 
 အပေါ်က example မှာ `i` ထည့်လိုက်ခြင်းအားဖြင့် `.pdf` သာ case-insensitive ဖြစ်သွားပြီး attribute ဖြစ်တဲ့ `href` ကတော့ case-sensitive ဖြစ်မြဲတိုင်းပါ။ 
 
-[^01]: ဒီ note က [CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
+[^1]: ဒီ note က [CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
 [^2]: page - 34
 [^3]: page 35
 [^4]: page 37
-[^5]: page 40
-[^6]: page 42
+[^5]: page 37
+[^6]: page 40
+[^7]: page 42

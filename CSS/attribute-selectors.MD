@@ -1,5 +1,5 @@
-# Attribute Selectors[^0]
-Attribute selector တွေက element တစ်ခုရဲ့ attribute နဲ့ attribute ရဲ့ value တွေကို base လုပ်ပြီး element ကို select လုပ်မှာပါ။ [^1]
+# Attribute Selectors[^1]
+Attribute selector တွေက element တစ်ခုရဲ့ attribute နဲ့ attribute ရဲ့ value တွေကို base လုပ်ပြီး element ကို select လုပ်မှာပါ။ [^2]
 
 ## Simple Attribute Selectors
 Attribute ရဲ့ value ကိုထည့်စဥ်းစားစရာမလိုပဲ certain attribute ပါရုံပဲဆိုရင် simple attribute selector ကိုသုံးပါတယ်။ 
@@ -14,9 +14,9 @@ Attribute ရဲ့ value ကိုထည့်စဥ်းစားစရာမ
         outline: 3px solid forestgreen;
     } 
 
-`a` မှာ `href` ရော `title` ပါတာရောဆိုရင် - 
+`a` မှာ `href` ရော `title` ပါတာရောဆိုရင် - [^3]
 
-     a[href][title] {...} [^2]
+     a[href][title] {...} 
 
 ## Selection Based on Exact Attribute Value
 Attribute မှာ certain value ပါတဲ့ element တွေကိုပဲ select လုပ်မှာပါ။
@@ -29,7 +29,7 @@ Attribute မှာ certain value ပါတဲ့ element တွေကိုပ�
 
 ဒီမှ သတိထားရမှာက html မှာ ရေးထားတဲ့ class name အစဥ်လိုက်အတိုင်းကို attribute selector ထဲမှာရေးမှ တူတယ်ဆိုပြီး select လုပ်မှာပါ။  
 
-## Selection Based on Partial Attribue Values [^3]
+## Selection Based on Partial Attribue Values [^4]
 <table border=1>
 <tr>
 <td width="20%">[foo~="bar"]</td>
@@ -55,12 +55,12 @@ Attribute မှာ certain value ပါတဲ့ element တွေကိုပ�
 </table>
 
 ### `|=` Examples
-ဥပမာ - lang attribute က <em>equal to en</em> ဒါမှမဟုတ် <em>en-</em> ဖြစ်တဲ့ element ကို select လုပ်မယ်ဆိုရင် ဒီ attribute selector က အသုံးတည့်ပါပြီ။  
+ဥပမာ - lang attribute က <em>equal to en</em> ဒါမှမဟုတ် <em>en-</em> ဖြစ်တဲ့ element ကို select လုပ်မယ်ဆိုရင် ဒီ attribute selector က အသုံးတည့်ပါပြီ။ [^4] 
 
     <h1 lang="en">Hello!</h1>
     <p lang="en-us">Greetings!</p>
 
-    *[lang|="en"] {...}[^3]
+    *[lang|="en"] {...}
 
 HTML document မှာ `figure-1.jpg` `figure-2.jpg` စတဲ့ `figure-` နဲ့စတဲ့ `img` တွေကို select လုပ်ချင်တယ်ဆိုရင်- 
 
@@ -98,11 +98,11 @@ Attribute value ရဲ့ portion တစ်စိတ်တစ်ပိုင်�
 
     img[src*="space"] {...}
 
-Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့ element ကို select လုပ်မယ်ဆိုရင်
+Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့ element ကို select လုပ်မယ်ဆိုရင်[^5]
 
     <button class="btn-small-arrow-active">Click Me</button>
 
-    *[class|="btn"][class*="-arrow"] {...} [^4]
+    *[class|="btn"][class*="-arrow"] {...} 
 
 ---
 
@@ -127,7 +127,7 @@ Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့
 
     a[href$=".pdf"] {...}
 
-## The Case-Insensitivity Identifier [^5]
+## The Case-Insensitivity Identifier [^6]
 `.pdf` နဲ့ ဆုံးတဲ့နေရာမှာ link က `.pdf` ဖြစ်မလား ၊ `.PDF` ဖြစ်မလား ကြိုမသိနိုင်ရင် 
 
     a[href$=".pdf" i] {...}
@@ -136,9 +136,9 @@ Class name မှာ btn hyphen နဲ့ စပြီး -arrow ပါတဲ့
 
 အပေါ်က example မှာ `i` ထည့်လိုက်ခြင်းအားဖြင့် `.pdf` သာ case-insensitive ဖြစ်သွားပြီး attribute ဖြစ်တဲ့ `href` ကတော့ case-sensitive ဖြစ်မြဲတိုင်းပါ။ 
 
-[^0]: ဒီ note က [CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
-[^1]: page - 34
-[^2]: page 35
-[^3]: page 37
-[^4]: page 40
-[^5]: page 42
+[^01]: ဒီ note က [CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
+[^2]: page - 34
+[^3]: page 35
+[^4]: page 37
+[^5]: page 40
+[^6]: page 42

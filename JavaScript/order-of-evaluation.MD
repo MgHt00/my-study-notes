@@ -65,6 +65,48 @@ Complex expression တွေ - multiple sub-expression တွေရှိတဲ�
 4. `y * z` ကို evaluate လုပ်ပြီး `12` ထုတ်ပါတယ်။ (operator precedence အရ `*` ကို `+` ထက်အရင် evaluate လုပ်ပါတယ်။)
 5. `x + 12` ကို evaluate လုပ်ပြီး `14` ထုတ်ပါတယ်။
 
+## 5. Left-to-Right Evaluation
+Operator precedence က order of operations ကို သတ်မှတ်ပေးပေမယ့် JavaScript ကတော့ sub-expression တိုင်းကို left to right ပဲ evaluate လုပ်ပါတယ်။ 
+
+    function getX() {
+    console.log('Evaluating x');
+    return 2;
+    }
+
+    function getY() {
+        console.log('Evaluating y');
+        return 3;
+    }
+
+    function getZ() {
+        console.log('Evaluating z');
+        return 4;
+    }
+
+    let result = getX() + getY() * getZ();
+    
+ဒီ snippet မှာ 
+
+1. `getX()` ကို အရင် evaluate လုပ်၊ "Evaluating x" ကို log လုပ်ပြီး 2 return ပြန်ပါတယ်။
+2. `getY()` ကို ဒုတိယ evaluate လုပ်၊ "Evaluating y" ကို log လုပ်ပြီး 3 return ပြန်ပါတယ်။
+3. `getZ()` ကို တတိယ evaluate လုပ်၊ "Evaluating z" ကို log လုပ်ပြီး 4 return ပြန်ပါတယ်။
+4. ပြီးမှ `getY() * getZ()` ကို evaluate လုပ်လို့  3 * 4 = 12 ထွက်ပါတယ်။ (* ရဲ့ higher precedence ကြောင့် * ကို အရင် evaluate လုပ်တာပါ။)
+5. နောက်ဆုံးမှ `getX() + 12` ကို evaluate လုပ်ပြီး 2 + 12 = 14 ထွက်ပါတယ်။ 
+
+# Evaluation Order of Sub-Expressions
+Key point က operator precedence and associativity က ဘယ် <strong>operations</strong> ကို အရင် perform လုပ်မယ်ဆိုတာ သတ်မှတ်ပေးပေမယ့် <strong>sub-expression</strong> (individual component) တွေ ဘယ် order နဲ့ evaluate လုပ်မယ်ဆိုတာကိုတော့ မသတ်မှတ်ပေးပါဘူး။  JavaScript က expression တွေကို left to right ပဲ evaluate လုပ်ပါတယ်။ 
+
+    w = x + y * z
+
+1. Step 1: Evaluate w (the target of the assignment).
+2. Step 2: Evaluate x.
+3. Step 3: Evaluate y.
+4. Step 4: Evaluate z.
+5. Step 5: Compute y * z (due to higher precedence of *).
+6. Step 6: Compute x + (y * z).
+7. Step 7: Assign the result to w.
+
+
 
 [^1]: ဒီ post က ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် note တစ်ခုသာဖြစ်ပြီး [JavaScript: The Definitive Guide, 7th Edition by David Flanagan](https://www.oreilly.com/library/view/javascript-the-definitive/9781491952016/) စာအုပ်ကို refer လုပ်ထားပါတယ်ဗျာ။ 
 

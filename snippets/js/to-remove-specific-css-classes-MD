@@ -1,0 +1,11 @@
+# To Remove Specific Classes [^1]
+
+Specific CSS classes တွေကို keep လုပ်ထားပြီး ကျန်တဲ့ class တွေကို JS ထဲကနေ ဖျက်ပစ်ချင်ရင် ဒီ code အဆင်ပြေပါတယ်။ 
+  
+   `const messageContainer = document.querySelector("#section-message");`
+
+    const classesToRemove = ["correct", "another-class", "yet-another-class"];
+
+    classesToRemove.forEach(cls => messageContainer.classList.remove(cls));
+
+[^1]: ဒီ code ကို chatGPT ရဲ့ အကူညီနဲ့ ရထားတာပါ။ 

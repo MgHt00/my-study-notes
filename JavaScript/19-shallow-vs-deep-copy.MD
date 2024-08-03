@@ -75,18 +75,18 @@ A deep copy of an array creates a new array with completely new instances of the
 ## Key Differences
 ### Shallow Copy:
 
--Only the references to the elements are copied.
--Changes to objects or arrays within the copied array affect the original array.
+- Only the references to the elements are copied.
+- Changes to objects or arrays within the copied array affect the original array.
 
 ### Deep Copy:
 
--Creates new instances of objects or arrays within the copied array.
--Changes to objects or arrays within the copied array do not affect the original array.
+- Creates new instances of objects or arrays within the copied array.
+- Changes to objects or arrays within the copied array do not affect the original array.
 
 ## Summary
--Shallow Copy: Copies only the first level of elements, which includes references to objects or other arrays. Methods include slice(), concat(), and the spread operator (...).
--Deep Copy: Copies all levels, ensuring no references to the original elements are retained. Methods include JSON.parse(JSON.stringify()) and custom recursive functions.
--Understanding the difference between shallow and deep copies is crucial when working with arrays and objects in JavaScript to ensure the desired behavior in your programs.
+- Shallow Copy: Copies only the first level of elements, which includes references to objects or other arrays. Methods include slice(), concat(), and the spread operator (...).
+- Deep Copy: Copies all levels, ensuring no references to the original elements are retained. Methods include JSON.parse(JSON.stringify()) and custom recursive functions.
+- Understanding the difference between shallow and deep copies is crucial when working with arrays and objects in JavaScript to ensure the desired behavior in your programs.
 
 ---
 
@@ -129,8 +129,8 @@ When working with arrays of objects or arrays, a shallow copy means that the cop
     console.log(original[0].a); // Output: 42 (changes in copy affect the original)
 
 ### Summary
--Primitive Values: When you create a shallow copy of an array of primitives using the spread operator (...), modifications to the copied array do not affect the original array because primitives are copied by value.
--Objects/Arrays: When you create a shallow copy of an array of objects or arrays, the copied array contains references to the same objects or arrays as the original. Modifications to these objects or arrays in the copied array will affect the original array because objects and arrays are copied by reference.
+- Primitive Values: When you create a shallow copy of an array of primitives using the spread operator (...), modifications to the copied array do not affect the original array because primitives are copied by value.
+- Objects/Arrays: When you create a shallow copy of an array of objects or arrays, the copied array contains references to the same objects or arrays as the original. Modifications to these objects or arrays in the copied array will affect the original array because objects and arrays are copied by reference.
 
 ### Conclusion
 The spread operator (...) creates a shallow copy of an array. When dealing with primitive values, this shallow copy behaves like a deep copy because primitives are copied by value. However, when dealing with objects or arrays, the shallow copy contains references to the same objects or arrays, meaning changes to these nested structures in the copied array will reflect in the original array.

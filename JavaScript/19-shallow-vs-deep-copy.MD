@@ -84,9 +84,11 @@ A deep copy of an array creates a new array with completely new instances of the
 -Changes to objects or arrays within the copied array do not affect the original array.
 
 ## Summary
-Shallow Copy: Copies only the first level of elements, which includes references to objects or other arrays. Methods include slice(), concat(), and the spread operator (...).
-Deep Copy: Copies all levels, ensuring no references to the original elements are retained. Methods include JSON.parse(JSON.stringify()) and custom recursive functions.
-Understanding the difference between shallow and deep copies is crucial when working with arrays and objects in JavaScript to ensure the desired behavior in your programs.
+-Shallow Copy: Copies only the first level of elements, which includes references to objects or other arrays. Methods include slice(), concat(), and the spread operator (...).
+-Deep Copy: Copies all levels, ensuring no references to the original elements are retained. Methods include JSON.parse(JSON.stringify()) and custom recursive functions.
+-Understanding the difference between shallow and deep copies is crucial when working with arrays and objects in JavaScript to ensure the desired behavior in your programs.
+
+---
 
 <i>But the author states as follows :
 
@@ -116,7 +118,7 @@ In this case, changing copy[0] does not affect original[0] because each element 
 ### Shallow Copy with Objects or Arrays
 When working with arrays of objects or arrays, a shallow copy means that the copied array contains references to the same objects or arrays as the original. Therefore, changes to the objects or arrays within the copied array will affect the original array.
 
-####Example with Objects
+#### Example with Objects
     let original = [{ a: 1 }, { b: 2 }];
     let copy = [...original];
     

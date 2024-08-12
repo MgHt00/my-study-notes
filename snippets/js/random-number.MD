@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Random Function
     function random(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -8,15 +7,11 @@
     function random(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
->>>>>>> 067f00dc71634d3fa05a17a31b39059f3e75a7dd
 
-<<<<<<< HEAD
 ## Explanation
 =======
 # Explanations
->>>>>>> 067f00dc71634d3fa05a17a31b39059f3e75a7dd
 
-<<<<<<< HEAD
 ### Math.random()
 generates a floating-point random number between 0(inclusive) and 1 (exclusive).
     

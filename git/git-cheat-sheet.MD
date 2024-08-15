@@ -1,8 +1,6 @@
 # Table of Content
 - [Working with Remotes](#working-with-remotes-1)
 - [Tagging](#tagging-4)
-
-
 # Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
 

@@ -1,3 +1,8 @@
+# Table of Content
+- [Working with Remotes](#working-with-remotes-1)
+- [Tagging](#tagging-4)
+
+
 # Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
 
@@ -26,12 +31,99 @@ remote ကို shortname နဲ့တူတူ ထပ်ထည့် (add) လ
 
 `fetch` ပြီးရင် local ပါ update ဖြစ်ဖို့အတွက် ဒီ command သုံးရပါမယ်။
 
-    get merge <remote>/<branch-name>
+    git merge <remote>/<branch-name>
 
-ဥပမာ `get merge origin/main`
+ဥပမာ `git merge origin/main`
 
 တဖက်မှာ `git pull` ကို သုံးမယ်ဆိုရင်တော့ `pull` က `fetch` + `merge` လုပ်ပေးပေမယ့် fetch လုပ်ပြီးမှာ ကိုယ်တိုင် merge လုပ်တာကိုတော့ ပိုသဘောကျပါတယ်။  
+
+### Pushing
+
+        git push <remote> <branch>
+
+`master` branch ကို `origin` server ဆီ push လုပ်မယ် - 
+
+        git push origin master
+
+### Inspecting a Remote
+
+        git remote show <remote>
+
+### Renaming a Remote
+
+        git remote rename <old-name> <new-name>
+
+# Tagging [^3]
+### Listing Tags
+
+        git tag
+
+v1.1 နဲ့ စတဲ့ tag တွေကို ရှာမယ် - 
+
+        git tag -l "V1.1*"
+
+Listing အတွက် `-l` (သို့) `--list` option လိုပါတယ်။
+
+### Creating Tag
+
+Lightweight tag နဲ့ annotated tag ၂ မျိုးရှိပြီး ၊ annotated tag က Git database ထဲမှာ full object အနေနဲ့ သိမ်းပြီး tagger name, email, date, tagging message တို့ပါပြီး GN Privacy Guard (GPG) နဲ့ signed and verified လုပ်လို့်ရပါတယ်။ 
+
+#### Annotated Tags
+
+        git tag -a <tag-name> -m <"message">
+
+eg. `git tag -a v1.4 -m "my version 1.1"` -m က tagging message ကို specify လုပ်ပြီး tag နဲ့ အတူ သိမ်းပါတယ်။  annotated tag မှာ message specify မလုပ်မိရင် မရ မက ထည့်ခိုင်းဖို့ Git က editor ဖွင့်ပေးပါလိမ့်မယ်။  
+
+#### Lightweight Tags
+
+        git tag <tag-name> 
+
+ဒါပါပဲ။
+
+### Tagging Later
+
+နောက်ကားနဲ့ လိုက် tag ချင်တယ်ဆိုရင် commit checksum ကိုသိဖို့လိုလိမ့်မယ်၊ ဒါကို အရင်သုံး...
+
+        git log --pretty=online
+
+ကျလာတဲ့ထဲက checksum ကို ရှာ 
+
+        git tag -a <tag-name> <checksum>
+
+Lightweight tag ပဲသုံးချင်ရင် `-a` မထည့်ရုံပဲပေါ့။  
+
+### Sharing Tags
+
+Tag တွေကို create လုပ်ရုံနဲ့ အတောင်ပံပေါက်ပြီး remote ဆီတက်သွားမှာ မဟုတ်သလို ၊ လိုင်းကားမှာခိုစီးသလို git commit မှာ အချောင်ကပ်ပါသွားမှာ မဟုတ်တဲ့အတွက် remote မှာလဲ ကိုယ့်ရဲ့ လှတပတ tag တွေရှိနေစေချင်ရင် တွန်းတင် (push) လုပ်ပေးရပါမယ်။  
+
+        git push <remote-name> <tag-name>
+
+အားအားရှိ tag တွေအများကြီးလုပ်ထားလို့ တစ်ခုချင်း တွန်းရမှာ မောရင် tag အကုန်လုံးကိုသာ တစ်ခါတည်း push ...
+
+        git push <remote-name> --tags
+
+ဒီ command က lightweight ရော annotated ပါ တွန်းမှာမို့လို့ ၊ ပေါ့ပေ့ါပါးပါး lightweight ပဲ တွန်းပါ သွားလုပ်လို့ မရပါဘူး။  
+
+### Deleting Tags
+
+Local repo မှာ ရှိတဲ့ tag ကို ဖျက်မယ်ဆိုရင် 
+
+        git tag -d <tag-name>
+
+ထုံးစံအတိုင်း local မှာ ဖျက်လို့ ခြေရာလက်ရာက remote မှာ ဟောသလို ဟောသလို မပျောက်တဲ့ အတွက် - 
+
+        git push origin :refs/tags/<tag-name>
+
+မှတ်ရတာ ရှုပ်ပါတယ် ၊ ဖျက်မနေပါနဲ့တော့ ....  
+
+လွယ်တာလေးလဲ ရှိပါတယ် - 
+
+        git push <remote-name> --delete  <tag-name>
+
+
+
 
 [^0]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
 [^1]: page 52
 [^2]: page 92
+[^3]: page 55

@@ -1,6 +1,10 @@
-# Table of Content
-- [Working with Remotes](#working-with-remotes-1)
-- [Tagging](#tagging-4)
+# Git Cheat Sheet
+| Table of Content      | Description |
+| ----------- | ----------- |
+| [Adding Files](#adding-files) | - |
+[Working with Remotes](#working-with-remotes-1)| Showing, fetching & pulling, pushing, inspecting, and renaming a remote
+| [Tagging](#tagging-4) | Listing, creating, sharing, and deleting tag; tagging later |
+
 # Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
 

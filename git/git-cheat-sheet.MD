@@ -41,7 +41,6 @@ remote ကို shortname နဲ့တူတူ ထပ်ထည့် (add) လ
 တဖက်မှာ `git pull` ကို သုံးမယ်ဆိုရင်တော့ `pull` က `fetch` + `merge` လုပ်ပေးပေမယ့် fetch လုပ်ပြီးမှာ ကိုယ်တိုင် merge လုပ်တာကိုတော့ ပိုသဘောကျပါတယ်။  
 
 ### Pushing
-
         git push <remote> <branch>
 
 `master` branch ကို `origin` server ဆီ push လုပ်မယ် - 
@@ -58,7 +57,6 @@ remote ကို shortname နဲ့တူတူ ထပ်ထည့် (add) လ
 
 # Tagging [^3]
 ### Listing Tags
-
         git tag
 
 v1.1 နဲ့ စတဲ့ tag တွေကို ရှာမယ် - 
@@ -125,7 +123,6 @@ Local repo မှာ ရှိတဲ့ tag ကို ဖျက်မယ်ဆ�
 
 # Git Branching
 ### Creating a New Branch [^4]
-
 Branch အသစ်လုပ်ချင်ရင် - 
 
         git branch <branch-name>
@@ -135,10 +132,40 @@ Branch အသစ်လုပ်ချင်ရင် -
         git log --oneline --decorate
 
 ### Switching Branches
-
 ရှိပြီးသား branch ကို switch လုပ်ချင်ရင် 
 
         git checkout <exiting-branch-name>
+
+ဒီမှာ `git log` က လက်ရှိ checkout လုပ်ထားတဲ့ branch မှာရှိတဲ့ commit history တွေကိုပဲ ပြလို့  branches အားလုံးရဲ့ log ကို မပြလို့ အားလုံးပြစေချင်ရင် 
+
+        git log --all
+
+သိချင်တဲ့ branch ကိုပဲ ရွေးပြစေချင်ရင် 
+
+        git log <branch-name>
+
+### Creating & Switching
+Branch အသစ်လုပ် တန်းပြောင်း - all in one go - 
+
+        git checkout -b <new-branch-name>
+
+version 2.23 အထက်ဆိုရင် မှတ်ရတာ ပိုများအောင် အသစ်ပါတာက 
+
+        git switch -c <new-branch-name>
+
+`-c` stands for create တဲ့ ၊ b ကတော့ ဘာ stands လဲ ကိုယ်လဲမသိ
+
+Branch ပြန်ပြောင်းမယ်ဆိုရင် 
+
+        git checkout <branch-name>
+
+### Divergent History
+
+Commit history ကို branch pointer တွေနဲ့တူတူ history က ဘယ်ကနေ diverge ဖြစ်လာတာလဲ ကြည့်ဖို့
+
+        git log --oneline --decorate --graph --all
+
+
 
 
 [^0]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။

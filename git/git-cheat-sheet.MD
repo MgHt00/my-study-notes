@@ -1,10 +1,11 @@
 # Git Cheat Sheet
-| Table of Content      | Description |
+| Category      | Sub-category |
 | ----------- | ----------- |
 | [Adding Files](#adding-files) | - |
 [Working with Remotes](#working-with-remotes-1)| [Showing](#showing-your-remotes-2), [fetching & pulling](#fetching-and-pulling), [pushing](#pushing), [inspecting](#inspecting-a-remote), and [renaming a remote](#renaming-a-remote)
 | [Tagging](#tagging-4) | [Listing](#listing-tags), [creating](#creating-tag), [sharing](#sharing-tags), and [deleting tag](#deleting-tags); [tagging later](#tagging-later) |
-| [Git Branching](#git-branching) | [Creating a New Branch](#creating-a-new-branch-5), [Switching Branches](#switching-branches) |
+| [Git Branching](#git-branching) | [Creating a New Branch](#creating-a-new-branch-5), [Switching Branches](#switching-branches), [Creating & Switching](#creating--switching), [Divergent History](#divergent-history), [Delete a Branch]|
+|[Branching & Merging]| [Basic Merging]|
 
 # Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
@@ -165,11 +166,32 @@ Commit history ကို branch pointer တွေနဲ့တူတူ history �
 
         git log --oneline --decorate --graph --all
 
+### Delete a Branch
 
+Safely deletes a branch, only if it has been merged:
 
+        git branch -d <branch-name>
+
+Forcefully deletes a branch, regardless of its merged status:
+
+        git branch -D <branch-name>
+
+# Branching & Merging[^5]
+### Basic Merging
+1. ကျန်နေခဲ့မယ့် branch ဆီကို အရင်သွားပါ။
+2. merge ပါ။
+
+        git checkout <branch-name>
+        git merge <incoming-branch-name>
+
+eg. `master` ထဲကို `hotfix` လာ merge ချင်ရင်
+
+        git checkout master
+        git merge hotfix
 
 [^0]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
 [^1]: page 52
 [^2]: page 92
 [^3]: page 55
 [^4]: page 65
+[^5]: page 70

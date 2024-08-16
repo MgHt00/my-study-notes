@@ -1,6 +1,12 @@
-# Table of Content
-- [Working with Remotes](#working-with-remotes-1)
-- [Tagging](#tagging-4)
+# Git Cheat Sheet
+| Table of Content      | Description |
+| ----------- | ----------- |
+| [Adding Files](#adding-files) | - |
+[Working with Remotes](#working-with-remotes-1)| [Showing](#showing-your-remotes-2), [fetching & pulling](#fetching-and-pulling), [pushing](#pushing), [inspecting](#inspecting-a-remote), and [renaming a remote](#renaming-a-remote)
+| [Tagging](#tagging-4) | [Listing](#listing-tags), [creating](#creating-tag), [sharing](#sharing-tags), and [deleting tag](#deleting-tags); [tagging later](#tagging-later) |
+| [Git Branching](#git-branching) | - |
+| [Creating a New Branch](#creating-a-new-branch-5) |||
+
 # Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
 
@@ -118,10 +124,26 @@ Local repo မှာ ရှိတဲ့ tag ကို ဖျက်မယ်ဆ�
 
         git push <remote-name> --delete  <tag-name>
 
+# Git Branching
+### Creating a New Branch [^4]
 
+Branch အသစ်လုပ်ချင်ရင် - 
+
+        git branch <branch-name>
+
+`git branch` က branch အသစ်ကိုပဲ ဖန်တီးပြီး HEAD ကိုတော့ မရွေ့ပေးပါဘူး။  HEAD က ဘယ်ကို ထိုးနေလဲ သိချင်ရင် 
+
+        git log --oneline --decorate
+
+### Switching Branches
+
+ရှိပြီးသား branch ကို switch လုပ်ချင်ရင် 
+
+        git checkout <exiting-branch-name>
 
 
 [^0]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
 [^1]: page 52
 [^2]: page 92
 [^3]: page 55
+[^4]: page 65

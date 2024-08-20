@@ -18,8 +18,8 @@ Entire working directory မှာ ရှိတဲ့ all changes (new file, mod
 
     $ git add -A
 
-# Working with Remotes [^0]
-### Showing Your Remotes [^1]
+# Working with Remotes [^1]
+### Showing Your Remotes [^2]
     $ git remote
 
 `-v` ထည့်ရင် reading နဲ့ writing အတွက် Git က သိမ်းထားတဲ့ URL ကိုပြပါတယ်။
@@ -33,7 +33,7 @@ remote ကို shortname နဲ့တူတူ ထပ်ထည့် (add) လ
 ### Fetching and Pulling
     $ git fetch
 
-`git fetch` က data တွေကို local repo ထဲ download လုပ်ရုံသာ လုပ်ပေးပြီး local မှာ ရှိနေတဲ့ pointer ကို remote ရဲ့ update ဖြစ်နေတဲ့ နေရာထိ auto မရွေ့ (automatically merge မလုပ်) ပေးပါဘူး။ [^2]
+`git fetch` က data တွေကို local repo ထဲ download လုပ်ရုံသာ လုပ်ပေးပြီး local မှာ ရှိနေတဲ့ pointer ကို remote ရဲ့ update ဖြစ်နေတဲ့ နေရာထိ auto မရွေ့ (automatically merge မလုပ်) ပေးပါဘူး။ [^3]
 
 `fetch` ပြီးရင် local ပါ update ဖြစ်ဖို့အတွက် ဒီ command သုံးရပါမယ်။
 
@@ -58,7 +58,7 @@ remote ကို shortname နဲ့တူတူ ထပ်ထည့် (add) လ
 
         $ git remote rename <old-name> <new-name>
 
-# Tagging [^3]
+# Tagging [^4]
 ### Listing Tags
         $ git tag
 
@@ -125,7 +125,7 @@ Local repo မှာ ရှိတဲ့ tag ကို ဖျက်မယ်ဆ�
         $ git push <remote-name> --delete  <tag-name>
 
 # Git Branching
-### Creating a New Branch [^4]
+### Creating a New Branch [^5]
 Branch အသစ်လုပ်ချင်ရင် - 
 
         $ git branch <branch-name>
@@ -178,7 +178,7 @@ Forcefully deletes a branch, regardless of its merged status:
 
         $ git branch -D <branch-name>
 
-# Branching & Merging[^5]
+# Branching & Merging[^6]
 ### Basic Merging
 1. ကျန်နေခဲ့မယ့် branch ဆီကို အရင်သွားပါ။ (check out the branch you wish you merge into)
 2. merge ပါ။
@@ -192,11 +192,11 @@ eg. `master` ထဲကို `hotfix` လာ merge ချင်ရင်
         $ git merge hotfix
 
 ### Fast-forward & Three-Way Merge
-Fast-forward merge မှာ Git က commit အသစ် မလုပ်ပဲ point ပဲရွေ့ပါတယ်။ တစ်နည်းအားဖြင့် divergent history မရှိရင် Git က fast-forward merge လုပ်ပါတယ်။  Defination အပြည့်အစုံကို စာအုပ်မှာ[^6]ဖတ်ပါ။
+Fast-forward merge မှာ Git က commit အသစ် မလုပ်ပဲ point ပဲရွေ့ပါတယ်။ တစ်နည်းအားဖြင့် divergent history မရှိရင် Git က fast-forward merge လုပ်ပါတယ်။  Defination အပြည့်အစုံကို စာအုပ်မှာ[^7]ဖတ်ပါ။
 
-အကယ်လို့ history က diverged ဖြစ်နေပြီဆိုရင် Git က branch ၂ ခု မှာရှိတဲ့ ထိပ်ဖျား snapshot ၂ ခု ရယ် ၊ branch ၂ ခုလုံးရဲ့ common ancestor ရယ်သုံးပြီး simple three-way merge လုပ်ပေးမှာပါ။[^7] 
+အကယ်လို့ history က diverged ဖြစ်နေပြီဆိုရင် Git က branch ၂ ခု မှာရှိတဲ့ ထိပ်ဖျား snapshot ၂ ခု ရယ် ၊ branch ၂ ခုလုံးရဲ့ common ancestor ရယ်သုံးပြီး simple three-way merge လုပ်ပေးမှာပါ။[^8] 
 
-### Basic Merge Confilcts[^8]
+### Basic Merge Confilcts[^9]
 ဘယ်ကိစ္စမဆို အစဥ်ချောမွေ့တဲ့ သဘောမရှိတဲ့ လောကကြီးမှာ Git လဲ ပါတာကြောင့် အကယ်လို့ file တစ်ခုတည်းမှာ ဟိုပြင် ဒီပြင် ၂ ခါပြင်လို့ ၂ ခု ရှိ ၊ Git က မျက်စိတွေလည်ပြီး ဘာလုပ်ရမလဲ ဖြစ်လာရင် ဒီတိုင်း merge လုပ်ချလိုက်မှာမဟုတ်ပဲ `CONFLICT` ပြလာတော့မှာပါ။  
 
 1. merge conflict ဖြစ်ပြီး merge မလုပ်ပဲ ကျန်နေခဲ့တဲ့ file တွေကို `git status` နဲ့ ကြည့်ပါ။ `<<<<<<`, `=======`, `>>>>>>>>` Git က ဒီ conflict marker တွေနဲ့ ဘာတွေဖြစ်နေသလဲ ပြပါလိမ့်မယ်။  `<<<<<<< HEAD:` ပြနေတာက ကိုယ်သွား merge လုပ်ချင်လွန်းလို့ checkout လုပ်ထားတဲ့ branch မှာ ရှိနေတဲ့ file ပါ။   `======` ကတော့ တစ်ပိုင်းပြီးပြီပေ့ါ။  `>>>>>>` က လာပေါင်းမယ့် branch မှာ ဖြစ်နေတဲ့ ကိစ္စတွေကို ပြပါတယ်။  
@@ -215,7 +215,7 @@ Fast-forward merge မှာ Git က commit အသစ် မလုပ်ပဲ p
                 $ git status
                 $ git commit 
 
-# Branch Management[^9]
+# Branch Management[^10]
 ### The Basics
 ဘာ argument မှ မပါပဲ သုံးရင် ရှိတဲ့ branch တွေကို ပြပေးပါမယ်။
 
@@ -247,7 +247,7 @@ Branch တစ်ခုချင်းစီမှာ ရှိတဲ့ last com
 
         $ git branch -r
 
-### Changing a Branch Name[^10]
+### Changing a Branch Name[^11]
 History တွေကို မပြောင်း ၊ မထိပဲ brach name ပဲ ပြောင်းမယ် -
 
         $ git branch --move <bad-branch-name> <corrected-branch-name>
@@ -260,7 +260,7 @@ Remote က အင်မတန်ရိုးပါတယ်။ အပေါ်�
 
         $ git push <remote> --delete <bad-branch-name>
 
-### Creating a Backup Branch[^11]
+### Creating a Backup Branch[^12]
 When a new branch is created, Git simply creates a pointer to the current commit, meaning that the new branch will have the same history and content as the branch you created if from.  This provide a snapshot or backup of the branch at that point in time.
 
 #### Step-by-Step Process
@@ -297,7 +297,7 @@ When a new branch is created, Git simply creates a pointer to the current commit
 
 <em>Branch ဖျက်လိုက်တာနဲ့ အသစ်ဆောက်ထားတဲ့ ကိစ္စကို `remote` ကို အသိပေးဖို့ လိုအုံးမှာဆိုတော့ အပေါ်မှာရေးထားတဲ့ [branch ကို remote ဆီတွန်းတဲ့](D#changing-a-branch-name11) command တွေနဲ့ ပြန်တွန်းဖို့ လိုကောင်းလိုပါမယ်။</em>
 
-### Deleting Commit(s)[^12]
+### Deleting Commit(s)[^13]
 `iss9` branch မှာ ရှိနေတဲ့ နောက်ဆုံး commit ၂ ခုကို ဖျက်ချင်ပြီ ဆိုပါစို့ 
 
         $ git checkout iss9
@@ -312,18 +312,19 @@ When a new branch is created, Git simply creates a pointer to the current commit
         $ git checkout -b <branch-name> <commit#>
         $ git log --online // to verify
 
-# Remote Branch[^13]
+# Remote Branch[^14]
 
-[^0]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
-[^1]: page 52
-[^2]: page 92
-[^3]: page 55
-[^4]: page 65
-[^5]: page 70
-[^6]: page 73
-[^7]: page 75
-[^8]: page 76
-[^9]: page 79
-[^10]: page 81
-[^11][^12]: ChatGPT
-[^13]: page 85
+[^1]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
+[^2]: page 52
+[^3]: page 92
+[^4]: page 55
+[^5]: page 65
+[^6]: page 70
+[^7]: page 73
+[^8]: page 75
+[^9]: page 76
+[^10]: page 79
+[^11]: page 81
+[^12]: ChatGPT
+[^13]: ChatGPT
+[^14]: page 85

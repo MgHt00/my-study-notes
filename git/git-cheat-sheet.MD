@@ -260,7 +260,7 @@ Remote က အင်မတန်ရိုးပါတယ်။ အပေါ်�
 
         $ git push <remote> --delete <bad-branch-name>
 
-### Creating a Backup Branch[^11]
+### Creating a Backup Branch[^11] ိ
 When a new branch is created, Git simply creates a pointer to the current commit, meaning that the new branch will have the same history and content as the branch you created if from.  This provide a snapshot or backup of the branch at that point in time.
 
 #### Step-by-Step Process

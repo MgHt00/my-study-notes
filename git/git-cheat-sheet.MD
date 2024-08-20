@@ -41,7 +41,7 @@ remote ကို shortname နဲ့တူတူ ထပ်ထည့် (add) လ
 
 ဥပမာ `git merge origin/main`
 
-တဖက်မှာ `git pull` ကို သုံးမယ်ဆိုရင်တော့ `pull` က `fetch` + `merge` လုပ်ပေးပေမယ့် fetch လုပ်ပြီးမှာ ကိုယ်တိုင် merge လုပ်တာကိုတော့ ပိုသဘောကျပါတယ်။  
+တဖက်မှာ `git pull` ကို သုံးမယ်ဆိုရင်တော့ `pull` က `fetch` + `merge` လုပ်ပေးပေမယ့် fetch လုပ်ပြီးမှ ကိုယ်တိုင် merge လုပ်တာကိုတော့ ပိုသဘောကျပါတယ်။  
 
 ### Pushing
         $ git push <remote> <branch>
@@ -313,6 +313,23 @@ When a new branch is created, Git simply creates a pointer to the current commit
         $ git log --online // to verify
 
 # Remote Branch[^14]
+Full list of remote references ကို ဒါတွေနဲ့ ကြည့်ပါ
+
+        $ git ls-remote <remote>
+---
+        $ git remote show <remote>
+
+ကောင်းတာက remote-tracking branch တွေရဲ့ အကူညီကို ယူတာပါ။
+
+Remote-tracking branch(တွေ)ဟာ - 
+- remote branch(တွေ) ရဲ့ <strong>state</strong> ကို ပြတဲ့ <strong>reference</strong> တွေပါ။[^15]
+- <strong>local reference</strong>(တွေ) ဖြစ်ပြီး ကိုယ်ကသွား ရွေ့ပေးလို့ မရပါဘူး​။ Remote repository ရဲ့ state ကို တိတိကျကျ represent လုပ်နေသာ သေချာအောင် ၊ ကိုယ့်ဖက်က network communication တစ်ခုခုလုပ်လိုက်မှသာ Git က ရွေ့ပေးမှာဖြစ်ပါတယ်။  
+- ကိုယ်နောက်ဆုံးအချိန် connect လုပ်ခဲ့တုန်းက remote repositories တွေထဲက ဘယ် branch တွေက ဘယ်နေရာမှာ ရှိနေတယ်ဆိုတာ သတိပေးမယ့် bookmark တွေဖြစ်ပါတယ်။
+
+Remote-tracking branch တွေဟာ `<remote>/<branch>` form ကို ယူပါတယ်။ 
+
+
+
 
 [^1]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
 [^2]: page 52
@@ -328,3 +345,4 @@ When a new branch is created, Git simply creates a pointer to the current commit
 [^12]: ChatGPT
 [^13]: ChatGPT
 [^14]: page 85
+[^15]: page 86

@@ -1,3 +1,10 @@
+| Category      | Sub-category |
+| ----------- | ----------- |
+|[Pseudo-Class Selectors](#pseudo-class-selectors)|-|
+|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#empty10)</li> <li>:only-child</li> <li>:only-of-type</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
+|[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
+|[User Action Pseudo-Classes](#user-action-pseudo-classes3)||
+
 # Pseudo-Class Selectors
 
 Pseudo-class selector တွေက phantom (not real; illusory) class တွေပါ။[^1] အဓိကအချက်က pesudo-class တွေက သူတို့ attached လုပ်ထားတဲ့ element တွေကိုပဲ refer လုပ်ပြီး သူတို့ရဲ့ decendent element တွေကို refer လုပ်တာမဟုတ်ပါဘူး။ ဥပမာ - 
@@ -6,7 +13,7 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 
 မှာ `first-child` ဖြစ်တဲ့ `p` ကို ရည်ညွှန်းတာဖြစ်ပြီး `p` ရဲ့ `first-child` ကို ရည်ညွှန်းတာ မဟုတ်ပါဘူး။ 
 
-### Structural Pseudo-Classes
+# Structural Pseudo-Classes
 
 - `:root`
 - [`:empty`](#empty10)
@@ -20,9 +27,21 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - `:nth-last-child`
 - `:nth-of-type`
 
-### Location Pseudo-Classes
+### :empty[^11]
 
-#### Hyperlink-specific pseudo-classes
+No children ဖြစ်တဲ့ any kind of element ကို select လုပ်မှာပါ။ ဒီမှာ element က 
+- no whitespace
+- no visible content
+- no decendant element ဖြစ်ရပါမယ်။ 
+
+CMS တွေမှာ ဘာ actual content မှ မပါတဲ့ element တွေကို supress လုပ်ချင်တဲ့ အခါ `p:empty {display: none;}` နဲ့ supress လုပ်လို့ ရပါတယ်။  
+
+ထူးခြားတာက `<!--comment-->` ကို content လို့ မသတ်မှတ်တဲ့အပြင် ၊ whitespace လို့ပါ မသတ်မှတ်လို့ `<p><!--a comment--></p>` ဆိုရင် `p:empth {....);` နဲ့ အကျုံးဝင်ပါတယ်။  ဒါပေမယ့် comment ရဲ့ဘယ်ညာ မှာ space ထည့်မိတာ ၊ new line ယူမိတာဆိုရင်တော့ အကျုံးမဝင်တော့ပါဘူး။  
+
+
+# Location Pseudo-Classes
+
+### Hyperlink-specific pseudo-classes
 
 - `:link`
 - `:visited`
@@ -67,8 +86,13 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - `:dir()`  for example `*:dir(rtl) {...}`
 
 ### Logical Pseudo-Classes
+- :not()[^7]
+- :is() and :where()[^8]
+- :has()
 
-#### The negation pseudo-class
+
+# Logical Pseudo-Classes
+### The negation pseudo-class
 
 - `:not()`[^7]
 
@@ -79,7 +103,7 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - `:is()` and `:where()`[^8]
 
 
-### The :has() Pseudo-Class
+## The :has() Pseudo-Class
 
 - `:has()`
 
@@ -121,17 +145,6 @@ sibling ပေါ်မူတည်ပြီး select လုပ်တာပေ�
         :is(h1, h2, h3, h4, h5, h6):not(:has(img))[^10]
 
 h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မျိုးလုံးအောက်မှာ `img` မပါတဲ့ heading တွေကို select လုပ်မှာပါ။
-
-## :empty[^11]
-
-No children ဖြစ်တဲ့ any kind of element ကို select လုပ်မှာပါ။ ဒီမှာ element က 
-- no whitespace
-- no visible content
-- no decendant element ဖြစ်ရပါမယ်။ 
-
-CMS တွေမှာ ဘာ actual content မှ မပါတဲ့ element တွေကို supress လုပ်ချင်တဲ့ အခါ `p:empty {display: none;}` နဲ့ supress လုပ်လို့ ရပါတယ်။  
-
-ထူးခြားတာက `<!--comment-->` ကို content လို့ မသတ်မှတ်တဲ့အပြင် ၊ whitespace လို့ပါ မသတ်မှတ်လို့ `<p><!--a comment--></p>` ဆိုရင် `p:empth {....);` နဲ့ အကျုံးဝင်ပါတယ်။  ဒါပေမယ့် comment ရဲ့ဘယ်ညာ မှာ space ထည့်မိတာ ၊ new line ယူမိတာဆိုရင်တော့ အကျုံးမဝင်တော့ပါဘူး။  
 
 [^1]: ဒီ note က [CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
 [^2]: page 71

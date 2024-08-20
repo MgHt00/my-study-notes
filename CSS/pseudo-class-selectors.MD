@@ -124,7 +124,7 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 
 ## :empty[^11]
 
-No children ဖြစ်တဲ့ any kind of element ကို select လုပ်မှာပါ။ ဒီမှာ elemet က 
+No children ဖြစ်တဲ့ any kind of element ကို select လုပ်မှာပါ။ ဒီမှာ element က 
 - no whitespace
 - no visible content
 - no decendant element ဖြစ်ရပါမယ်။ 

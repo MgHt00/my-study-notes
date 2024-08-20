@@ -5,8 +5,9 @@
 [Working with Remotes](#working-with-remotes-1)| [Showing](#showing-your-remotes-2), [fetching & pulling](#fetching-and-pulling), [pushing](#pushing), [inspecting](#inspecting-a-remote), and [renaming a remote](#renaming-a-remote)
 | [Tagging](#tagging-4) | [Listing](#listing-tags), [creating](#creating-tag), [sharing](#sharing-tags), and [deleting tag](#deleting-tags); [tagging later](#tagging-later) |
 | [Git Branching](#git-branching) | [Creating a New Branch](#creating-a-new-branch-5), [Switching Branches](#switching-branches), [Creating & Switching](#creating--switching), [Divergent History](#divergent-history), [Delete a Branch](#delete-a-branch)|
-|[Branching & Merging](#branching--merging6)| [Basic Merging](#basic-merging), [Fast-forward & Three-Way Merge], [Basic Merge Confilcts]|
-|[Branch Management]|[The Basics], [Changing a Branch Name], [Creating a Backup Branch]|
+|[Branching & Merging](#branching--merging6)| [Basic Merging](#basic-merging), [Fast-forward & Three-Way Merge](#fast-forward--three-way-merge), [Basic Merge Confilcts](#basic-merge-confilcts9)|
+|[Branch Management](#branch-management10)|[The Basics](#tha-basics), [Changing a Branch Name](#changing-a-branch-name11), [Creating a Backup Branch](#creating-a-backup-branch12), [Deleting Commit(s)], [Creating a branch from a specific commit]|
+|[Remote Branch]||
 
 # Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
@@ -215,7 +216,7 @@ Fast-forward merge မှာ Git က commit အသစ် မလုပ်ပဲ p
                 $ git commit 
 
 # Branch Management[^9]
-### Tha Basics
+### The Basics
 ဘာ argument မှ မပါပဲ သုံးရင် ရှိတဲ့ branch တွေကို ပြပေးပါမယ်။
 
         $ git branch
@@ -259,7 +260,7 @@ Remote က အင်မတန်ရိုးပါတယ်။ အပေါ်�
 
         $ git push <remote> --delete <bad-branch-name>
 
-### Creating a Backup Branch[^11]
+### Creating a Backup Branch[^11] ိ
 When a new branch is created, Git simply creates a pointer to the current commit, meaning that the new branch will have the same history and content as the branch you created if from.  This provide a snapshot or backup of the branch at that point in time.
 
 #### Step-by-Step Process
@@ -294,6 +295,24 @@ When a new branch is created, Git simply creates a pointer to the current commit
 
         $ git checkout -b <fresh-branch>
 
+<em>Branch ဖျက်လိုက်တာနဲ့ အသစ်ဆောက်ထားတဲ့ ကိစ္စကို `remote` ကို အသိပေးဖို့ လိုအုံးမှာဆိုတော့ အပေါ်မှာရေးထားတဲ့ [branch ကို remote ဆီတွန်းတဲ့](D#changing-a-branch-name11) command တွေနဲ့ ပြန်တွန်းဖို့ လိုကောင်းလိုပါမယ်။</em>
+
+### Deleting Commit(s)[^12]
+`iss9` branch မှာ ရှိနေတဲ့ နောက်ဆုံး commit ၂ ခုကို ဖျက်ချင်ပြီ ဆိုပါစို့ 
+
+        $ git checkout iss9
+        $ git log
+        $ git reset --hard <hash-of-second-last-commit>
+
+`git reset --hard` က very dangerous command ပါ။  ဒါကြောင့် commit တွေကို hard reset လုပ်ပစ်မယ့်အစား branch အသစ်ပွားယူလိုက်တာ ပိုပြီး ကောင်းပါတယ်။ 
+
+#### Creating a branch from a specific commit        
+
+        $ git log --oneline // to find the commit hash
+        $ git checkout -b <branch-name> <commit#>
+        $ git log --online // to verify
+
+# Remote Branch[^13]
 
 [^0]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
 [^1]: page 52
@@ -306,4 +325,5 @@ When a new branch is created, Git simply creates a pointer to the current commit
 [^8]: page 76
 [^9]: page 79
 [^10]: page 81
-[^11]: ChatGPT
+[^11][^12]: ChatGPT
+[^13]: page 85

@@ -9,7 +9,7 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 ### Structural Pseudo-Classes
 
 - `:root`
-- `:empty`
+- [`:empty`](#empty10)
 - `:only-child`
 - `:only-of-type`
 - `:first-child`

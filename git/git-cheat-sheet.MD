@@ -6,7 +6,7 @@
 | [Tagging](#tagging-4) | [Listing](#listing-tags), [creating](#creating-tag), [sharing](#sharing-tags), and [deleting tag](#deleting-tags); [tagging later](#tagging-later) |
 | [Git Branching](#git-branching) | [Creating a New Branch](#creating-a-new-branch-5), [Switching Branches](#switching-branches), [Creating & Switching](#creating--switching), [Divergent History](#divergent-history), [Delete a Branch](#delete-a-branch)|
 |[Branching & Merging](#branching--merging6)| [Basic Merging](#basic-merging), [Fast-forward & Three-Way Merge], [Basic Merge Confilcts]|
-|[Branch Management]|[The Basics], [Changing a Branch Name]|
+|[Branch Management]|[The Basics], [Changing a Branch Name], [Creating a Backup Branch]|
 
 # Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
@@ -259,6 +259,42 @@ Remote က အင်မတန်ရိုးပါတယ်။ အပေါ်�
 
         $ git push <remote> --delete <bad-branch-name>
 
+### Creating a Backup Branch[^11]
+When a new branch is created, Git simply creates a pointer to the current commit, meaning that the new branch will have the same history and content as the branch you created if from.  This provide a snapshot or backup of the branch at that point in time.
+
+#### Step-by-Step Process
+1. Backup လုပ်ချင်တဲ့ branch ကို အရင်ပြောင်း
+        
+        $ git checkout <branch-name>
+
+2. Backup အနေနတဲ့ branch အသစ်ဆောက်
+
+        $ git branch <backup-branch-name>
+
+   ဒါမှမဟုတ် သေချာအောင် တခါတည်း ပြောင်းကြည့်လို့လဲ ရပါ့
+
+        $ git checkout -b <backup-branch-name>
+
+3. Branch တွေ အားလုံး ထင်သလို အိုကေ နေပြီလား verify လုပ် -
+
+        $ git branch
+
+#### Revert to the Backup if Needed
+မဖြစ်ချင်ပေမယ့်လဲ ဖြစ်လာမှာမို့ backup လုပ်ထားတဲ့ branch ကို အတည်ယူပြီး ပြန် restore လုပ်ဖို့ လိုလာခဲ့ရင် - 
+
+1. Backup လုပ်ထားတဲ့ branch ကို ပြောင်း
+
+        $ git checkout <backup-branch>
+
+2. အဖတ်ဆည်မရတော့တဲ့ branch ကို delete လုပ် (force delete လိုဖို့များ)
+
+        $ git branch -D <messed-up-branch>
+
+3. Backup လုပ်ထားတဲ့ branch ကနေ branch အသစ်ပြန်ပွားယူ
+
+        $ git checkout -b <fresh-branch>
+
+
 [^0]: ဒီ cheat sheet ထဲက command အများစုက (Pro Git - 2nd Edition - by Scott Chacon and Ben Straub)[https://git-scm.com/book/en/v2] ထဲကဖြစ်ပါတယ်။
 [^1]: page 52
 [^2]: page 92
@@ -270,3 +306,4 @@ Remote က အင်မတန်ရိုးပါတယ်။ အပေါ်�
 [^8]: page 76
 [^9]: page 79
 [^10]: page 81
+[^11]: ChatGPT

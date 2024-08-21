@@ -95,6 +95,18 @@ Type selector ကို element selector လို့ပြောင်းခေ
 - `<p>` element ၊ ပတ်ဝန်းကျင်ကြားမှာ တစ်ခုတည်းပါနေတဲ့ `<p>` ဖြစ်ပြီး class attribute မှာ unique ပါနေတဲ့ `<p>` ကို select လုပ်ပါ။
 - <em>`class=unique` ပါတဲ့ တစ်ခုတည်းရှိတဲ့ `<p>` ကို select လုပ်ခိုင်းနေတာ မဟုတ်ပါဘူး </em>
 
+## nth-child[^00]
+
+        div
+        |- p
+        |- ul
+        |- p
+
+ဒီ structure မှာ `p:nth-child(2)` ဆိုရင် နောက်ဆုံးက `p` ကို select <em>မလုပ်</em> ပါဘူး။
+
+မှတ်ထားရမှာက - 2nd child ဟာ `p` ဖြစ်နေရင်လို့ ပြောတာပါ။ ဒုတိယမြောက် `p` လို့ ပြောချင်တာ မဟုတ်ပါဘူး။
+
+
 # Location Pseudo-Classes
 
 ### Hyperlink-specific pseudo-classes
@@ -218,3 +230,4 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 [^14]: page 59
 [^15]: page 60
 [^16]: page 61
+[^00]: page 62

@@ -5,6 +5,13 @@
 |[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
 |[User Action Pseudo-Classes](#user-action-pseudo-classes3)||
 
+# Combining Pseudo-Classes
+Pseudo-class တွေကို combine(chain) လုပ်လို့ ရပါတယ်။ 
+        
+        a:link:hover {}
+
+Specify လုပ်ထားတဲ့ order က အရေးမကြီးပါဘူး။ 
+
 # Pseudo-Class Selectors
 
 Pseudo-class selector တွေက phantom (not real; illusory) class တွေပါ။[^1] အဓိကအချက်က pesudo-class တွေက သူတို့ attached လုပ်ထားတဲ့ element တွေကိုပဲ refer လုပ်ပြီး သူတို့ရဲ့ decendent element တွေကို refer လုပ်တာမဟုတ်ပါဘူး။ ဥပမာ - 
@@ -19,9 +26,9 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - [`:empty`](#empty10)
 - `:only-child`
 - `:only-of-type`
-- `:first-child`
-- `:last-child`
-- `:first-of-type`
+- `:first-child`[^14]
+- `:last-child`[^15] 
+- `:first-of-type` [^16]
 - `:last-of-type`
 - `:nth-child`
 - `:nth-last-child`
@@ -208,3 +215,4 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 [^11]: page 55
 [^12]: page 56
 [^13]: page 57
+[^14]: page 59 | [^15]: page 60 | [^16]: page 61

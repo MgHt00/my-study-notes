@@ -1,7 +1,7 @@
 | Category      | Sub-category |
 | ----------- | ----------- |
 |[Pseudo-Class Selectors](#pseudo-class-selectors)|-|
-|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#empty10)</li> <li>:only-child</li> <li>:only-of-type</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
+|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#empty10)</li> <li>[:only-child](#only-child4)</li> <li>[:only-of-type](#only-of-type5)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
 |[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
 |[User Action Pseudo-Classes](#user-action-pseudo-classes3)||
 
@@ -24,11 +24,11 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 
 - `:root`
 - [`:empty`](#empty10)
-- `:only-child`
-- `:only-of-type`
+- [`:only-child`](#only-child4)
+- [`:only-of-type`](#only-of-type5)
 - `:first-child`[^14]
 - `:last-child`[^15] 
-- `:first-of-type` [^16]
+- `:first-of-type`[^16]
 - `:last-of-type`
 - `:nth-child`
 - `:nth-last-child`
@@ -215,4 +215,6 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 [^11]: page 55
 [^12]: page 56
 [^13]: page 57
-[^14]: page 59 | [^15]: page 60 | [^16]: page 61
+[^14]: page 59
+[^15]: page 60
+[^16]: page 61

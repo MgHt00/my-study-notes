@@ -27,7 +27,7 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - `:nth-last-child`
 - `:nth-of-type`
 
-### :empty[^11]
+## :empty[^11]
 
 No children ဖြစ်တဲ့ any kind of element ကို select လုပ်မှာပါ။ ဒီမှာ element က 
 - no whitespace
@@ -38,7 +38,7 @@ CMS တွေမှာ ဘာ actual content မှ မပါတဲ့ element �
 
 ထူးခြားတာက `<!--comment-->` ကို content လို့ မသတ်မှတ်တဲ့အပြင် ၊ whitespace လို့ပါ မသတ်မှတ်လို့ `<p><!--a comment--></p>` ဆိုရင် `p:empth {....);` နဲ့ အကျုံးဝင်ပါတယ်။  ဒါပေမယ့် comment ရဲ့ဘယ်ညာ မှာ space ထည့်မိတာ ၊ new line ယူမိတာဆိုရင်တော့ အကျုံးမဝင်တော့ပါဘူး။  
 
-### :only-child[^12]
+## :only-child[^12]
 Element တစ်ခုက ငုံထားပြီး ငုံထားတဲ့ထဲမှာ သူတစ်ယောက်တည်း ရှိနေရင် `only-child` နဲ့ select လုပ်လို့ ရတယ် (အိ.... ငုံထားတာ .. ရွံစရာ :P) 
 
 သတိထားရမှာက only-child ဖြစ်တဲ့ element ကို select လုပ်နေတာ ဖြစ်ပြီး သူ့ရဲ့ parent ကို select လုပ်ဖို့ကြိုးစားနေတာ မဟုတ်ပါဘူး။ 
@@ -55,6 +55,38 @@ Element တစ်ခုက ငုံထားပြီး ငုံထားတ�
 အကယ်လို့ `a` ရဲ့ child ဖြစ်ကိုဖြစ်ရမယ်၊ တစ်ယောက်တည်းကလဲ​ မွေးထားရအုံးမယ် ဆိုတဲ့ စွတ်အတင်းအတွက် ဆိုရင် - 
 
         a > img:only-child
+
+## only-of-type[^13]
+`a` က ငုံထားမယ် ပတ်ဝန်းကျင်မှာ သူနဲ့တူတာ မရှိဘူး ဆိုတဲ့သူကို select လုပ်ချင်ရင် `only-of-type` ကို သုံးရမှာပါ။ 
+
+`a` က ငုံထားပြီး တစ်ခုတည်းပါတဲ့ `img` ကို select လုပ်မယ်ဆိုပါစို့ - 
+
+        a
+        |- b
+        |- em
+        |- img
+
+        a img:only-of-typ 
+
+`only-of-type` က တခြားသူတွေပါနေသော်လည်း သူပုံစံ (type) နဲ့ သူသာ ရှိတယ်ဆိုရင် select လုပ်မှာပါ။  ဒါက `only-child` နဲ့ ကွာတဲ့အချက်ပါ။ 
+
+Type selector ကို element selector လို့ပြောင်းခေါ်သလိုပါပဲ။  ဒီနေရာမှာ type နဲ့ သူတစ်ယာက်တည်းဆိုတဲ့ စာကားလုံးကို သတိထားရပါမယ်။ 
+
+        p.unique:only-of-type {color: red};
+
+ဒီ code မှာ only-of-type ဖြစ်တဲ့ p (type / element) ကို အဓိက ဦးတည်မှာ ဖြစ်ပြီး class ကို အဓိကထားပြီး only-of-type ဖြစ်လား စစ်မှာမဟုတ်ပါဘူး။ 
+
+        <div>
+                <p class="unique">...</p>
+                <p>...</p>
+        </div>
+
+ဒီလိုဆိုရင် `p.unique:only-of-type` က ဘေးမှာ sibling `<p>` ရှိနေတဲ့အတွက် `only-of-type` က ဘယ် `<p>` ကိုမှ select လုပ်မှာမဟုတ်ပါဘူး။ 
+
+`p.unique:only-of-type` က အဓိပ္ပါယ်က - 
+
+- `<p>` element ၊ ပတ်ဝန်းကျင်ကြားမှာ တစ်ခုတည်းပါနေတဲ့ `<p>` ဖြစ်ပြီး class attribute မှာ unique ပါနေတဲ့ `<p>` ကို select လုပ်ပါ။
+- <em>`class=unique` ပါတဲ့ တစ်ခုတည်းရှိတဲ့ `<p>` ကို select လုပ်ခိုင်းနေတာ မဟုတ်ပါဘူး </em>
 
 # Location Pseudo-Classes
 
@@ -175,3 +207,4 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 [^10]: page 93
 [^11]: page 55
 [^12]: page 56
+[^13]: page 57

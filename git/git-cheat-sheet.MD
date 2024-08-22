@@ -178,6 +178,20 @@ Forcefully deletes a branch, regardless of its merged status:
 
         $ git branch -D <branch-name>
 
+### Deleting the Remote Branch
+Remote မှာ ရှိတဲ့ branch ကို delete လုပ်ချင်ရင် 
+
+        $ git push --delete <remote> <branch-name>
+
+### Pushing the New Branch to the Remote
+အသစ်လုပ်ထားတဲ့ new branch ကို remote ဆီတွန်းဖို့ 
+
+        $ git push <remote> <branch-name>
+        
+New branch လုပ်ပြီးရင် new branch ကို remote branch နဲ့ track ဖို့ အသိပေးထားတာ ကောင်း
+
+        $ git push --set-upstream <remote> <branch-name>
+
 # Branching & Merging[^6]
 ### Basic Merging
 1. ကျန်နေခဲ့မယ့် branch ဆီကို အရင်သွားပါ။ (check out the branch you wish you merge into)

@@ -3,7 +3,7 @@
 |[Pseudo-Class Selectors](#pseudo-class-selectors)|-|
 |[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#empty10)</li> <li>[:only-child](#only-child4)</li> <li>[:only-of-type](#only-of-type5)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
 |[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
-|[User Action Pseudo-Classes](#user-action-pseudo-classes3)||
+|[User Action Pseudo-Classes]()<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>|<ul><li> :enabled</li><li>:disabled</li><li>:checked</li><li>:indeterminate</li><li> :default</li><li>:autofill</li><li>:placeholder-shown</li><li>:valid</li><li>:invalid</li><li> :in-range</li><li>:out-of-range</li><li>:required</li><li>:optional</li><li> :read-write</li><li>:read-only</li></ul>|
 
 # Combining Pseudo-Classes
 Pseudo-class တွေကို combine(chain) လုပ်လို့ ရပါတယ်။ 
@@ -180,11 +180,11 @@ HTML ရဲ့ markup structure တစ်ခုတည်းကို ကြည�
 
 |Name   |Description    |
 |-----  |--------       |
-|`:hover`   |mouse pointer တင်ထားတဲ့ any element ကို refer   |
+|`:hover`   |mouse pointer တင်ထားတဲ့ any element  |
 |`:active`   |user input ကြောင့် activated ဖြစ်နေတဲ့ any element   |
 |`:focus`   |လက်ရှိမှာ input focus ရှိနေတဲ့ any element   |
-|`:focus-within`   |   |
 |`:focus-visible`| အခြေနေတစ်ခုခုမှာ browswer(user agent) က visible focus style ပေးသင့်တယ်လို့ သတ်မှတ်ထားတဲ့ element  |
+|`:focus-within`   | focus ရှိတဲ့ any element (သို့) focus ရှိနေတဲ့ decendant ကို ပိုင်ထားနေတဲ့ element   |
 
 ဒီ element တွေကို `:active`, `:focus` သုံးလို့ ရပါတယ်။
 - links
@@ -214,24 +214,100 @@ Link တွေကို pseudo-class တွေနဲ့ styling လုပ်တ�
         mouse နဲ့ click လုပ်တဲ့အခါမှ ပြပေးမှာ မဟုတ်ပါဘူး။
         */
 
+### :focus-within
+---
+Focus ရှိတဲ့ any element (သို့) focus ရှိနေတဲ့ decendant ကို ပိုင်ထားနေတဲ့ element ကို select လုပ်ပါတယ်။  ဥပမာ 
 
-### UI-State Pseudo-Classes[^00]
+        nav (:focus-within ပေးထားမယ်)
+        |- a (:focus ပေးထားမယ်)
+        |- a (:focus ပေးထားမယ်)
+        |- a (:focus ပေးထားမယ်)
 
-- `:enabled`
-- `:disabled`
-- `:checked`
-- `:indeterminate`
-- `:default`
-- `:autofill`
-- `:placeholder-shown`
-- `:valid`
-- `:invalid`
-- `:in-range`
-- `:out-of-range`
-- `:required`
-- `:optional`
-- `:read-write`
-- `:read-only`
+ဒီလိုဆိုရင် `a` က focus ရတာနဲ့ `nav` ရဲ့ `focus-within` က အလုပ်လုပ်မှာပါ။ 
+
+# 4. UI-State Pseudo-Classes[^18]
+### 4.1 Enabled and disabled UI elements
+|Name   | Description   |
+|----   |---   |
+|`:enabled`   |input လုပ်လို့ရတဲ့ / enable ဖြစ်နေတဲ့ UI element (form element လိုမျိုး) တွေ  |
+|`:disabled`|input လုပ်လို့မရတဲ့ / disable ဖြစ်နေတဲ့ UI element (form element လိုမျိုး) တွေ|
+----
+
+### 4.2 Check states
+|Name   | Description   |
+|----   |---   |
+|`:checked`|user ကြောင့် / default ကြောင့် select လုပ်ခံထားရတဲံ radio button (သို့) checkbox|
+|`:indeterminate`|check မယ်ဆိုရပေမယ့် check လဲမဟုတ် uncheck လဲမဖြစ်တဲ့ radio button (သို့) checkbox (DOM scripting နဲ့ပဲ ဒီလို state ဖြစ်အောင် ဖန်တီးလို့ရပါတယ်။)[^19]|
+---
+
+### 4.3 Default-value pseudo-classes
+|Name   | Description   |
+|----   |---   |
+|`:default`|selected by default ဖြစ်နေတဲ့ radio button, checkbox, or option | 
+|`:autofill`|browser ကနေ autofill လုပ်ထားတဲ့ user input|
+|`:placeholder-shown`|placeholder(not value) text ကြိုဖြည့်ထားတဲ့ user input |
+
+#### Userful Codes
+---
+        input[type="checkbox"]:checked + label {
+        ...
+        }
+
+---
+        input:placeholder-shown {
+                opacity: 0.75
+        }
+
+---
+input:autofill {
+                border: thick sold marooon;
+        }
+Browser က သတ်မှတ်ထားတဲ့ built-in autofill style တွေကို override လုပ်ရတာ ခက်ပါတယ်။ ဥပမာ browser သတ်မှတ်ထားတဲ့ autofill ရဲ့ background ကို override လုပ််လို့ မရပါဘူး။[^20]
+
+### 4.4 Optionality pseudo-classes
+|Name   | Description   |
+|----   |---   |
+|`:required`|value တစ်ခုခု set လုပ်ကိုလုပ်ထားရမယ့် user input|
+|`:optional`|value တစ်ခုခု set လုပ်ထားစရာ မလိုတဲ့ user input|
+---
+
+### 4.5 Validity pseudo-classes
+|Name   | Description   |
+|----   |---   |
+|`:valid`|သူ့ရဲ့ data validity requirement တွေအားလုံးနဲ့ ကိုက်ညီတဲ့ user input|
+|`:invalid`|သူ့ရဲ့ data validity requirement တွေအားလုံးနဲ့ မကိုက်ညီတဲ့ user input|
+** `:valid` နဲ့ `invalid` တွေကို data validity requirement capacity ရှိတဲ့ `<input>` လို element တွေမှာပဲ သုံးလို့ရပြီး `<div>` လို element တွေကို ဒီ pseudo-class နဲ့ select လုပ်လို့ ရမှာ မဟုတ်ပါဘူး။ [^21]
+
+#### Userful Codes
+---
+        input[type="email"]:focus {
+                background-positon: 100% 50%;
+                background-repeat: no-repat;
+        }
+
+        input[type="email"]:focus:invalid {
+                background-image: url(warning.jpg);
+        }
+
+        input[type="email"]:focus:valid {
+                background-image: url(checkmark.jpg);
+        }
+
+---
+
+### 4.6 Range pseudo-classes
+|Name   | Description   |
+|----   |---   |
+|`:in-range`|သူ့ရဲ့ value က minimum နဲ့ maximum value ကြားထဲမှာ ရှိနေတဲ့ user input|
+|`:out-of-range`|သူ့ရဲ့ value က control က ခွင့်ပြုထားတဲ့ minimum value ထက်နည်း (သို့) maximum ထက်များနေတဲ့ user input|
+
+|`:read-write`|user က edit လုပ်ခွင့်ရှိတဲ့ user input|
+|`:read-only`|user က edit လုပ်ခွင့် မရှိတဲ့ user input|
+
+#### Userful Codes
+---
+        
+
 
 ### The :lang() and dir() Pseudo-Classes
 
@@ -316,3 +392,7 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 [^16]: page 74
 [^17]: ([MDN web docs - Styling some links
 ](https://developer.mozilla.org/en-US/docs/Learn/CSS/Styling_text/Styling_links#styling_some_links))
+[^18]: page 77
+[^19]: page 78
+[^20]: page 80
+[^21]: page 81

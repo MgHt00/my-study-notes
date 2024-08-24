@@ -1,9 +1,9 @@
 | Category      | Sub-category |
 | ----------- | ----------- |
 |[Pseudo-Class Selectors](#pseudo-class-selectors)|-|
-|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#empty10)</li> <li>[:only-child](#only-child4)</li> <li>[:only-of-type](#only-of-type5)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
-|[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
-|[User Action Pseudo-Classes]()<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>|<ul><li> :enabled</li><li>:disabled</li><li>:checked</li><li>:indeterminate</li><li> :default</li><li>:autofill</li><li>:placeholder-shown</li><li>:valid</li><li>:invalid</li><li> :in-range</li><li>:out-of-range</li><li>:required</li><li>:optional</li><li> :read-write</li><li>:read-only</li></ul>|
+|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#empty10)</li> <li>[:only-child](#only-child4)</li> <li>[:only-of-type](#only-of-type5)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
+|[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
+|[User Action Pseudo-Classes]()<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>|<ul><li> :enabled</li><li>:disabled</li><li>:checked</li><li>:indeterminate</li><li> :default</li><li>:autofill</li><li>:placeholder-shown</li><li>:valid</li><li>:invalid</li><li> :in-range</li><li>:out-of-range</li><li>:required</li><li>:optional</li><li> :read-write</li><li>:read-only</li></ul>|
 
 # Combining Pseudo-Classes
 Pseudo-class တွေကို combine(chain) လုပ်လို့ ရပါတယ်။ 
@@ -35,8 +35,6 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - `:nth-of-type`[^5]
 
 ### 1.1 empty[^7]
----
-
 No children ဖြစ်တဲ့ any kind of element ကို select လုပ်မှာပါ။ ဒီမှာ element က 
 - no whitespace
 - no visible content
@@ -47,7 +45,6 @@ CMS တွေမှာ ဘာ actual content မှ မပါတဲ့ element �
 ထူးခြားတာက `<!--comment-->` ကို content လို့ မသတ်မှတ်တဲ့အပြင် ၊ whitespace လို့ပါ မသတ်မှတ်လို့ `<p><!--a comment--></p>` ဆိုရင် `p:empth {....);` နဲ့ အကျုံးဝင်ပါတယ်။  ဒါပေမယ့် comment ရဲ့ဘယ်ညာ မှာ space ထည့်မိတာ ၊ new line ယူမိတာဆိုရင်တော့ အကျုံးမဝင်တော့ပါဘူး။  
 
 ### 1.2 only-child[^8]
----
 Element တစ်ခုက ငုံထားပြီး ငုံထားတဲ့ထဲမှာ သူတစ်ယောက်တည်း ရှိနေရင် `only-child` နဲ့ select လုပ်လို့ ရတယ် (အိ.... ငုံထားတာ .. ရွံစရာ :P) 
 
 သတိထားရမှာက only-child ဖြစ်တဲ့ element ကို select လုပ်နေတာ ဖြစ်ပြီး သူ့ရဲ့ parent ကို select လုပ်ဖို့ကြိုးစားနေတာ မဟုတ်ပါဘူး။ 

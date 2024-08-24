@@ -12,7 +12,7 @@ Pseudo-class တွေကို combine(chain) လုပ်လို့ ရပ�
 
 Specify လုပ်ထားတဲ့ order က အရေးမကြီးပါဘူး။ 
 
-# 1. Pseudo-Class Selectors
+# Pseudo-Class Selectors
 
 Pseudo-class selector တွေက phantom (not real; illusory) class တွေပါ။[^1] အဓိကအချက်က pesudo-class တွေက သူတို့ attached လုပ်ထားတဲ့ element တွေကိုပဲ refer လုပ်ပြီး သူတို့ရဲ့ decendent element တွေကို refer လုပ်တာမဟုတ်ပါဘူး။ ဥပမာ - 
 
@@ -20,7 +20,7 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 
 မှာ `first-child` ဖြစ်တဲ့ `p` ကို ရည်ညွှန်းတာဖြစ်ပြီး `p` ရဲ့ `first-child` ကို ရည်ညွှန်းတာ မဟုတ်ပါဘူး။ 
 
-# Structural Pseudo-Classes
+# 1. Structural Pseudo-Classes
 
 - `:root`
 - [`:empty`](#empty10)
@@ -34,7 +34,7 @@ Pseudo-class selector တွေက phantom (not real; illusory) class တွေ�
 - `:nth-last-child`
 - `:nth-of-type`[^5]
 
-### :empty[^7]
+### 1.1 empty[^7]
 ---
 
 No children ဖြစ်တဲ့ any kind of element ကို select လုပ်မှာပါ။ ဒီမှာ element က 
@@ -46,7 +46,7 @@ CMS တွေမှာ ဘာ actual content မှ မပါတဲ့ element �
 
 ထူးခြားတာက `<!--comment-->` ကို content လို့ မသတ်မှတ်တဲ့အပြင် ၊ whitespace လို့ပါ မသတ်မှတ်လို့ `<p><!--a comment--></p>` ဆိုရင် `p:empth {....);` နဲ့ အကျုံးဝင်ပါတယ်။  ဒါပေမယ့် comment ရဲ့ဘယ်ညာ မှာ space ထည့်မိတာ ၊ new line ယူမိတာဆိုရင်တော့ အကျုံးမဝင်တော့ပါဘူး။  
 
-### :only-child[^8]
+### 1.2 only-child[^8]
 ---
 Element တစ်ခုက ငုံထားပြီး ငုံထားတဲ့ထဲမှာ သူတစ်ယောက်တည်း ရှိနေရင် `only-child` နဲ့ select လုပ်လို့ ရတယ် (အိ.... ငုံထားတာ .. ရွံစရာ :P) 
 
@@ -65,7 +65,7 @@ Element တစ်ခုက ငုံထားပြီး ငုံထားတ�
 
         a > img:only-child
 
-### only-of-type[^9]
+### 1.3 only-of-type[^9]
 ---
 `a` က ငုံထားမယ် ပတ်ဝန်းကျင်မှာ သူနဲ့တူတာ မရှိဘူး ဆိုတဲ့သူကို select လုပ်ချင်ရင် `only-of-type` ကို သုံးရမှာပါ။ 
 
@@ -98,7 +98,7 @@ Type selector ကို element selector လို့ပြောင်းခေ
 - `<p>` element ၊ ပတ်ဝန်းကျင်ကြားမှာ တစ်ခုတည်းပါနေတဲ့ `<p>` ဖြစ်ပြီး class attribute မှာ unique ပါနေတဲ့ `<p>` ကို select လုပ်ပါ။
 - <em>`class=unique` ပါတဲ့ တစ်ခုတည်းရှိတဲ့ `<p>` ကို select လုပ်ခိုင်းနေတာ မဟုတ်ပါဘူး </em>
 
-### nth-child[^10]
+### 1.4 nth-child[^10]
 ---
 
         div
@@ -301,27 +301,53 @@ Browser က သတ်မှတ်ထားတဲ့ built-in autofill style တ�
 |`:in-range`|သူ့ရဲ့ value က minimum နဲ့ maximum value ကြားထဲမှာ ရှိနေတဲ့ user input|
 |`:out-of-range`|သူ့ရဲ့ value က control က ခွင့်ပြုထားတဲ့ minimum value ထက်နည်း (သို့) maximum ထက်များနေတဲ့ user input|
 
+        <input id="grams" type="number" min="0" max="1000" />
+
+ဒီ code မှာ 0 to 1000 (inclusive) ဆိုရင် `in-range` ထဲဝင်ပြီး အပြင်ဆိုရင် `:out-of-range` ဖြစ်မှာပါ။
+
+HTML မှာ `step` attribute လဲရှိတာကြောင့် `step` value နဲ့ မကိုက်ရင် range ထဲ ဝင်နေသော်ငြားလည်း `:invilid` နဲ့ သွားပြီး match ဖြစ်မှာပါ။  
+
+        input[type="number"]:invalid {color: red;}
+        input[type="number"]:in-range {font-weight: bold;}
+
+        <input id="by-tens" type="number" min="0" max="1000" step="10" value="23" />
+
+ဒီ code မှာ value ကို 23 ထည့်ထားတာကြောင့် `in-range` ထဲ ဝင်နေလို့ bold ဖြစ်သလို not evenly divisible by 10 ဖြစ်တာကြောင့် `invalid` နဲ့လဲ အကျုံးဝင်နေမှာပါ။  
+
+### 4.7 Mutability pseudo-classes
+|Name   | Description   |
+|----   |---   |
 |`:read-write`|user က edit လုပ်ခွင့်ရှိတဲ့ user input|
 |`:read-only`|user က edit လုပ်ခွင့် မရှိတဲ့ user input|
 
-#### Userful Codes
----
-        
+HTML မှာ nondisabled, non-read-only `input` element တွေနဲ့ <strong>`contenteditable`</strong> attribute ပေးထားတဲ့ elemennt တွေအားလုံးက `read-write` နဲ့ အကျုံးဝင်ပြီး ကျန်တာတွေအားလုံးက `read-only` နဲ့ အကျံးဝင်ပါတယ်။  
 
+        <textarea disabled></textarea>
+        <pre contenteditable>Type your own code!</pre>
 
-### The :lang() and dir() Pseudo-Classes
+ဒီ code မှာ နဂိုက `read-write` ဖြစ်တဲ့ `textarea` ကို `read-only` နဲ့ အကျုံးဝင်အောင် လုပ်ထားပြီး ၊ default အားဖြင့် `read-only` ဖြစ်တဲ့ `pre` ကို `contenteditable` နဲ့ `read-write` ဖြစ်အောင် လုပ်ထားတာပါ။  
+      
+# 5. The :lang() and dir() Pseudo-Classes[^22]
 
-- `:lang()` for example `*:lang(fr) {...}`[^00]
+### 5.1 :lang()
+Language ကိုလိုက်ပြီး element ကို select လုပ်ချင်တဲ့အခါ `:lang()` ကို သုံးပါတယ်။  
+
+        *:lang(fr) {font-style: italic;}
+
+ဒီ code က content ကို French နဲ့ ရေးထားရင် italic လုပ်ပေးမှာပါ။  ဒီလိုဆိုရင် `*[lang|="fr"] {font-style: italic;}` နဲ့ ရေးတာနဲ့ သွားတူနေသလို ရှိပေမယ့် ကွာတာက attribute selector (|=) နဲ့ သုံးရင် element ကိုယ်တိုင်မှာ attribute ထည့်ရေးထားဖို့ လိုကိုလိုအပ်ပြီး `lang()` နဲ့သုံးရင်တော့ language information ကို multiple sources ကနေယူပြီး လိုအပ်ရင် element ရဲ့ ပြင်ပကနေလဲ ဆွဲယူပါတယ်။  
+
+### 5.2 :dir()
+ဒီ pseudo-class က element တွေကို HTML ထဲမှာ ရှိတဲ့ သူတို့ရဲ့ directionality ပေါ်မူတည်ပြီး (`direction` property ရဲ့ value မဟုတ်) select လုပ်ပါတယ်။ ဒါကြောင့် ဒီ selector မှာ HTML က support လုပ်ထားတဲ့ `ltr`​(left to right) နဲ့ `rtl`(right to left) ၂ မျိုးပဲ သုံးလို့ရပါတယ်။
+
 - `:dir()`  for example `*:dir(rtl) {...}`
 
-### Logical Pseudo-Classes
+# 6. Logical Pseudo-Classes
 - :not()[^00]
 - :is() and :where()[^00]
 - :has()
 
-
-# Logical Pseudo-Classes
 ### The negation pseudo-class
+---
 
 - `:not()`[^00-]
 
@@ -396,3 +422,4 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 [^19]: page 78
 [^20]: page 80
 [^21]: page 81
+[^22]: page 83

@@ -63,7 +63,6 @@ Element တစ်ခုက ငုံထားပြီး ငုံထားတ�
         a > img:only-child
 
 ### 1.3 only-of-type[^9]
----
 `a` က ငုံထားမယ် ပတ်ဝန်းကျင်မှာ သူနဲ့တူတာ မရှိဘူး ဆိုတဲ့သူကို select လုပ်ချင်ရင် `only-of-type` ကို သုံးရမှာပါ။ 
 
 `a` က ငုံထားပြီး တစ်ခုတည်းပါတဲ့ `img` ကို select လုပ်မယ်ဆိုပါစို့ - 
@@ -96,7 +95,6 @@ Type selector ကို element selector လို့ပြောင်းခေ
 - <em>`class=unique` ပါတဲ့ တစ်ခုတည်းရှိတဲ့ `<p>` ကို select လုပ်ခိုင်းနေတာ မဟုတ်ပါဘူး </em>
 
 ### 1.4 nth-child[^10]
----
 
         div
         |- p
@@ -146,7 +144,7 @@ HTML ရဲ့ markup structure တစ်ခုတည်းကို ကြည�
 <em>Fragment identifier</em> ဆိုတဲ့ term နဲ့ အရင်ရင်းနီးဖို့ လိုပါတယ်။  ဥပမာ - www.mmls.biz/#new-arrival ဆိုတဲ့ link မှာ `#new-arrival` က fragment identifier ပါ။  
 
 ### :target
----
+
         *:target {...}
 
 ဒီ style ထည့်ရေးထားမယ်ဆိုရင် ကိုယ့် page ကို visit လုပ်လာတဲ့ URL မှာ fragment identifier ပါလာတာနဲ့ HTML မှာရှိတဲ့ အဲ့ဒီ trageted element ကို select လုပ်မှာပါ။
@@ -157,7 +155,6 @@ HTML ရဲ့ markup structure တစ်ခုတည်းကို ကြည�
 - scroll state ကို create မလုပ်ထားတဲ့ အခြေအနေနဲ့ page URL ကို update လုပ်လာတဲ့အခါ [^13]
 
 ### :target-within
----
 `target` နဲ့ `target-within` ကွာတာက `target-within` က ကိုယ်တိုင် target ဖြစ်နေရင်ရော target မဟုတ်သော်ငြား target ရဲ့ parent ဖြစ်နေရင်ရော select လုပ်ပါတယ်။ [^14]
 
         p:target-within {..}
@@ -165,7 +162,6 @@ HTML ရဲ့ markup structure တစ်ခုတည်းကို ကြည�
 `p` ကိုယ်တိုင်က `#` ပါပြီး target ဖြစ်နရင် ဖြစ်ဖြစ် ၊ `p` ရဲ့ child element တစ်ခုခုက target ဖြစ်နေနရင် ဖြစ်ဖြစ် ဒီ style က အလုပ်လုပ်ပါတယ်။ [^15]
 
 ### :scope
----
 `scope` က JS နဲ့ တွဲပြီး အလုပ်လုပ်ပါတယ်။
 
         let output = document.querySelector("#output");
@@ -199,7 +195,6 @@ Link တွေကို pseudo-class တွေနဲ့ styling လုပ်တ�
 <strong>L</strong>o<strong>V</strong>e <strong>F</strong>ears <strong>HA</strong>te လို့ မှတ်ရင် ပိုလွယ်ပါတယ်။[^17]
 
 ### :focus-visible
----
 `:focus` နဲ့ တူသလို ရှိပေမယ့် ကွဲပြားတဲ့အချက်က အခြေနေတစ်ခုခုမှာ browswer(user agent) က visible focus style ပေးသင့်တယ်လို့ သတ်မှတ်ထားတဲ့ element ကိုပဲ match လုပ်မှာပါ။ 
 
 ဥပမာ button တစ်ခုကို mouse နဲ့ click လုပ်ရင် `focus` ပေးနိုင်သလို ၊ keyboard နဲ့ click ရင်လဲ `focus` ပေးနိုင်ပါတယ်။ သို့ပေမယ့် accessibility နဲ့ aesthetics ကို အရေးပေးပြီး button ကို keyboard သို့မဟုတ် အခြား assistive technology သုံးပြီး focus လုပ်လာတဲ့အခါမှ `focus` ပေးချင်ပြီး mouse နဲ့ click / tap လုပ်လာတဲ့အခါ focus မပေးချင်ရင် `focus-visible` ကို သုံးရပါမယ်။
@@ -212,7 +207,6 @@ Link တွေကို pseudo-class တွေနဲ့ styling လုပ်တ�
         */
 
 ### :focus-within
----
 Focus ရှိတဲ့ any element (သို့) focus ရှိနေတဲ့ decendant ကို ပိုင်ထားနေတဲ့ element ကို select လုပ်ပါတယ်။  ဥပမာ 
 
         nav (:focus-within ပေးထားမယ်)
@@ -245,7 +239,7 @@ Focus ရှိတဲ့ any element (သို့) focus ရှိနေတဲ�
 |`:placeholder-shown`|placeholder(not value) text ကြိုဖြည့်ထားတဲ့ user input |
 
 #### Userful Codes
----
+
         input[type="checkbox"]:checked + label {
         ...
         }
@@ -276,7 +270,7 @@ Browser က သတ်မှတ်ထားတဲ့ built-in autofill style တ�
 ** `:valid` နဲ့ `invalid` တွေကို data validity requirement capacity ရှိတဲ့ `<input>` လို element တွေမှာပဲ သုံးလို့ရပြီး `<div>` လို element တွေကို ဒီ pseudo-class နဲ့ select လုပ်လို့ ရမှာ မဟုတ်ပါဘူး။ [^21]
 
 #### Userful Codes
----
+
         input[type="email"]:focus {
                 background-positon: 100% 50%;
                 background-repeat: no-repat;
@@ -289,8 +283,6 @@ Browser က သတ်မှတ်ထားတဲ့ built-in autofill style တ�
         input[type="email"]:focus:valid {
                 background-image: url(checkmark.jpg);
         }
-
----
 
 ### 4.6 Range pseudo-classes
 |Name   | Description   |
@@ -339,31 +331,114 @@ Language ကိုလိုက်ပြီး element ကို select လုပ
 - `:dir()`  for example `*:dir(rtl) {...}`
 
 # 6. Logical Pseudo-Classes
-- :not()[^00]
-- :is() and :where()[^00]
+- :not()
+- :is() and :where()
 - :has()
 
-### The negation pseudo-class
+## 6.1 The negation pseudo-class[^23]
+
+### `:not()`
+Selector အများစုက ရှိနေတာကို select လုပ်တဲ့ positive selector တွေဖြစ်ပေမယ့် ၊  `not` ကတော့ ပြောင်းပြန်ပါ။
+
+        li:not(.moreinfo) {...}
+        /* moreinfo class မရှိတဲ့ `li` တွေကို select လုပ် */
+
 ---
-
-- `:not()`[^00-]
-
         .moreinfo:not(li) {...}
+        /* moreinfo class ရှိပြီး `li` မဟုတ်တဲ့ element တွေကို select လုပ် */
 
-.moreinfo class ရှိပြီး li မဟုတ်တဲ့ element တွေအားလုံးကို select လုပ်ပါမယ်။
+ပိုရှုပ်တဲ့ code တွေလဲ ရေးလို့ ရပါတယ်။  `<section>` အောက်မှာ ရှိတဲ့ `<table>` ကို select <strong>မ</strong>လုပ်ချင်ဘူးဆိုရင် 
 
-- `:is()` and `:where()`[^00-]
+        :not(section) > table
+
+Table header အောက်မှာ <strong>မ</strong>ရှိတဲ့ table header cell ကို select လုပ်မယ်
+
+        :not(thead) > tr > th
+
+`not` နဲ့ လုပ်လို့ မရတာက nest negation ပါ။ 
+
+        p:not(:not(p))
+        /*/* ဒါမျိုး မရပါဘူး */
+
+#### and also (not this)
+"ဒါလဲ မဟုတ်ဘူး ၊ ပြီးတော့ ဒါလဲ မဟုတ်တဲ့" ဆိုတဲ့ အခြေအနေအတွက် 
+
+        *.link:not(li):not(p) {...}
+        /* link class ရှိပြီး `<li>` မဟုတ်တဲ့ `<p>` လဲမဟုတ်တဲ့ `*` ကို select */
+
+ဒီလို ကိစ္စတွေအတွက် CSS (browser) က selector list သုံးတာကိုလဲ support လုပ်ပါတယ်။
+
+        *.link:not(li, p) {...}
+        /* ဒီလို ရေးလို့လဲ ရပါတယ်။ */
+
+#### complex selectors
+`<form>` ရဲ့ decendant တွေဖြစ်ပေမယ့် `<p>` ပြီးချက်ချင်းလာတာ <strong>မ</strong>ဟုတ်တဲ့ element အားလုံးကို select လုပ်မယ် - 
+
+        form *:not(p + *)
+
+ဒါကို selector list နဲ့ အတွဲလိုက်ကိုင်မယ်ဆိုရင်လဲရပါတယ်။[^24]
+
+        form *:not(p + *, li, thead > tr > th)
+
+#### Selecting defined elements
+Custom HTML element ကို HTML ထဲမှာ ထည့်ရေးပြီး server side script နဲ့ content တစ်ခု dynamic ပြပေးဖို့ ရည်ရွယ်ထားပေမယ့် အကြောင်းကိစ္စကြောင့် script က အလုပ်မလုပ် ၊ custom element မှာ ယာယီထည့်ထားတဲ့ placeholder ကို ဘာ style မှလဲ မလုပ်ထားမိပဲ front-end မှာ high and dry ပြနေတာမျိုး မဖြစ်စေချင်ရင် `defined` နဲ့ ဒီလို ရေးထားလို့ ရပါတယ်။
+
+        <mylib-combobox>Options go here</mylib-combobox> <!- HTML ဖက်မှာပါ ->
+
+---
+        mylib-combobox {...}
+        mylib-combobox:not(:defined) {display: none;}
+        mylib-combobox:defined {display: inline-block;}
+        
+
+## 6.2 `:is()` and `:where()` pseudo-class[^25]
+`is` နဲ့ `where` ကို group matching လုပ်ဖို့ သုံးပါတယ်။ 
+
+ပုံမှန်ရေးနေကျ 
+
+        ol li, ul li {...}
+
+ဒါကို group matching လုပ်ပြီး `is` နဲ့ ရေးရင် ဒီလို -
+
+        :is(ol, ul) li {...}
+
+ပုံမှန် ကိစ္စတွေအတွက် ပိုအလုပ်ရှုပ်သလို ရှိပေမယ့် ဥပမာ parent က `<ul>` ဖြစ်ဖြစ် `<ol>` ဖြစ်ဖြစ် ရှိနေပြီး two level deep ဖြစ်နေတဲ့ `<li>` ကို select လုပ်ချင်တယ်ဆိုရင် 
+
+        :------- ol/ul ------:
+        |      |       |      |   
+        li    li    ol/ul    li
+                 :-----|-------:
+                 |     |       |
+                li    ol/ul    li
+                        |
+                        li      
+
+___
+
+        :is(ol,ul) :is(ol,ul) li {....}
+
+#### Forgiving selector
+ပုံမှန်အားဖြင့် selector ထဲမှာ တစ်ခုခုက invalid ဖြစ်နေတာနဲ့ rule တစ်ခုလုံး invalid ဖြစ်သွားပေမယ့် `is` မှာတော့ invalid ဖြစ်နေတဲ့ rule ကို ဖယ်ပြီး ကျန်တဲ့ rule တွေကို honor ဆက်လုပ်သွားမှာပါ။ 
+
+### where()
+`is` နဲ့ `where` ကွာတာကတော့ `is` က selector list ထဲမှာရှိတဲ့ most-specific selector ရဲ့ specificity ကိုယူပြီး `where` မှာတော့ zero specificity ရှိပါတယ်။ 
 
 
-## The :has() Pseudo-Class
-
-- `:has()`
+# 6.3 The :has() Pseudo-Class
+Decendant `<img>` ပါတဲ့ ဘယ် `div` ကို select လုပ်ချင်ရင် 
 
         div:has(img) {...}
 
-`img` ပါတဲ့ div တွေအားလုံးကို select လုပ်ပါမယ်။ 
+`<img>` က `<div>` ရဲ့ child ဖြစ်မှပဲ select လုပ်ဆိုရင် 
 
-`:has()` ကို mythical "parent selector" လို့ ခေါ်နိုင်ပါတယ်။[^00]  
+        div:has(> img) {...}
+
+မှတ်ထားသင့်တာက 
+- `:has()` ရဲ့ ကွင်းထဲမှာ comma-separated list of selectors ထည့်လို့ ရပြီး simple ဖြစ်ဖြစ် ၊ compound ဖြစ်ဖြစ် ၊ complex ဖြစ်ဖြစ် ရပါတယ်။
+- အဲ့ဒီ selector တွေက `:has()` attach လုပ်ထားတဲ့ element နဲ့ relative ဖြစ်တယ်လို့ သတ်မှတ်ပါတယ်။ 
+
+
+`:has()` ကို mythical "parent selector" လို့ ခေါ်နိုင်ပါတယ်။[^26]  
 
 1. `:has()`ဟာ parent selection လုပ်နိုင်ရုံမက
 2. sibiling တွေပေါ်မူတည်ပြီး select လုပ်လို့ရသလို
@@ -420,3 +495,7 @@ h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မ
 [^20]: page 80
 [^21]: page 81
 [^22]: page 83
+[^23]: page 84
+[^24]: :not() ထဲ complex selector တွေထည့်သုံးတာကို 2021 အစပိုင်းကမှ browser တွေမှာ စရှိလာတာ ကြောင့် အခြေနေကြည့်ပြီးမှ သုံးရင်ကောင်းပါတယ်။ p.86
+[^25]: page 87
+[^26]: page 89

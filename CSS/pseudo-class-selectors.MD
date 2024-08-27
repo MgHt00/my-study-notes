@@ -473,7 +473,7 @@ sibling ပေါ်မူတည်ပြီး select လုပ်တာပေ�
 
 h1 ပဲဖြစ်ဖြစ် h3 ပဲဖြစ်ဖြစ် ၊ h ၆မျိုးလုံးအောက်မှာ `img` မပါတဲ့ heading တွေကို select လုပ်မှာပါ။
 
-[^1]: ဒီ note က [CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
+[^1]: ဒီ note က ([CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/)) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
 [^2]: page 58
 [^3]: page 60
 [^4]: page 61

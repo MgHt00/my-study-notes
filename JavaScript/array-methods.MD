@@ -4,6 +4,13 @@
 - Subarray methods - larger array ရဲ့ contiguous region တွေကို extract, delete, insert, fill, and copy လုပ်ဖို့ သုံးပါတယ်။
 - Searching and sorting methods - array ထဲမှာ  element တွေ locate လုပ်ဖို့ ၊​ sort လုပ်ဖို့ သုံးပါတယ်။ 
 
+| Category      | Sub-category |
+| ----------- | ----------- |
+| Array Iterator Methods | ----------- |
+| Stack and queue methods | ----------- |
+| Subarray methods | ----------- |
+| Searching and sorting methods | ----------- |
+
 # 1. Array Iterator Methods
 ဒီ method တွေက array ရဲ့ element တွေကို supply လုပ်ထားတဲ့ function ဆီ pass လုပ်ပါတယ်။ iterate, map, filter, test, and reduce လုပ်ဖို့ အသုံးတည့်ပါတယ်။
 

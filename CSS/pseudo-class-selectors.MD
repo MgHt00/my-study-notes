@@ -1,7 +1,7 @@
 | Category      | Sub-category |
 | ----------- | ----------- |
 |[Pseudo-Class Selectors](#pseudo-class-selectors)|-|
-|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#empty10)</li> <li>[:only-child](#only-child4)</li> <li>[:only-of-type](#only-of-type5)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
+|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#11-empty6)</li> <li>[:only-child](#12-only-child7)</li> <li>[:only-of-type](#13-only-of-type8)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
 |[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
 |[User Action Pseudo-Classes]()<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>|<ul><li> :enabled</li><li>:disabled</li><li>:checked</li><li>:indeterminate</li><li> :default</li><li>:autofill</li><li>:placeholder-shown</li><li>:valid</li><li>:invalid</li><li> :in-range</li><li>:out-of-range</li><li>:required</li><li>:optional</li><li> :read-write</li><li>:read-only</li></ul>|
 

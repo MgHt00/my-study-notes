@@ -1,9 +1,12 @@
 | Category      | Sub-category |
 | ----------- | ----------- |
 |[Pseudo-Class Selectors](#pseudo-class-selectors)|-|
-|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#11-empty6)</li> <li>[:only-child](#12-only-child7)</li> <li>[:only-of-type](#13-only-of-type8)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>:nth-child</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
-|[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#hyperlink-specific-pseudo-classes) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#nonhyperlink-location-pseudo-classes2)</strong><ul><li>:target</li> <li>:target-within</li> <li>:scope</li></ul> |
-|[User Action Pseudo-Classes]()<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>|<ul><li> :enabled</li><li>:disabled</li><li>:checked</li><li>:indeterminate</li><li> :default</li><li>:autofill</li><li>:placeholder-shown</li><li>:valid</li><li>:invalid</li><li> :in-range</li><li>:out-of-range</li><li>:required</li><li>:optional</li><li> :read-write</li><li>:read-only</li></ul>|
+|[Structural Pseudo-Classes](#pseudo-class-selectors)<br><br><br><br><br><br><br><br><br><br><br><br>| <ul><li>:root</li> <li>[:empty](#11-empty6)</li> <li>[:only-child](#12-only-child7)</li> <li>[:only-of-type](#13-only-of-type8)</li> <li>:first-child</li> <li>:last-child</li> <li>:first-of-type</li> <li>:last-of-type</li> <li>[:nth-child](#14-nth-child9)</li> <li>:nth-last-child</li> <li>:nth-of-type</li></ul>|
+|[Location Pseudo-Classes](#location-pseudo-classes)<br><br><br><br><br><br><br><br><br><br><br><br>|<strong>[Hyperlink-specific pseudo-classes](#21--hyperlink-specific-pseudo-classes10) <br> <ul><li>:link</li> <li>:visited</li> <li>:any-link</li> <li>:local-link</li></ul> <br> <strong>[Nonhyperlink location pseudo-classes](#22--nonhyperlink-location-pseudo-classes11)</strong><ul><li>[:target](#target)</li> <li>[:target-within](#target-within)</li> <li>[:scope](#scope)</li></ul> |
+|[User Action Pseudo-Classes](#3-user-action-pseudo-classes15)<br><br><br><br><br><br>|<ul><li>:hover</li><li>:active</li><li>focus</li><li>[focus-visible](#focus-visible)</li><li>[focus-within](#focus-within)</li></ul>|
+|[UI-State Pseudo-Classes](#4-ui-state-pseudo-classes17)|<ul><li> :enabled</li><li>:disabled</li><li>:checked</li><li>:indeterminate</li><li> :default</li><li>:autofill</li><li>:placeholder-shown</li><li>:valid</li><li>:invalid</li><li> :in-range</li><li>:out-of-range</li><li>:required</li><li>:optional</li><li> :read-write</li><li>:read-only</li></ul>|
+|[The :lang() and dir() Pseudo-Classes](#5-the-lang-and-dir-pseudo-classes21)|<ul><li> [:lang()](#51-lang)</li><li>[:dir()](#52-dir)</li></ul>|
+|[Logical Pseudo-Classes](#6-logical-pseudo-classes)|<ul><li> [:not()](#not)</li><li> [:is() and :where()](#62-is-and-where-pseudo-class24)</li><li> [:has()](#63-the-has-pseudo-class)</li></ul>|
 
 # Combining Pseudo-Classes
 Pseudo-class တွေကို combine(chain) လုပ်လို့ ရပါတယ်။ 
@@ -424,7 +427,7 @@ ___
 `is` နဲ့ `where` ကွာတာကတော့ `is` က selector list ထဲမှာရှိတဲ့ most-specific selector ရဲ့ specificity ကိုယူပြီး `where` မှာတော့ zero specificity ရှိပါတယ်။ 
 
 
-# 6.3 The :has() Pseudo-Class
+## 6.3 The :has() Pseudo-Class
 Decendant `<img>` ပါတဲ့ ဘယ် `div` ကို select လုပ်ချင်ရင် 
 
         div:has(img) {...}

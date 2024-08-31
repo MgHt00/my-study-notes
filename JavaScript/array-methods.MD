@@ -319,6 +319,35 @@ Length of the array က အပြောင်းအလဲ မရှိပါဘ�
         // 3rd argument is omitted
         // => returns [4,4,3,4,4]
 
+# 4. Array Searching and Sorting Methods[^16]
+
+| indexOf( )<br>lastIndexOf( ) | includes( ) | sort ( ) | reverse( )
+| --- | --- | --- | --- |
+
+### 4.1 indexOf( ) and lastIndexOf( )
+ပေးလိုက်တဲ့ value ကို array ထဲမှာ ရှာပြီး ပထမဆုံးတွေ့တဲ့ element ရဲ့ index ကို return ပြန်ပါတယ်။  မတွေ့ရင် `-1` ပြန်ပါတယ်။  `indexOf()` က beginning to end ရှာပြီး `lastIndexOf()` က end to beginning ရှာပါတယ်။ 
+
+        let a = [0,1,2,1,0];
+        a.indexOf(1);           // => 1; a[1] is 1
+        a.lastIndexOf(1);       // => 3;
+        a.indexOf(3);           // => -1;
+
+Optional second argument ပေးလို့ရပြီး second argument က စရှာရမယ့် array ရဲ့ index ပါ။  Second argument ကို negative value ပေးရင် array length ကနေ ပြန်နုတ်ပြီး စမှာပါ။   
+
+ဒီ method ၂ ခုက array element တွေကို === နဲ့ compare လုပ်ပြီး array မှာ primitive value တွေအစား object တွေပါလာရင် reference ၂ ခုတူလာကိုပဲ တိုက်စစ်ပေးပါတယ်။[^17]
+
+### 4.2 includes( )
+Single argument ကို ယူပြီး အဲ့ဒီ argument က array ထဲမှာပါရင် `ture` ၊ မပါရင် `false` return ပြန်ပါတယ်။  
+
+တိုက်စစ်တဲ့နေရာမှာ `===`ရဲ့ slight variation နဲ့ စစ်တာကြောင့် `indexOf()` မှာ `NaN` ကို `NaN` နဲ့ မတူဘူးလို့ အဖြေထွက်ပေမယ့် `includes()` က တော့ `NaN` က `NaN` နဲ့ <em>တူ</em> တယ်လို့ အဖြေထွက်ပါတယ်။ ဒါကြောင့် `indexOf()` က NaN ကို array ထဲမှာ detect မလုပ်ပေမယ့် `includes()` ကတော့ detect <em>လုပ်</em> ပါတယ်။
+
+        let a = [1,true,3,NaN];
+        a.includes(true);       // => true
+        a.includes(2);          // => false
+        a.includes(NaN);        // => true
+
+        a.indexOf(NaN);         // => -1
+
 [^1]: ဒီ note က ([CSS: The Definitive Guide, 5th Edition by Eric Meyer, Estelle Weyl](https://www.oreilly.com/library/view/css-the-definitive/9781098117603/)) စာအုပ်ကို refer လုပ်ထားတာဖြစ်ပြီး ၊ ကျွန်တော်ပြန်ဖတ်ဖို့ ကျွန်တော့ရဲ့ ကိုယ်ပိုင် study note တစ်ခုသာဖြစ်လို့ အမှားပါကောင်းပါနိုင်ပါတယ်။  
 [^2]: page 166
 [^3]: page 166
@@ -334,3 +363,5 @@ Length of the array က အပြောင်းအလဲ မရှိပါဘ�
 [^13]: page 170
 [^14]: Stack: last in first out; Queue: first in first out
 [^15]: page 172
+[^16]: page 174
+[^17]: အသေးစိပ်ကို sn20 မှာဖတ်ပါ။

@@ -88,7 +88,7 @@ Gap တွေကိုလဲ ဖျောက်မယ် ၊ undefined နဲ့
 ```javascript
     a = a.filter(x => x !== undefined && x !== null);
 ```
-## 1.4 find() and findIndex()[^5]
+## 1.4 find( ) and findIndex( )[^5]
 Array ကို iterate လုပ်ပြီး လိုချင်တဲ့ element ကို ရှာတွေ့တာနဲ့ ရပ်မှာပါ။ `find()` က matching element ကို return လုပ်ပြီး `findIndex()` က matching element ရဲ့ index ကို return လုပ်ပါတယ်။ 
 
 ရှာမတွေ့ရင် `find()` က `undefined`, `findIndex()` က `-1` return ပါတယ်။
@@ -100,7 +100,7 @@ Array ကို iterate လုပ်ပြီး လိုချင်တဲ့ 
         a.find(x => x % 5 === 0); // => 5
         a.find(x => x % 7 === 0); // => undefined
 ```
-## 1.5 every() and some()[^6]
+## 1.5 every( ) and some( )[^6]
 
 | every() | some() |
 | --- | -- |
@@ -109,7 +109,7 @@ Array ကို iterate လုပ်ပြီး လိုချင်တဲ့ 
 
 Explicit loop မရေးပဲ array ကို check လုပ်ဖို့အတွက် ဒီ method ၂ ခုက အသုံးတည့်ပါတယ်။[^7]
 
-## 1.6 reduce() and reduceRight()[^8]
+## 1.6 reduce( ) and reduceRight( )[^8]
 ပေးထားတဲ့ function ကို သုံးပြီး array ရဲ့ element တွေကို combine လုပ်ပြီး single value ထုတ်ပေးပါတယ်။
 
 `reduce()` က argument ၂ ခုယူပြီး ပထမက function, ဒုတိယက optional ဖြစ်ပြီး function ကို pass မယ့် initial value ပါ။  function ရဲ့ အလုပ်က value ၂ ခုကို ပေါင်း ၊ ဒါမှမဟုတ် single value ဖြစ်အောင် reduce လုပ်ပြီး reduced value ကို return လုပ်ပါတယ်။
@@ -145,7 +145,7 @@ Empty array မှာ inital value မပေးပဲ `reduce()` ကို call 
 
 One value - 1 element ပဲ ရှိတဲ့ array ကို initial value မပေးပဲ ၊ ဒါမှမဟုတ် empty array ကို initial value ပေးပြီးဖြစ်ဖြစ် `reduce()` ကို call ရင် reduction function ကို call မလုပ်တော့ပဲ အဲ့ဒီ one value ကိုပဲ return ပြန်ပါတယ်။ 
 
-### reduceRight()
+### reduceRight( )
 `reduceRight()` က အားလုံးတူပြီး သူက highest index to lowest index (right-to-left) process လုပ်မှာပါ။
 
 ### Second Argument
@@ -157,7 +157,7 @@ One value - 1 element ပဲ ရှိတဲ့ array ကို initial value �
 ### Special Feature
 Two value(such as two objects) ကို one value of the same type အဖြစ် combine လုပ်နိုင်တဲ့ ဘယ် function ကို မဆို `reduce()` နဲ့ `reduceRight()` မှာသုံးလို့ ရပါတယ်။  (အခြား iterator methods တွေကတော့ mathematical computation ပဲလုပ်နိုင်ပါတယ်။)
 
-## 1.7 Flattening arrays with flat() and flatMap()[^9]
+## 1.7 Flattening arrays with flat( ) and flatMap( )[^9]
 `flat()` က ပေးလိုက်တဲ့ array ကို pass လုပ်လိုက်တဲ့ argument အတိုင်း flat လုပ်ပြီး နဂိုပါတဲ့ element တွေ အားလုံး နဂို value အတိုင်း(flat လုပ်ပြီး) ပြန်ပါတဲ့ array ကို return လုပ်ပေးပါတယ်။ 
 
 ```javascript
@@ -175,7 +175,7 @@ Two value(such as two objects) ကို one value of the same type အဖြစ
         let words = phrases.flatMap(phrase => phrase.split( ));
         words; // => ["hello", "world", "the", "definitive", "guide"]
 ```
-|[^10]flat()|flatMap()|
+|[^10]flat( )|flatMap( )|
 |---|---|
 |<strong>Usage: </strong>To flatten an array to a specified depth<br><br><strong>No callback: </strong>The method does not use a callback function. |<strong>Useage: </strong>To first map each element using a mapping function and then flatten the result into a new array.<br><br><strong>Callback required: </strong>The callback function is required and should return an iterable. |
 
@@ -192,7 +192,7 @@ Two value(such as two objects) ကို one value of the same type အဖြစ
 - `flatMap()` မှာ callback function လိုအပ်ပြီး ၊ function ရဲ့ return value က array (သို့) iterable ဖြစ်သင့်ပါတယ်။
 - `flatMap()` က `map()` operation ကိုအရင်လုပ်ပြီး `flat()` operation ကို depth of `1` နဲ့ ဆက်လုပ်ပါတယ်။ [^11]
 
-## 1.8 Adding arrays with concat()[^12]
+## 1.8 Adding arrays with concat( )[^12]
 Original array နဲ့ pass လုပ်လိုက်တဲ့ argument တစ်ခုချင်းကိုပေါင်းထားတဲ့ array အသစ်ကို return ပြန်ပေးပြီး original array ကိုတော့ မပြောင်းလဲပါဘူး။  Pass လုပ်ထားတဲ့ argument က array ဆိုရင် အဲ့ဒီ array ရဲ့ element တွေကိုဆွဲယူ ၊ concatenate လုပ်ပေးမှာဖြစ်ပြီး array တစ်ခုလုံးအနေနဲ့ concatenate လုပ်ပေးမှာမဟုတ်သလို ၊ arrays of arrays ကို argument အနေနဲ့ pass လုပ်လိုက်ရင်လဲ recursively flatten လုပ်မှာ မဟုတ်ပါဘူး။  
 
 ```javascript

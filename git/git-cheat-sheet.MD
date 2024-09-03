@@ -1,7 +1,7 @@
 # Git Cheat Sheet
 | Category      | Sub-category |
 | ----------- | ----------- |
-| [Adding Files](#adding-files) | - |
+| The Basics | [Adding Files](#adding-files), [Removing Files], [Renaming Files], [Unstaging a Staged File], [Unmodifying a Modified File] |
 [Working with Remotes](#working-with-remotes-1)| [Showing](#showing-your-remotes-2), [fetching & pulling](#fetching-and-pulling), [pushing](#pushing), [inspecting](#inspecting-a-remote), and [renaming a remote](#renaming-a-remote)
 | [Tagging](#tagging-4) | [Listing](#listing-tags), [creating](#creating-tag), [sharing](#sharing-tags), and [deleting tag](#deleting-tags); [tagging later](#tagging-later) |
 | [Git Branching](#git-branching) | [Creating a New Branch](#creating-a-new-branch-5), [Switching Branches](#switching-branches), [Creating & Switching](#creating--switching), [Divergent History](#divergent-history), [Delete a Branch](#delete-a-branch)|
@@ -9,14 +9,70 @@
 |[Branch Management](#branch-management10)|[The Basics](#tha-basics), [Changing a Branch Name](#changing-a-branch-name11), [Creating a Backup Branch](#creating-a-backup-branch12), [Deleting Commit(s)], [Creating a branch from a specific commit]|
 |[Remote Branch]||
 
-# Adding Files
+# The Basics
+## Adding Files
 Current directory နဲ့ subdirectory တွေ မှာ ရှိနေတဲ့ all changes (new file တွေအပါအဝင်) add ချင်ရင် -
 
-    $ git add .
+ ```shell
+ $ git add .
+```
 
 Entire working directory မှာ ရှိတဲ့ all changes (new file, modification, deletion) တွေအားလုံး add ချင်ရင် -
 
-    $ git add -A
+```shell
+$ git add -A
+```
+
+## Removing Files
+Git ထဲကနေ file ကို remove လုပ်ဖို့အတွက် tracked files (staging area) နေ remove လုပ်ရပါမယ်။  
+
+`git rm` က staging area ကနေ ထုတ်ပေးတဲ့အပြင် working directory မှာပါဖျက်ပေးပါတယ်။
+
+```shell
+$ git rm Projects.MD
+```
+
+အကယ်လို့ working directory မှာ ချန်ထားပြီး git ထဲမှာ ဖျက်ချင်ရင် 
+
+```shell
+$ git rm --cached Projects.MD
+```
+
+`*.log` ကို ဖျက်ချင်ရင် (shell ရဲ့ filename expansion မှာ Git က ကိုယ်ပိုင် filename expansion ထပ်ပေါင်းတာကြောင့်)  အရှေ့မှာ `\` ခံပေးရပါတယ်။
+
+```shell
+$ git rm \*.log
+
+$ git rm log/\*log
+```
+ဒုတိယ command က log directory ထဲက log နဲ့ ဆုံးတဲ့ file တွေအားလုံးဖျက်မှာပါ။  
+
+## Renaming Files
+File ကို rename လုပ်ချင်ရင် 
+
+```shell
+$ git mv old_name new_name
+```
+`git mv` က command ၁ ခုတည်းနဲ့ ဒီ ၃ မျိုးလုပ်ပေးပါတယ်။
+
+```shell
+$ mv old_name new_name
+$ git rm old_name
+$ git add new_name
+```
+
+## Unstage a Staged File
+မှားပြီး staged လုပ်ထားတဲ့ file ကို staging area က ပြန်ထုတ်ချင်ရင် 
+
+```shell
+$ git restore --staged FILE.MD
+```
+
+`--staged` မထည့်ပေးလိုက်ရင် shock ရှိပါတယ်။ အကယ်လို့ လိုလိုချင်ချင် မထည့်ပေးလိုက်မိတာဆိုရင်တော့ လက်ရှိလုပ်နေတဲ့ local changes တွေအားလုံးပျောက်ပြီး နောက်ဆုံး commit လုပ်ထားတဲ့ (last staged) version ကို ပြန်ပြောင်းသွားမှာပါ။  
+
+```shell
+$ git restore FILE.MD
+```
 
 # Working with Remotes [^1]
 ### Showing Your Remotes [^2]
@@ -49,6 +105,26 @@ remote ကို shortname နဲ့တူတူ ထပ်ထည့် (add) လ
 `master` branch ကို `origin` server ဆီ push လုပ်မယ် - 
 
         $ git push origin master
+
+
+The commands `git push` and `git push origin main` are both used to upload your local commits to a remote repository, but they have some key differences in terms of their behavior:
+
+### 1. `git push`
+- **Default Behavior**: When you use `git push` without specifying any remote or branch, Git uses the default remote and branch configurations set in your repository.
+- **Default Remote**: Typically, the default remote is `origin` (the one you cloned from).
+- **Default Branch**: The branch you’re pushing to depends on your branch’s upstream configuration (the branch it tracks on the remote).
+- **Potential for Multiple Branches**: If your current branch is configured to track a branch on the remote, `git push` will push to that branch. If there are other branches configured to push to the remote, they might be pushed as well.
+
+### 2. `git push origin main`
+- **Explicit Remote and Branch**: This command explicitly specifies that you want to push to the `main` branch on the `origin` remote.
+- **Single Branch Push**: It only pushes the current state of your local `main` branch to the `main` branch on the `origin` remote.
+- **More Control**: By specifying both the remote (`origin`) and branch (`main`), you have more control over exactly what gets pushed and where.
+
+### Summary
+- **`git push`**: Uses the default settings (typically `origin` and the branch you’re currently on). It pushes the changes to the upstream branch set in your repository.
+- **`git push origin main`**: Explicitly pushes your current `main` branch to the `main` branch on the `origin` remote.
+
+Using `git push origin main` is generally safer and more explicit, ensuring that you’re only pushing the branch you intend to push to the correct remote and branch.
 
 ### Inspecting a Remote
 
@@ -162,6 +238,15 @@ Branch ပြန်ပြောင်းမယ်ဆိုရင်
 
         $ git checkout <branch-name>
 
+### Pushing the New Branch to the Remote
+အသစ်လုပ်ထားတဲ့ new branch ကို remote ဆီတွန်းဖို့ 
+
+        $ git push <remote> <branch-name>
+        
+New branch လုပ်ပြီးရင် new branch ကို remote branch နဲ့ track ဖို့ အသိပေးထားတာ ကောင်း
+
+        $ git push --set-upstream <remote> <branch-name>
+
 ### Divergent History
 
 Commit history ကို branch pointer တွေနဲ့တူတူ history က ဘယ်ကနေ diverge ဖြစ်လာတာလဲ ကြည့်ဖို့
@@ -183,14 +268,7 @@ Remote မှာ ရှိတဲ့ branch ကို delete လုပ်ချ�
 
         $ git push --delete <remote> <branch-name>
 
-### Pushing the New Branch to the Remote
-အသစ်လုပ်ထားတဲ့ new branch ကို remote ဆီတွန်းဖို့ 
 
-        $ git push <remote> <branch-name>
-        
-New branch လုပ်ပြီးရင် new branch ကို remote branch နဲ့ track ဖို့ အသိပေးထားတာ ကောင်း
-
-        $ git push --set-upstream <remote> <branch-name>
 
 # Branching & Merging[^6]
 ### Basic Merging

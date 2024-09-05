@@ -6,10 +6,10 @@
 
 | Category      | Sub-category |
 | ----------- | ----------- |
-| Array Iterator Methods |  [forEach()](#11-foreach-2), [map()](#12-map-3), [filter()](#13-filter-4), [find() and findIndex()](#14-find--and-findindex-5), [every() and some()](#15-every--and-some-6), [reduce() and reduceRight()](#16-reduce--and-reduceright-8), [flat()](#17-flattening-arrays-with-flat--and-flatmap-9), [flatMap()](#17-flattening-arrays-with-flat--and-flatmap-9), [concat()](#18-adding-arrays-with-concat-12)  |
+| Array Iterator Methods | [Summary Table](#summary-table),  [forEach()](#11-foreach-2), [map()](#12-map-3), [filter()](#13-filter-4), [find() and findIndex()](#14-find--and-findindex-5), [every() and some()](#15-every--and-some-6), [reduce() and reduceRight()](#16-reduce--and-reduceright-8), [flat()](#17-flattening-arrays-with-flat--and-flatmap-9), [flatMap()](#17-flattening-arrays-with-flat--and-flatmap-9), [concat()](#18-adding-arrays-with-concat-12)  |
 | Stack and queue methods | [push( ) and pop( )](#21-push--and-pop-), [shift( ) and unshift( )](#22-shift--and-unshift-) |
-| Subarray methods | [slice( )](#31-slice-), [splice( )](#32-splice-), [fill( )](https://github.com/MgHt00/my-study-notes/blob/main/JavaScript/array-methods.MD#33-fill-), [copyWithin( )](#34-copywithin-) |
-| Searching and sorting methods | [indexOf( ) and lastIndexOf( )](#41-indexof--and-lastindexof-), [includes( )](#42-includes-), [sort( )](#43-sort-), [reverse( )](#44-reverse-) |
+| Subarray methods | [Summary Table](#3-subarrays-with-slice--splice---fill---and-copywithin-15) [slice( )](#31-slice-), [splice( )](#32-splice-), [fill( )](https://github.com/MgHt00/my-study-notes/blob/main/JavaScript/array-methods.MD#33-fill-), [copyWithin( )](#34-copywithin-) |
+| Searching and sorting methods | [Summary Table](#4-array-searching-and-sorting-methods16) [indexOf( ) and lastIndexOf( )](#41-indexof--and-lastindexof-), [includes( )](#42-includes-), [sort( )](#43-sort-), [reverse( )](#44-reverse-) |
 
 # 1. Array Iterator Methods
 ဒီ method တွေက array ရဲ့ element တွေကို supply လုပ်ထားတဲ့ function ဆီ pass လုပ်ပါတယ်။ iterate, map, filter, test, and reduce လုပ်ဖို့ အသုံးတည့်ပါတယ်။

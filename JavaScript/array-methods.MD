@@ -286,7 +286,7 @@ First argument က insert/delete စလုပ်မယ့် array position (ind
         a.splice(4);    // => returns [5,6,7,8]; a is now [1,2,3,4]
         a.splice(1,2);  // => returns [2,3]; a is now [1,4]
 ```
-Argument က ၂ ခု မဟုတ်ပဲ နောက်မှာ ဆက်ပါလာရင် ဖျက်လဲဖျက်မယ့် insert လဲ လုပ်ပါမယ်။  
+Argument က ၂ ခု မဟုတ်ပဲ နောက်မှာ ဆက်ပါလာရင် ဖျက်လဲဖျက်မယ် ၊ insert လဲ လုပ်ပါမယ်။  
 
 ```javascript
         let a = [1,2,3,4,5];

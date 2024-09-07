@@ -260,7 +260,7 @@ Original array နဲ့ pass လုပ်လိုက်တဲ့ argument တ�
 | <li>returns a subarray</li> | <li>insert / remove elements from an array</li><li>or perform both operations at the same time</li><li>indexes are increased or decereased as necessary</li> | <li>set a specified value to an element (of subset) of an array</li> | <li>copies a slice of an array to a new position within the array</li> |
 
 ### 3.1 slice( )
-Subarray(slice) ကို return ပြန်ပြီး ၊ start နဲ့ end ကို argument အနေနဲ့ pass လုပ်ရပြီး first argument ကနေ second argument မတိုင်ခင်အထိ return ပြန်ပေးပါတယ်။  Argument တစ်ခုတည်း pass လုပ်ရင်တော့ start ကနေ end of the array ကို return ပြန်ပါတယ်။
+Subarray(slice) ကို return ပြန်ပါတယ်။ start နဲ့ end ကို argument အနေနဲ့ pass လုပ်ရပြီး first argument ကနေ second argument မတိုင်ခင်အထိ return ပြန်ပေးပါတယ်။  Argument တစ်ခုတည်း pass လုပ်ရင်တော့ start ကနေ end of the array ကို return ပြန်ပါတယ်။
 
 ```javascript
         let a = [1,2,3,4,5]
@@ -272,7 +272,7 @@ Argument က negative ဆိုရင် array ရဲ့ length ကနေ နှ
 
         a.slice(1, -1); // returns [2,3,4]
 
-        a.slice(-2, -1); // returns [3]
+        a.slice(-3, -2); // returns [3]
 ```
 ### 3.2 splice( )
 Array ထဲ element တွေထည့်လို့ရတယ် ၊ ဖျက်လို့လဲ ရသလို ၊ ၂ မျိုးလုံးလဲ တစ်ပြိုင်တည်း လုပ်နိုင်ပါတယ်။

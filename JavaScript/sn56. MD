@@ -1,0 +1,35 @@
+Sure! The statement means that normally, most JavaScript operators don’t change anything outside their scope, but when you **invoke functions** (function calls) or **create objects** using constructors, those operations can have side effects if the **code inside the function or constructor** modifies something, like changing a variable, updating an object property, or logging to the console.
+
+Let me give you examples:
+
+### Example of Side Effects from Function Invocation:
+```javascript
+let count = 0;
+
+function incrementCounter() {
+  count++;  // This changes the value of the global `count` variable
+}
+
+incrementCounter();  // The function invocation has a side effect: `count` is now 1
+console.log(count);  // Logs: 1
+```
+Here, the `++` operator inside the `incrementCounter()` function modifies the `count` variable, which is a **side effect** because it changes the state outside the function.
+
+### Example of Side Effects from Object Creation:
+```javascript
+let log = [];
+
+function LogMessage(message) {
+  log.push(message);  // Adds the message to the global `log` array
+}
+
+new LogMessage("Object created");  // Object creation with a side effect
+console.log(log);  // Logs: ["Object created"]
+```
+In this example, the constructor `LogMessage` modifies the global `log` array by adding a message to it. The side effect here is the modification of the array as part of object creation.
+
+### What the Statement Means:
+- **Without Side Effects:** Operators like `+`, `-`, `*`, etc., typically just return a value without changing the outside world.
+- **With Side Effects:** When invoking a function or creating an object, if those functions or constructors have code that modifies external variables or objects (like updating `count` or `log`), they cause side effects.
+
+Does that make the statement clearer for you?

@@ -1,0 +1,96 @@
+Let's break down the statement to make it clearer:
+
+### 1. **Order of evaluation**:
+This refers to the sequence in which expressions are evaluated in a single line of code or statement. JavaScript has rules for which expressions get evaluated first.
+
+### 2. **Side effects**:
+A side effect occurs when an expression or function modifies some state outside its local environment, such as:
+- Modifying a variable (`x++` or `x = 5`)
+- Changing a property of an object (`obj.property = 10`)
+- Logging something (`console.log("something")`)
+
+### 3. **Why order of evaluation matters**:
+The order in which expressions are evaluated is **important when there are side effects** because the side effect in one expression can impact the next expression.
+
+For example:
+
+```javascript
+let x = 1;
+let y = 2;
+
+let z = x++ + y;  // Expression 1: x is incremented after use
+let w = ++x + y;  // Expression 2: x is incremented before use
+```
+
+- In **Expression 1** (`x++ + y`), `x` is evaluated first (its value is `1`), then `y` (`2`), and finally `x` is incremented to `2`.
+- In **Expression 2** (`++x + y`), `x` is incremented first to `3`, and then `y` is evaluated.
+
+Now consider this scenario with **side effects** and **order of evaluation**:
+
+```javascript
+let x = 1;
+let z = x++ + x;  // The order of evaluation matters here!
+```
+
+In this case, the first `x++` increments `x` **after** its value is used, so the first `x` is `1`. But in the second part of the expression (`x`), `x` is now `2` (after being incremented).
+
+If the order was different, the value of `z` would also be different because the side effect of `x++` (incrementing `x`) affects the value of the next `x` in the expression.
+
+### Key point:
+- If **expression `x` modifies a variable** that is used later in **expression `z`**, the order in which they are evaluated **matters** because the side effect (changing the variable) influences the value of the second expression.
+
+### Example:
+
+```javascript
+let a = 1;
+
+let result = a++ + a;  // a++ is evaluated first (returns 1, then increments to 2)
+// Now a is 2, and the second 'a' is evaluated as 2.
+console.log(result);  // Outputs: 3
+```
+
+If the order was different, it could have produced a different result.
+
+---
+
+Sure! Let's look at an example where the **order of evaluation** makes a difference.
+
+### Example with different order of evaluation:
+
+```javascript
+let x = 1;
+
+let result1 = x++ + x;  // Evaluates left to right: first x++ (returns 1, then x becomes 2), then x is used as 2.
+console.log(result1);   // Outputs: 3 (1 + 2)
+
+x = 1;  // Reset x to 1 for comparison
+
+let result2 = ++x + x;  // Evaluates left to right: first ++x (increments to 2, returns 2), then x is still 2.
+console.log(result2);   // Outputs: 4 (2 + 2)
+```
+
+### Explanation:
+
+1. **In `result1 = x++ + x`:**
+   - First, `x++` is evaluated. Since `x++` increments `x` after its current value is used, `x++` returns `1`, and then `x` is incremented to `2`.
+   - After `x++` has been evaluated, the second `x` is evaluated as `2`.
+   - So, `result1` is `1 + 2 = 3`.
+
+2. **In `result2 = ++x + x`:**
+   - First, `++x` is evaluated. Since `++x` increments `x` before its value is used, `++x` returns `2`.
+   - Then the second `x` is also `2` because `x` was already incremented.
+   - So, `result2` is `2 + 2 = 4`.
+
+### If the order of evaluation were different:
+
+If, hypothetically, the second `x` were evaluated before `x++` (which doesn't happen in JavaScript due to left-to-right evaluation), the result could be different because `x++` would affect the value of `x` after the second operand is evaluated.
+
+For example, with right-to-left evaluation in the first case:
+
+```javascript
+let x = 1;
+let result1 = x + x++;  // (If x was evaluated first, then x++ incremented after)
+console.log(result1);   // Output: 2 (because both `x` are 1 when first evaluated)
+```
+
+But in JavaScript, expressions are evaluated **left to right**, so the actual behavior is as shown in the first example.

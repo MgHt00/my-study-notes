@@ -22,9 +22,12 @@ a ?? b // equals to (a !== null && a!== undefined) ? a : b
 
 # Logical AND (&&)[^3]
 ```javascript
-falsy-value && truthy-value // If the value on the left is falsy, it returns the value on the left. Value of entire expression must be falsy.
+falsy-value && truthy-value 
+// If the value on the left is falsy, it returns the value on the left. 
+// Value of the entire expression must be falsy.
 
-truthy-value && falsy-value // If the value on the left is truthy, it evaluates and returns the value on the right.
+truthy-value && falsy-value 
+// If the value on the left is truthy, it evaluates and returns the value on the right.
 ```
 
 #### Usage

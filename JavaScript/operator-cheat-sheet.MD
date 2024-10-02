@@ -43,9 +43,12 @@ p && p.x // => null
 
 # Logical OR (||)[^4]
 ```javascript
-truthy-value || some-value; // if the first operand is truthy, it short-circuits and returns that truthy value
+truthy-value || some-value; 
+// if the first operand is truthy, it short-circuits and returns that truthy value
 
-falsy-value || some-value; // if the first operand is falsy, || evaluates its second operand and returns the value of that expression.
+falsy-value || some-value; 
+// if the first operand is falsy, || evaluates its second operand and 
+// returns the value of that expression.
 ```
 
 `||` နဲ့ `??` ကွာတဲ့ main point က `||` က truthy/falsy ဖြစ် ၊ မဖြစ် ကို စစ်ပြီး `??` က nullish ဖြစ် ၊ မဖြစ် စစ်ပါတယ်။

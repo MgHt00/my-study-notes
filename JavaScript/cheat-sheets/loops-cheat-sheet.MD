@@ -77,7 +77,9 @@ for (variable in object)
   statement
 ```
 - `object` expression ကို အရင် evaluate လုပ်ပြီး`null / undefined` ဆိုရင် loop ကို ကျော်ပါတယ်။ 
-- iteration တစ်ခု မလုပ်ခင်တိုင်း JavaScript intepreter က `variable` expression ကို evaluate လုပ်ပြီး name of the property (a string value) ကို `variable` ထဲ assign လုပ်ပါတယ်။  
+- iteration တစ်ခု မလုပ်ခင်တိုင်း JavaScript intepreter က `variable` expression ကို evaluate လုပ်ပြီး name of the property (a string value) ကို `variable` ထဲ assign လုပ်ပါတယ်။ 
+
+JavaScript array တွေက special kind of object ဖြစ်တာကြောင့် array ကို `for/in` နဲ့ loop ရင် array ရဲ့ property name ဖြစ်တဲ့ index ကို ထုတ်ပေးပါတယ်။ 
 
 [^1]: JavaScript The Definitive Guide by David Flanagan - 5.4.1 (p. 105)
 [^2]: 5.4.2 (p. 106)

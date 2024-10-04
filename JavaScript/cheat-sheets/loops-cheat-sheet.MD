@@ -42,9 +42,26 @@ for(i = 0, j = 10 ; i < 10 ; i++, j--) {
 
 #### for/of with objects
 - object တွေက (by default) not iterable ပါ။  `for/of` ကို regular object မှာ သုံးရင် `TypeError`ထွက်ပါတယ်။
-- `objects.keys()`, `objects.values()`, `objects.entries()` နဲ့သုံးလို့ရပါတယ်။
+- `Object.keys()`, `Object.values()`, `Object.entries()` နဲ့သုံးလို့ရပါတယ်။
   - ဒီ methods တွေက property name, value, pair ကို array အနေနဲ့ return ပြန်တာကြောင့် `for/off` နဲ့ သုံးလို့ရသွားတာဖြစ်ပါတယ်။
   - ထုတ်ပြီးသား array ကို `for/of` နဲ့ ပြန် loop တာဖြစ်တာကြောင့် pure array ကို loop သလို object ကို live iterate လုပ်လို့ မရပါဘူး
+```javascript
+for(let element of o) {
+  // Throws TypeError
+}
+
+for(let k of Object.keys(o)) {
+  // Object.keys() -> [ , , ]
+}
+
+for(let v of Object.values(o)) {
+  // Object.values() -> [ , , ]
+}
+
+for(let [k,v] of Object.entries(o)) {
+  // Object.entries() -> [ [ , ], [ , ], [ , ]]
+}
+```
 
 [^1]: JavaScript The Definitive Guide by David Flanagan - 5.4.1 (p. 105)
 [^2]: 5.4.2 (p. 106)

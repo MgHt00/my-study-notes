@@ -63,7 +63,17 @@ for(let [k,v] of Object.entries(o)) {
 }
 ```
 
+# for/in[^5]
+- any object ကို loop လို့ရပါတယ်။
+- အဓိက point က specified လုပ်ထားတဲ့ object ရဲ့ **property name** ကို loop ပါတယ်။ 
+```javascript
+for (variable in object)
+  statement
+```
+- `object` expression ကို အရင် evaluate လုပ်ပြီး`null / undefined` ဆိုရင် loop ကို ကျော်ပါတယ်။ 
+
 [^1]: JavaScript The Definitive Guide by David Flanagan - 5.4.1 (p. 105)
 [^2]: 5.4.2 (p. 106)
 [^3]: 5.4.3 (p. 106)
 [^4]: 5.4.4 (p. 108)
+[^5]: 5.4.5 (p. 111)

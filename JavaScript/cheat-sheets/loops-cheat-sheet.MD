@@ -37,8 +37,14 @@ for(i = 0, j = 10 ; i < 10 ; i++, j--) {
 ```
 
 # for/of[^4]
+```javascript
+for(let element of data){
+
+}
+```
 - iterable object တွေဖြစ်တဲ့ arrays, strings, sets, maps တွေနဲ့ သုံးလို့ရပါတယ်။
-- array က iterated live လုပ်ပါတယ်။  ဒါကြောင့် loop ထဲမှာ array ကို push လုပ်တဲ့ expression မျိုးပါနေရင် infinite loop ထွက်နိုင်ပါတယ်။  
+- array က iterated live လုပ်ပါတယ်။  ဒါကြောင့် loop ထဲမှာ array ကို push လုပ်တဲ့ expression မျိုးပါနေရင် infinite loop ဖြစ်သွားနိုင်ပါတယ်။  
+- loop body ကို execute မလုပ်ခင်တိုင်း array ရဲ့ next element ကို `element` variable ထဲ assign လုပ်ပါတယ်။
 
 #### for/of with objects
 - object တွေက (by default) not iterable ပါ။  `for/of` ကို regular object မှာ သုံးရင် `TypeError`ထွက်ပါတယ်။
@@ -71,6 +77,7 @@ for (variable in object)
   statement
 ```
 - `object` expression ကို အရင် evaluate လုပ်ပြီး`null / undefined` ဆိုရင် loop ကို ကျော်ပါတယ်။ 
+- iteration တစ်ခု မလုပ်ခင်တိုင်း JavaScript intepreter က `variable` expression ကို evaluate လုပ်ပြီး name of the property (a string value) ကို `variable` ထဲ assign လုပ်ပါတယ်။  
 
 [^1]: JavaScript The Definitive Guide by David Flanagan - 5.4.1 (p. 105)
 [^2]: 5.4.2 (p. 106)

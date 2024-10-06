@@ -27,3 +27,38 @@ When you run this command, you are telling Git to merge changes from the remote-
 ```bash
 git merge origin/main
 ```
+
+Merge branch without fast-forward
+```bash
+git merge develop --no-ff
+```
+Using --no-ff when merging can be a valuable strategy for maintaining clarity in your project's commit history. It provides a clear understanding of when features or changes were integrated, which can be especially useful for larger teams or long-term projects.
+
+---
+When you see a message indicating that your branch and `origin/main` have diverged, it means that:
+
+1. **Your local `main` branch** has commits that are not on the remote `main` branch.
+2. **The remote `main` branch** has commits that are not on your local `main` branch.
+
+To resolve this, 
+
+### Merge the Remote Changes
+
+1. **Fetch the latest changes from the remote**:
+   ```bash
+   git fetch origin
+   ```
+   This updates your local tracking branches without modifying your working directory.
+
+2. **Merge the remote `main` branch into your local `main`**:
+   ```bash
+   git merge origin/main
+   ```
+   This will merge the changes from the remote `main` into your local `main`. If there are conflicts, Git will notify you, and you’ll need to resolve them.
+
+3. **Push the merged changes back to the remote** (if needed):
+   ```bash
+   git push origin main
+   ```
+   This updates the remote repository with your merged changes.
+---

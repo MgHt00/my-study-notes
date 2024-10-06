@@ -1,8 +1,10 @@
+## To Track the Remote Branc
 Set the New Branch to Track the Remote Branch (Optional but recommended):
 ```bash
 git push --set-upstream origin <branch-name>
 ```
 
+## To delete the remote branch
 To delete the remote branch, you can use the following command:
 ```bash
 git push origin --delete branch_name

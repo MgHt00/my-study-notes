@@ -65,6 +65,15 @@ Pass လုပ်လိုက်တဲ့ function က return ပြန်လာ
 `map()` က new array ကို return ပြန်ပြီး function invoke လုပ်တဲ့ array ကို modify မလုပ်ပါဘူး​။
 
 Array က sparse ဆိုရင် missing element တွေအတွက် function ကို call လုပ်မှာမဟုတ်ပေမယ့် return ပြန်တဲ့ array မှာတော့ original array အတိုင်း sparse လုပ်ထားမှာဖြစ်တာကြောင့် original array အတိုင်း same length ဖြစ်ပြီး same missing element တွေပါပါလိမ့်မယ်။
+```javascript
+// Create a sparse array
+let sparseArray = [1, , 3]; // This array has a missing element at index 1
+
+// Use map() on the sparse array
+let result = sparseArray.map(x => x * 2);
+
+console.log(result); // Output: [2, , 6]
+```
 
 ## 1.3 filter( )[^4]
 Invoke လုပ်ခံရတဲ့ array ရဲ့ element အချို့ (subset) ပါတဲ့ array ကို return ပြန်ပါတယ်။ Pass လုပ်မယ့် function က `true`/`false` return ပြန်သင့်ပါတယ်။

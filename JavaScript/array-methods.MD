@@ -152,7 +152,7 @@ Explicit loop မရေးပဲ array ကို check လုပ်ဖို့�
 ```
 Empty array မှာ inital value မပေးပဲ `reduce()` ကို call ရင် `TypeError` ထွက်ပါတယ်။  
 
-One value - 1 element ပဲ ရှိတဲ့ array ကို initial value မပေးပဲ ၊ ဒါမှမဟုတ် empty array ကို initial value ပေးပြီးဖြစ်ဖြစ် `reduce()` ကို call ရင် reduction function ကို call မလုပ်တော့ပဲ အဲ့ဒီ one value ကိုပဲ return ပြန်ပါတယ်။ 
+One value (one element) ပဲ ရှိတဲ့ array ကို initial value မပေးပဲ ၊ ဒါမှမဟုတ် empty array ကို initial value ပေးပြီးဖြစ်ဖြစ် `reduce()` ကို call ရင် reduction function ကို call မလုပ်တော့ပဲ အဲ့ဒီ one value ကိုပဲ return ပြန်ပါတယ်။ 
 
 ### reduceRight( )
 `reduceRight()` က အားလုံးတူပြီး သူက highest index to lowest index (right-to-left) process လုပ်မှာပါ။

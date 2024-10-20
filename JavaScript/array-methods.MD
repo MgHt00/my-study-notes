@@ -49,7 +49,7 @@ First argument ဖြစ်တဲ့ function ကို argument ၃ ခု pass
 
     data.forEach(value => {sum + value}); // sum == 15
 
-    data.forEach(v, i, a => a[i] = v + 1); // data == [2,3,4,5,6]
+    data.forEach((v, i, a) => a[i] = v + 1); // data == [2,3,4,5,6]
 ```
 `forEach()` မှာ `break` ပေးပြီး iteration ကို terminate လုပ်လို့မရပဲ array ဆုံးတဲ့ထိ သွားမှာပါ။ 
 

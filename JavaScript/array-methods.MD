@@ -34,7 +34,7 @@ Iterator methods အားလုံးက
 ## Summary Table
 |forEach() | map() | filter() | find() and findIndex() | every() and some() | reduce() and reduceRight() | flat() | flatMap() | concat() |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| no return |return an array | return an array | return a value | returns true/false | returns a reduced value | returns a flatten array | returns a flatten array | concatenate array elements |
+| no return |return an array | return an array (subset of the array on which it is invoked) | return a value | returns true/false | returns a reduced value | returns a flatten array | returns a flatten array | concatenate array elements |
 |<em>Needs</em>|
 | --- | ( ) should return a value | ( ) should return true/false | ( ) should return true/false | ( ) should return true/false | ( ) w or w/o initial value | does not use a callback ( ) | ( ) should return an iterable | does not use a callback ( )|
 | <em>Features</em>  |

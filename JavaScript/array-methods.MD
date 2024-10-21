@@ -126,9 +126,9 @@ Explicit loop မရေးပဲ array ကို check လုပ်ဖို့�
 ဒီမှာ `forEach()` တို့ `map()` တို့နဲ့ကွာတာက
 
 ```javascript
-        forEach(function(value, index, array)); 
+        forEach(function(value, index, array), value of this keyword); 
 
-        reduce(function(accumulator, value, index, array));
+        reduce(function(accumulator, value, index, array), initial value);
 ```
 ### Accumulator 
 <em>First call to the function</em> - function ကို ပထမဆုံး ခေါ်တဲ့အချိန်မှာ initial value ပေးထားရင် initial value ကို accumulator အနေနဲ့ သုံးပြီး ၊ inital value မပေးထားရင် array ရဲ့ first element ကို accumulator အနေနဲ့ သုံးပါတယ်။  

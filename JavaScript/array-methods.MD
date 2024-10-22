@@ -329,7 +329,7 @@ Slice of an array ကို same array ရဲ့ new position ဆီ copy လု
 
 Length of the array က အပြောင်းအလဲ မရှိပါဘူး။
 
-- Frist argument - copy လုပ်ထားတဲ့ element(s) ကို စထည့်မယ့် destination index ပါ။
+- First argument - copy လုပ်ထားတဲ့ element(s) ကို စထည့်မယ့် destination index ပါ။
 - Second argument - copy လုပ်မယ့် first element ရဲ့ index ပါ။ Omit လုပ်ရင် `0` ကိုအစားထိုးပါတယ်။ Negative number သုံးလို့ရပါတယ်။
 - Third arguemnt - copy ကူးမယ့် အပိုင်းအစ(slice) အဆုံး ရဲ့ index ပါ။ Omit လုပ်ရင် length of the array ကို အစားထိုးပါတယ်။ အဆုံး index က copy ကူးတဲ့ထဲမှာ exclusive ဖြစ်ပါတယ်။ Negative number သုံးလို့ရပါတယ်။
 

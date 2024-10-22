@@ -315,7 +315,7 @@ Array ရဲ့ element (သို့) တစ်စိတ်တစ်ပို�
 
 First argument က set(fill) လုပ်မယ့် value ပါ။  
 
-Optional second argument က သူ့မတိုင်ခင်ထိ set(fill) လုပ်ရမယ့် index no. ပါ။  Second argument မပါရင် end of the array ထိ သွားပြီး ၊ negative value ပေးရင် array ရဲ့ length ထဲက နှုတ်ပါတယ်။  
+Optional second argument က index no. ဖြစ်ပြီး သူ့မတိုင်ခင်ထိ set(fill) ပါတယ်။  Second argument မပါရင် end of the array ထိ သွားပြီး ၊ negative value ပေးရင် array ရဲ့ length ထဲက နှုတ်ပါတယ်။  
 
 ```javascript
         let a = new Array(5);   // => start with no elements and lenght of 5

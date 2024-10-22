@@ -318,7 +318,7 @@ First argument က set(fill) လုပ်မယ့် value ပါ။
 Optional second argument က index no. ဖြစ်ပြီး သူ့မတိုင်ခင်ထိ set(fill) ပါတယ်။  Second argument မပါရင် end of the array ထိ သွားပြီး ၊ negative value ပေးရင် array ရဲ့ length ထဲက နှုတ်ပါတယ်။  
 
 ```javascript
-        let a = new Array(5);   // => start with no elements and lenght of 5
+        let a = new Array(5);   // => start with no elements and length of 5
         a.fill(0);              // => returns [0,0,0,0,0]
         a.fill(9,1);            // => returns [0,9,9,9,9]
         a.fill(8, 2, -1);       // => returns [0,9,8,8,9]

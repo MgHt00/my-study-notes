@@ -16,7 +16,7 @@ let copy = [...original];
 String က iterable ဖြစ်တာကြောင့် spread operator သုံးပြီး single-character string လုပ်လို့ရပါတယ်။ 
 ```javascript
 let digits = [..."0123456789ABCDEF"];
-```javascript
+```
 
 ### 1.3 The Array() Constructor
 - argument မပါပဲ call:

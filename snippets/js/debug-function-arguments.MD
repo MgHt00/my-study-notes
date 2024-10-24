@@ -1,4 +1,4 @@
-## `arguemnts` Object
+## `arguments` Object
 The `arguments` object is an array-like object available with functions.  It contains all the arguments passed to the function.
 ```javascript
   function example () {

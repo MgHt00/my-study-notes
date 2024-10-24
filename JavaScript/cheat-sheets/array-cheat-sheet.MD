@@ -17,3 +17,21 @@ String က iterable ဖြစ်တာကြောင့် spread operator သ�
 ```javascript
 let digits = [..."0123456789ABCDEF"];
 ```javascript
+
+### 1.3 The Array() Constructor
+- argument မပါပဲ call:
+```javascript
+let a = new Array();
+```
+- single numeric argument (which specifies a length) နဲ့ call
+```javascript
+let a = new Array(10); // value 10 ထည့်တာမဟုတ်ပဲ ၊ array ၁၀ ခန်း ဆောက်တာပါ
+```
+
+- two or more array element ဒါမှမဟုတ် single non-numeric element နဲ့ call
+```javascript
+let a = new Array(5, 4, 3, 2);
+let b = new Array("c");
+```
+
+[^1]: JavaScript The Definitive Guide by David Flanagan - 7.1 (p. 156)

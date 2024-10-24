@@ -34,4 +34,15 @@ let a = new Array(5, 4, 3, 2);
 let b = new Array("c");
 ```
 
+### 1.4 Array.of()
+Factory method ဖြစ်လို့ `new` နဲ့ call စရာမလိုပါဘူး။ ပေးထားတဲ့ argument ကိုသုံးပြီး new array ကို return ပါတယ်။  
+```javascript
+Array.of(); // => []
+Array.of(10); // => [10] ဒီမှာ new Array(10) သုံးတာနဲ့ ကွာပါတယ်။
+Array.of(1,2,3); // => [1,2,3]
+```
+### 1.5 Array.from()
+Factory method ပါ။  array-like object ကို true-array ဖြစ်အောင် လုပ်ပေးနိုင်ပါတယ်။
+
+
 [^1]: JavaScript The Definitive Guide by David Flanagan - 7.1 (p. 156)

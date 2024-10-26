@@ -60,5 +60,24 @@ a["1.000"] = 1; // Array index 1. Same as a [1] = 1;
 ```
 Javascript array တွေမှာ "out of bounds" error မရှိပါဘူး။  ဒါကြောင့် nonexistent property ကို query လုပ်ရင် error ထွက်မှာမဟုတ်ပဲ `undefined` ပဲ ထွက်လာပါလိမ့်မယ်။ (Array တင်မဟုတ်ပဲ object မှာလဲ ဒီလိုပဲဖြစ်ပါတယ်။)
 
+## 3. Sparse Array[^3]
+`Array()` constructor သုံးပြီး ဒါမှမဟုတ် current array length ထက်ပိုကြီးတဲ့ array index သတ်မှတ်ပြီး sparse array တွေ ဖန်တီးနိုင်ပါတယ်။
+```javascript
+let a = new Array(5); // No element, but a.length is 5.
+a = [];               // Create an array with no elements and length = 0.
+a[1000] = 0;          // Assignment adds one element but sets length to 1001.
+```
+`delete` operator သုံးလိုက်ရင်လဲ sparse array ဖြစ်သွားပါတယ်။ 
+```javascript
+let b = [1,2,3];
+delete b[1]; // => b = [1, , 3];
+```
+Array literal မှာ value ကို omit လုပ်ရင်လဲ sparse array ထွက်ပါတယ်။  
+```javascript
+let a1 = [,] // နောက်ဆုံး comma က tailing comma ပါ။ ဒါကြောင့် comma နောက်က element က sparse မဟုတ်ပဲ length စစ်ရင် 1 ပဲ ထွက်ပါလိမ့်မယ်။   
+```
+Sparse array တွေနဲ့ အလုပ်လုပ်တဲ့အခါ code တွေက sparse array ကို `undefined` element တွေဖြည့်ထားတဲ့ nonsparse array တစ်ခုအနေနဲ့ပဲ treat လုပ်ပါလိမ့်မယ်။
+
 [^1]: JavaScript The Definitive Guide by David Flanagan - 7.1 (p. 156)
 [^2]: 7.2 (p. 159)
+[^3]: 7.3 (p. 160)

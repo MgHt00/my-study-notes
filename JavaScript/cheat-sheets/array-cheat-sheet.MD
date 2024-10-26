@@ -47,10 +47,18 @@ Factory method ပါ။  array-like object ကို true-array ဖြစ်အ
 ## 2. Reading and Writing Array Elements[^2]
 Array တွေက specialized kind of object တွေပါ။ 
 
-JavaScript က array အတွက်ပေးလိုက်တဲ့ numeric index ကို string ဖြစ်အောင် convert လုပ်ပါတယ်။  ဒါကြောင့် index 1 က string "1" ဖြစ်သွားပြီး အဲဒီ string ကို property name အဖြစ်သုံးပါတယ်။
+Array အတွက်ပေးလိုက်တဲ့ numeric index ကို JavaScript က string ဖြစ်အောင် convert လုပ်ပါတယ်။  ဒါကြောင့် index 1 က string "1" ဖြစ်သွားပြီး အဲဒီ string ကို property name အဖြစ်သုံးပါတယ်။
 
-Array index တိုင်းက property name ဖြစ်ပေမယ့် 0 နဲ့ 2<sup>32</sup> - 2 (non-negative integer) ဖြစ်တဲ့ property name တွေပဲ array index ဖြစ်နိုင်ပါတယ်။
+Array index တိုင်းက property name ဖြစ်နိုင်ပေမယ့် 0 နဲ့ 2<sup>32</sup> - 2 ကြား (non-negative integer) ဖြစ်တဲ့ property name တွေပဲ array index ဖြစ်နိုင်ပါတယ်။
 
+Array တိုင်းက object ဖြစ်တာကြောင့် property with any name ကို array မှာ create လုပ်လို့ ရပါတယ်။  အကယ်လို့ array index တွေကို property name အဖြစ်သုံးရင်တော့ ၊ `length` property ကို update လုပ်နိုင်တဲ့ behavior တစ်ခု array မှာ ရှိပါတယ်။  
+
+အကယ်လို့ non-negative integer တစ်ခုက string အဖြစ် (`" "`) နဲ့ object property လုပ်ပါလို့ သတ်မှတ်ပေးလိုက်ရင် ၊ string ဖြစ်သော်ငြားလဲ non-negative integer ဖြစ်တာကြောင့် array index တစ်ခု အနေနဲ့ behave လုပ်ပါတယ်။
+```javascript
+a["1000"] =  0; // This is the 1001st element of the array
+a["1.000"] = 1; // Array index 1. Same as a [1] = 1;
+```
+Javascript array တွေမှာ "out of bounds" error မရှိပါဘူး။  ဒါကြောင့် nonexistent property ကို query လုပ်ရင် error ထွက်မှာမဟုတ်ပဲ `undefined` ပဲ ထွက်လာပါလိမ့်မယ်။ (Array တင်မဟုတ်ပဲ object မှာလဲ ဒီလိုပဲဖြစ်ပါတယ်။)
 
 [^1]: JavaScript The Definitive Guide by David Flanagan - 7.1 (p. 156)
 [^2]: 7.2 (p. 159)

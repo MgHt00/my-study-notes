@@ -49,7 +49,7 @@ Array တွေက specialized kind of object တွေပါ။
 
 JavaScript က array အတွက်ပေးလိုက်တဲ့ numeric index ကို string ဖြစ်အောင် convert လုပ်ပါတယ်။  ဒါကြောင့် index 1 က string "1" ဖြစ်သွားပြီး အဲဒီ string ကို property name အဖြစ်သုံးပါတယ်။
 
-Array index တိုင်းက property name ဖြစ်ပေမယ့် 0 - 2<sup>32><sup>-2 (non-negative integer) ဖြစ်တဲ့ property name တွေပဲ array index ဖြစ်နိုင်ပါတယ်။
+Array index တိုင်းက property name ဖြစ်ပေမယ့် 0 - 2<sup>32<sup>-2 (non-negative integer) ဖြစ်တဲ့ property name တွေပဲ array index ဖြစ်နိုင်ပါတယ်။
 
 
 [^1]: JavaScript The Definitive Guide by David Flanagan - 7.1 (p. 156)

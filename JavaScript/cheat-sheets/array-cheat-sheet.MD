@@ -74,7 +74,8 @@ delete b[1]; // => b = [1, , 3];
 ```
 Array literal မှာ value ကို omit လုပ်ရင်လဲ sparse array ထွက်ပါတယ်။  
 ```javascript
-let a1 = [,] // နောက်ဆုံး comma က tailing comma ပါ။ ဒါကြောင့် comma နောက်က element က sparse မဟုတ်ပဲ length စစ်ရင် 1 ပဲ ထွက်ပါလိမ့်မယ်။   
+let a1 = [,] // နောက်ဆုံး comma က tailing comma ပါ။ ဒါကြောင့် comma နောက်က element က sparse မဟုတ်ပဲ ...
+             // ... length စစ်ရင် 1 ပဲ ထွက်ပါလိမ့်မယ်။   
 ```
 Sparse array တွေနဲ့ အလုပ်လုပ်တဲ့အခါ code တွေက sparse array ကို `undefined` element တွေဖြည့်ထားတဲ့ nonsparse array တစ်ခုအနေနဲ့ပဲ treat လုပ်ပါလိမ့်မယ်။
 

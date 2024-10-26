@@ -1,6 +1,6 @@
 # Arrays
 ## 1. Creating Arrays[^1]
-### 1.1 Array Literals
+### **1.1 Array Literals**
 Square bracket ထဲမှာ comma-separated list 
 ```javascript
 let empty = [];

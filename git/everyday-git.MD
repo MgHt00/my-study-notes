@@ -1,4 +1,4 @@
-## To Track the Remote Branc
+## To Track the Remote Branch
 Set the New Branch to Track the Remote Branch (Optional but recommended):
 ```bash
 git push --set-upstream origin <branch-name>

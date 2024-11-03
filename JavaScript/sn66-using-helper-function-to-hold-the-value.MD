@@ -86,3 +86,55 @@ console.log(funcs[5]()); // Outputs 5
 ```
 
 In this revised code, the IIFE `((v) => () => v)(i)` creates a new function with a unique `v` for each iteration, capturing the current value of `i` each time, so `funcs[5]()` will return `5` as expected.
+
+---
+
+Certainly! The expression `((v) => () => v)(i)` can look a bit tricky at first, so let’s break it down step by step.
+
+This expression is an **Immediately Invoked Function Expression (IIFE)**, and it’s doing two main things:
+
+1. **Creating a new function** to capture the value of `i` in each iteration.
+2. **Immediately invoking that function** with the current value of `i`.
+
+Let’s break down each part in detail.
+
+### 1. Breaking Down `((v) => () => v)`
+
+- `(v) => () => v` is an arrow function that takes a single parameter `v`.
+- This function returns another function: `() => v`.
+  - The inner function, `() => v`, is a function with no parameters that returns the value `v`.
+
+When you write `(v) => () => v`, you're creating a *function generator*. Each time you call this outer function with a value for `v`, it returns a new function that remembers that specific value of `v`.
+
+So, if you called `(v) => () => v` with `v = 5`, it would return a function that, when invoked, would return `5`.
+
+### 2. Immediately Invoking with `(i)`
+
+Now, let’s add the `(i)` at the end: `((v) => () => v)(i)`.
+
+- By adding `(i)`, we are immediately invoking the outer function with the current value of `i`.
+- When `(v) => () => v` is called with `i`, it returns a new function `() => v`, where `v` has the value of `i` at the time of invocation.
+- This means the inner function `() => v` "remembers" the value of `i` that was passed in.
+
+### 3. Using It in a Loop
+
+Putting this in the context of a `for` loop, here’s how it works:
+
+```javascript
+for (var i = 0; i < 10; i++) {
+  funcs[i] = ((v) => () => v)(i); // Assign the result of IIFE to funcs[i]
+}
+```
+
+- In each iteration, `((v) => () => v)(i)` is executed with the current value of `i`.
+- This creates a new function `() => v` where `v` is the current value of `i`.
+- Each function stored in `funcs[i]` now "remembers" the value of `i` from that iteration.
+
+### Putting It All Together
+
+In short:
+- The outer function `(v) => () => v` creates a new function that closes over `v`.
+- The `(i)` immediately invokes this outer function with the current value of `i`.
+- The returned inner function `() => v` has its own unique `v`, set to the value of `i` from when the function was created.
+
+This means that each function in `funcs[i]` remembers a unique value of `i` from each iteration, so `funcs[5]()` will correctly return `5`.

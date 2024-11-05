@@ -62,3 +62,59 @@ In this snippet:
 - **Use Snippet A** if you don’t mind `counter` being accessible outside the function, and if simplicity is preferred. It’s well-suited for simpler or isolated scenarios where security and encapsulation aren’t a big concern.
   
 - **Use Snippet B** if you want `counter` to remain private, preventing any external interference with its value. This is ideal for larger projects or cases where data encapsulation is important, as it avoids unintended modifications.
+
+---
+
+Yes, your example with `counterManager()` does achieve encapsulation without needing an IIFE, and it’s a solid approach!
+
+In this setup:
+
+```javascript
+const counterInstance = counterManager();
+
+function counterManager() {
+  let counter = 0;
+
+  function uniqueInteger() {
+    return counter++;
+  } 
+
+  return { uniqueInteger };
+}
+```
+
+Here’s why this works well:
+
+1. **Encapsulation**: `counter` is declared inside `counterManager()`, so it’s scoped to that function and remains private. Only the `uniqueInteger()` function has access to it.
+  
+2. **Access to `uniqueInteger` through the returned object**: By returning `{ uniqueInteger }`, you expose only `uniqueInteger()` to the outside, allowing controlled access to `counter`.
+
+3. **No IIFE Needed**: The outer function `counterManager()` provides the necessary closure for `counter`. This closure means that `counter` retains its state across calls to `uniqueInteger()` but remains inaccessible outside `counterManager()`.
+
+### Using `counterInstance`
+
+You can now call `counterInstance.uniqueInteger()` to increment and access `counter`:
+
+```javascript
+console.log(counterInstance.uniqueInteger()); // 0
+console.log(counterInstance.uniqueInteger()); // 1
+console.log(counterInstance.uniqueInteger()); // 2
+```
+
+Each time you call `counterInstance.uniqueInteger()`, it increments the private `counter` variable.
+
+### Pros of this Approach
+
+- **Encapsulation without an IIFE**: This pattern avoids the need for an immediately invoked function expression, yet it still keeps `counter` private.
+- **Reusability**: You can create multiple instances of `counterManager()`, each with its own `counter` variable. For example:
+  
+  ```javascript
+  const counterA = counterManager();
+  const counterB = counterManager();
+  
+  console.log(counterA.uniqueInteger()); // 0
+  console.log(counterA.uniqueInteger()); // 1
+  console.log(counterB.uniqueInteger()); // 0 (separate instance)
+  ```
+
+This structure is a clean, modular way to create and manage private state within JavaScript. Well done!

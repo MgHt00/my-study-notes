@@ -68,3 +68,8 @@ To resolve this,
    ```
    This updates the remote repository with your merged changes.
 
+## New Branch from the commit hash or the branch
+This command create a new branch `fix01` starting from the end of `bugfix` branch
+```bash
+git branch fix01 bugfix
+```

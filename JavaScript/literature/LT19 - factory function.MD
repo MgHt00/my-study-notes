@@ -132,7 +132,7 @@ Let me know if you'd like more examples to clarify further!
 
 --
 
-<em>Factory functions are often preferred when: * You don’t need inheritance.<em>
+<em>Factory functions are often preferred when: * You don’t need inheritance.</em>
 
 <em>Can you explain me more about this?</em>
 

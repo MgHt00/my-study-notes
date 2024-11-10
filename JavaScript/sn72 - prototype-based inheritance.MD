@@ -23,6 +23,8 @@ The `prototype` object itself has a property called `constructor`, which:
 
 To illustrate this with your example:
 
+![My own illustration](https://github.com/MgHt00/my-study-notes/edit/main/JavaScript/_assets/20241110_091422.jpg?raw=true)
+
 ```javascript
 let F = function() {};   // Define a function F
 let p = F.prototype;     // Get F’s prototype object

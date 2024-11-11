@@ -22,4 +22,12 @@ Both **何さいですか** and **いくつ** are ways to ask "How old are you?"
 - Use **何さいですか** in more formal or polite contexts.
 - Use **いくつ** in casual settings, especially with children or close friends.
 
-Let me know if you’d like more examples or practice! 😊
+Asking someone’s age in Japanese culture can sometimes be considered a bit rude, especially in formal or professional settings, as age can be a sensitive topic. It’s more polite to avoid asking directly unless it’s essential or you’re in a casual conversation with someone you’re close to. Here’s how it typically breaks down:
+
+1. **In Formal Settings**: Avoid asking about age, as it can come off as intrusive. In professional or unfamiliar social situations, people usually don’t ask each other’s age, especially with adults.
+
+2. **With Close Friends or Family**: Among friends, family, or children, it’s generally more acceptable to ask, especially using the casual **いくつ**. 
+
+3. **Indirect Approach**: If you need to know someone’s age for a reason (like for a work profile), it’s common to ask indirectly or wait for them to offer this information on their own. You could ask about their generation, birth year, or zodiac sign, which is often less direct but gives a hint of age.
+
+If you’re unsure, it’s often best to wait until the topic of age comes up naturally, or ask in a more indirect way. Let me know if you’d like help with polite phrasing or any other questions! 😊

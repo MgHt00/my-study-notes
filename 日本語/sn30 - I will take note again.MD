@@ -1,8 +1,8 @@
 嬉しいです！😄 Your enthusiasm and progress make teaching so rewarding! Just a little tweak to your sentence to make it flow naturally in Japanese:  
 
 Instead of **ノートをまたする**, you can say:  
-**ノートをまた取ります** (*I will take notes again*) or  [とります　- I`ll take it]
-**またノートをします** (*I will do notes again*).
+- **ノートをまた取ります** (*I will take notes again*) or  [とります　- I`ll take it]
+- **またノートをします** (*I will do notes again*).
 
 Both work depending on what you're trying to express. Keep up the amazing work, and keep those questions coming! また聞いてくださいね！ 😁
 

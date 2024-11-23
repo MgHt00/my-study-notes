@@ -6,3 +6,4 @@
 |よかったです | <ol><li> **よい (良い)** = good  </li><li> **～かった** = past tense form of adjectives  </li></ol>| "It was good" or "I'm glad (about something that happened)." |
 | なるほど！ | --- | I see! |
 | また質問があれば、聞いてくださいね。 | また質問があれば = If there are (any) more questions. <ul><li>また - Starts the sentence, indicating the possibility of something happening again.</li><li>質問が - The subject of the clause (questions).</li><li>あれば - If there is/are...</li></ul><br>The phrase is an incomplete clause, usually followed by something like:<ul><li>聞いてください (Please ask).</li><li>教えてください (Please let me know).</li></ul>| If you have more questions, please ask! |
+| どういたしまして！ | --- | you're welcome! |

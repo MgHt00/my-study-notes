@@ -7,4 +7,4 @@
 <li>**ちょっと** = a little, slightly  </li>
 <li>**寒い** (さむい) = cold  </li>
 <li>**です** = polite copula  </li>
-<li>**ね** = seeking confirmation or agreement  </li> | It's a little cold today, isn't it? | 
+<li>**ね** = seeking confirmation or agreement  </li> | It's a little cold today, isn't it?</ul> | 

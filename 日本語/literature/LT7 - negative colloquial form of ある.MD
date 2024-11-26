@@ -53,3 +53,52 @@ In standard Japanese, we expect verbs to follow regular patterns when forming ne
 ---
 
 Would you like to explore more about this irregularity or practice with some sentences? 😊
+
+いいですね！では、練習しましょう！😊 Here are some exercises to practice **ある** and its negative forms. Try to fill in the blanks or translate the sentences. I'll give you the answers afterward!
+
+---
+
+### **練習 1: Fill in the blanks**
+Complete the sentences with the appropriate form of **ある** or its negative:
+1. 部屋に机が ________ 。  
+   (_There is a desk in the room._)
+
+2. 近くにコンビニが ________ 。  
+   (_There isn’t a convenience store nearby._)
+
+3. 私の財布にお金が ________ 。  
+   (_I don’t have money in my wallet._)
+
+4. 今日、学校にテストが ________ 。  
+   (_There is a test at school today._)
+
+5. 駅の近くに公園が ________ 。  
+   (_There is no park near the station._)
+
+---
+
+### **練習 2: Translate into Japanese**
+Translate the following sentences into Japanese using **ある** or its negative:
+1. There is no book in my bag.  
+   (_Hint: bag = カバン_)
+
+2. Is there a bank near here?  
+   (_Hint: bank = 銀行, near here = この近く_)
+
+3. There is a cat under the table.  
+   (_Hint: under = 机の下_)
+
+4. There is no coffee in the fridge.  
+   (_Hint: fridge = 冷蔵庫, coffee = コーヒー_)
+
+---
+
+### **練習 3: Polite or casual?**
+Decide if the following sentences are polite or casual, and rewrite them in the other style:
+1. 駅にトイレがないです。  
+2. ここに大きな木があります。  
+3. うちに犬がないよ。  
+
+---
+
+がんばってください！終わったら教えてね！ 😊

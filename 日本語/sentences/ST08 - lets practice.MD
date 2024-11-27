@@ -38,3 +38,33 @@ If you wanted to say "Let's practice" in a more casual way, you would use the pl
 ---
 
 Does that clear it up? 😊
+
+---
+
+Great question! If **練習しましょう** means "Let's practice," and you want to say **"Let's practice some more"**, you can say:
+
+### 1. **もう少し練習しましょう**
+   - **もう少し (もうすこし)**: "a little more" or "some more."
+   - This is the most natural way to say "Let's practice some more."
+
+---
+
+### Example Usage:
+- **もう少し練習しましょう** – "Let's practice a bit more."
+- **時間があるので、もう少し練習しましょう。** – "Since we have time, let's practice a bit more."
+
+---
+
+### 2. **もっと練習しましょう**
+   - **もっと**: "more" or "further."
+   - This can also work and carries the meaning of "Let's practice more" or "Let's practice further."
+
+---
+
+### Key Difference:
+- **もう少し** feels a bit softer or implies a small additional effort ("just a little more").
+- **もっと** is more general and emphasizes doing more without specifying how much more.
+
+---
+
+You can use either depending on the nuance you want. 😊 Would you like more examples?

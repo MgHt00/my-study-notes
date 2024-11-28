@@ -51,7 +51,7 @@ Great! Let’s practice with some examples and variations to deepen your underst
 ---
 
 ### Example 2: Asking about a situation  
-**何を食べているんですか。**  
+**何を食べているんですか。**  [LT14]
 (*Nani o tabete iru n desu ka?*)  
 - **Translation:** "What are you eating?"  
 - **Explanation:** With **ん**, it sounds more curious, like you noticed someone eating and want details. Without **ん**, it’s more of a factual question.

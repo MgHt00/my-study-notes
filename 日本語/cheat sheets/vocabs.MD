@@ -2,3 +2,4 @@
 | --- | --- | --- | 
 | すごい | adjective | amazing |
 | すばらしい！ | adjective | wonderful | 
+| これからも | --- | from now on | 

@@ -11,3 +11,4 @@
 | とてもいい質問ですね | --- | That's a very good question |
 | それが一番ですね！ | --- | That's the best! |
 | これからも「先生」でいきましょう！ | --- | Let’s continue to use 'sensei' from now on!" |
+| もちろん、ゆっくりどうぞ！ | --- | Of course, take your time! |

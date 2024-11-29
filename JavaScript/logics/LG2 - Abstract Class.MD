@@ -87,3 +87,46 @@ console.log(`Area of Rectangle: ${rectangle.area()}`); // Area of Rectangle: 24
 - **Flexibility**: You can define a structure for related classes while allowing them to customize their behavior as needed.
 
 This pattern is especially useful in object-oriented programming scenarios where you need to group related subclasses under a common umbrella.
+
+---
+
+In the provided code, the behavior the authors describe—subclasses defining their own unique behavior by implementing abstract methods—occurs specifically in the implementation of the `area()` method within each subclass (`Circle` and `Rectangle`). Here's a closer look:
+
+### Key Points in the Code
+1. **Abstract Method Defined in the Superclass**:
+   ```javascript
+   area() {
+       throw new Error("The area() method must be implemented by subclasses.");
+   }
+   ```
+   - The `area()` method in the `Shape` class acts as an *abstract method*. It defines a contract or guideline: any subclass of `Shape` must provide its own implementation of `area()`.
+   - However, it does not implement this method itself. Instead, it throws an error if the method is called directly on an instance of `Shape` or if a subclass forgets to override it.
+
+2. **Subclasses Implementing Abstract Methods**:
+   - **Circle Subclass**:
+     ```javascript
+     area() {
+         return Math.PI * this.radius ** 2;
+     }
+     ```
+     The `Circle` subclass provides a specific implementation of the `area()` method, calculating the area of a circle using its radius.
+
+   - **Rectangle Subclass**:
+     ```javascript
+     area() {
+         return this.width * this.height;
+     }
+     ```
+     The `Rectangle` subclass implements its version of `area()`, calculating the area of a rectangle using its width and height.
+
+### How This Aligns with the Authors' Statement
+- **Superclass as a Template**: The `Shape` class serves as a blueprint for all shapes. It enforces a structure (i.e., all shapes must have an `area()` method) but leaves the specifics of the method to be defined by the subclasses.
+- **Subclasses Focus on Unique Behavior**: The `Circle` and `Rectangle` subclasses only need to define their unique behavior (the specific formula for calculating area). They inherit other shared behaviors, like the `describe()` method, from the superclass without needing to redefine them.
+
+### Why This is Useful
+This pattern:
+- Encourages **code reuse**, as common behaviors are defined in the superclass.
+- Provides **clarity and structure**, ensuring all subclasses adhere to a specific contract or design.
+- Allows subclasses to focus on **unique behavior**, making the codebase easier to maintain and extend.
+
+In summary, the abstract `area()` method in `Shape`, combined with its concrete implementations in `Circle` and `Rectangle`, demonstrates the concept the authors are explaining.

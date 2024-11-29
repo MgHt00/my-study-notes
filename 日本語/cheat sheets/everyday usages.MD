@@ -10,3 +10,4 @@
 | 公園での散歩 | Yes, you can absolutely say **公園での散歩** for !  Here’s how it works:  <ul><li>**公園** = park  </li><li>**で** = particle indicating "in" or "at" (the location where the action happens)  </li><li>**の** = possessive particle linking **公園で** ("in the park") to **散歩** ("walk")  </li></ul> | "A Walk in the Park" So, **公園での散歩** literally means "a walk that takes place in the park." It's a natural and correct way to express it in Japanese.|
 | とてもいい質問ですね | --- | That's a very good question |
 | それが一番ですね！ | --- | That's the best! |
+| これからも「先生」でいきましょう！ | --- | Let’s continue to use 'sensei' from now on!" |

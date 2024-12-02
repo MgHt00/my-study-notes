@@ -100,3 +100,43 @@ Translate these sentences into Japanese using **には**:
 3. "In that town, there are no shops."  
 
 Let me know your answers, and we’ll review them together! 😊
+
+---
+
+なら、『あなたは猫がいますか』と『あなたには猫がいますか。』同じですか。
+
+---
+
+Ah, of course! Here's the explanation in English:
+
+---
+
+### 1. **あなたは猫がいますか**
+- **Nuance**:  
+  - Using **「あなたは」** puts the focus on *you* as the subject. It asks, "As for you, do you have a cat?"  
+  - It's a straightforward way to ask, "Do you have a cat?" but can sound a bit formal or stiff in natural conversation.
+
+---
+
+### 2. **あなたには猫がいますか**
+- **Nuance**:  
+  - Adding **「には」** emphasizes the relationship between *you* and *having a cat*. It subtly shifts the focus to *whether you specifically* have a cat, as opposed to others.  
+  - It's more natural and conversational, implying curiosity or context, like:
+    - "Do *you* (in particular) have a cat?"  
+    - Perhaps you're asking because other people might not, or because you suspect they do.
+
+---
+
+### Key Difference:  
+- **「は」**: General subject marker; focuses on the main topic (you).  
+- **「には」**: Adds nuance, often emphasizing personal relevance or contrast.  
+
+---
+
+### Example in Context:
+1. あなたは猫がいますか: Just asking if they have a cat.  
+2. あなたには猫がいますか: Emphasizes "you," like asking, "What about you? Do you have a cat?"  
+
+---
+
+Did that make sense? 😊

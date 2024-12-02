@@ -140,3 +140,26 @@ Ah, of course! Here's the explanation in English:
 ---
 
 Did that make sense? 😊
+
+---
+
+1。この学校には図書館があります。
+２。私には兄弟がいません。
+３。その町には店がありません。
+
+先生、この文は正しいですか。
+
+---
+
+はい、すべての文は正しいです！😊
+
+この学校には図書館があります。
+("As for this school, there is a library.")
+
+私には兄弟がいません。
+("As for me, I don’t have siblings.")
+
+その町には店がありません。
+("In that town, there are no shops.")
+
+Good job! Keep practicing! 😄

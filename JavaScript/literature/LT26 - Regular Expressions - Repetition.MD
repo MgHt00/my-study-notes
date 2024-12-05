@@ -80,3 +80,144 @@ Sure! The `{n,m}`, `{n,}`, `{n}`, `?`, `+`, and `*` are repetition quantifiers i
 - These quantifiers are powerful tools for matching variable-length patterns.
 
 Let me know if you’d like examples tailored to your current learning material! 😊
+
+
+---
+
+Thank you, I am now using regex101.com as you mentioned.  u?r is my expression and test strings are
+
+color
+colour
+
+
+and match information shows:
+
+match 1 - r
+match 2 - ur
+
+
+So does that mean my regex u?r targets r with the optional u at the front?
+
+---
+
+Yes, your understanding is correct! The regex `u?r` targets the character `r` with an optional `u` before it. Let's break it down:
+
+### Regex Explanation: `u?r`
+1. **`u?`**:
+   - The `?` quantifier means "zero or one occurrence" of the preceding character or group.
+   - Here, it applies to `u`, making `u` optional.
+
+2. **`r`**:
+   - This matches the literal character `r`.
+
+### How It Works
+When applied to the test strings `"color"` and `"colour"`, your regex:
+- **Matches the `r`** in both words.
+- **Optionally includes the `u`** before `r` if it exists.
+
+### Match Information
+1. `"color"`:
+   - Matches only the `r` (since there's no `u` before it).
+
+2. `"colour"`:
+   - Matches the `ur` (as the optional `u` is present).
+
+### Key Takeaway
+Your regex essentially says:
+- "Look for an `r`, and if there happens to be a `u` right before it, include that too."
+
+This explains why the matches are:
+- Match 1: `r` (from `"color"`)
+- Match 2: `ur` (from `"colour"`)
+
+---
+
+To check for the string `ap` repeated **1 to 3 times** in a row, you can use `{1,3}` to specify the repetition range in your regular expression.
+
+### Regex:
+```regex
+(ap){1,3}
+```
+
+### Explanation:
+1. `ap`: Matches the literal string "ap".
+2. `{1,3}`: Specifies that the preceding group (in this case, `ap`) must appear **at least 1 time** and **at most 3 times**.
+
+### Examples:
+- Input: `ap`  
+  - Matches: `ap` (1 time).
+- Input: `apap`  
+  - Matches: `apap` (2 times).
+- Input: `apapap`  
+  - Matches: `apapap` (3 times).
+- Input: `apapapap`  
+  - Matches: Only the first `apapap` (3 times), as it stops at the maximum repetition.
+
+### Practical Use in Code:
+- **JavaScript:**
+  ```javascript
+  const regex = /(ap){1,3}/;
+  console.log(regex.test("ap"));        // true
+  console.log(regex.test("apap"));      // true
+  console.log(regex.test("apapap"));    // true
+  console.log(regex.test("apapapap"));  // true (but matches only the first 3 "ap")
+  ```
+
+- **Python:**
+  ```python
+  import re
+  pattern = r"(ap){1,3}"
+  print(bool(re.search(pattern, "ap")))        # True
+  print(bool(re.search(pattern, "apap")))      # True
+  print(bool(re.search(pattern, "apapap")))    # True
+  print(bool(re.search(pattern, "apapapap")))  # True (but matches only up to 3 repetitions)
+  ```
+
+### Things to Note:
+- Using parentheses `(ap)` ensures that the repetition applies to the entire "ap" string rather than just one character.
+- The `{1,3}` quantifier specifies the minimum and maximum repetitions of the pattern.
+
+Let me know if you'd like additional examples or further clarifications! 😊
+
+---
+
+To match both the string `abc` and the pattern `\d{2,4}` in a single regular expression, you can use the **pipe (`|`) operator**. The pipe acts as an "OR" operator in regex, allowing you to match either of two patterns.
+
+### Regex:
+```regex
+abc|\d{2,4}
+```
+
+### Explanation:
+1. `abc`: Matches the literal string "abc".
+2. `|`: Acts as an "OR" operator.
+3. `\d{2,4}`: Matches a sequence of 2 to 4 digits.
+
+### Examples:
+- Input: `abc123`
+  - Matches: `abc` and `123` (as part of different checks).
+- Input: `42`
+  - Matches: `42` (because it has 2 digits).
+- Input: `abcd`
+  - Matches: `abc` (but not `d` because it isn't a digit).
+
+### Practical Use:
+You can use this regex in functions like:
+- **JavaScript:** 
+  ```javascript
+  const regex = /abc|\d{2,4}/;
+  console.log(regex.test("abc"));  // true
+  console.log(regex.test("123"));  // true
+  console.log(regex.test("xyz"));  // false
+  ```
+
+- **Python:**
+  ```python
+  import re
+  pattern = r"abc|\d{2,4}"
+  print(bool(re.search(pattern, "abc")))  # True
+  print(bool(re.search(pattern, "1234"))) # True
+  print(bool(re.search(pattern, "def")))  # False
+  ```
+
+Let me know if you'd like to explore more examples or other regex concepts!

@@ -36,4 +36,39 @@ console.table(user);
 ```
 This will display the `user` object as a table with `name`, `age`, and `city` as rows, showing their corresponding values.
 
-These methods are excellent for debugging and visualizing data in a more readable format in the console. Would you like more detailed examples or explanations for either of these methods?
+These methods are excellent for debugging and visualizing data in a more readable format in the console. 
+
+Here are examples for the two statements about `console.table()`:
+
+### 1. Relatively Short Array of Objects
+`console.table()` works best with arrays of objects where each object has a similar structure and a small number of properties. Here's an example:
+
+```javascript
+const people = [
+  { name: "Alice", age: 25, city: "New York" },
+  { name: "Bob", age: 30, city: "San Francisco" },
+  { name: "Charlie", age: 35, city: "Los Angeles" }
+];
+
+console.table(people);
+```
+
+In this example, each object in the `people` array has the same set of properties (`name`, `age`, and `city`). This structure makes it easy for `console.table()` to display the data in a clear and concise tabular format.
+
+### 2. Array of Property Names as Optional Second Argument
+You can specify which properties (columns) you want to include in the table by passing an array of property names as the second argument. Here's an example:
+
+```javascript
+const people = [
+  { name: "Alice", age: 25, city: "New York" },
+  { name: "Bob", age: 30, city: "San Francisco" },
+  { name: "Charlie", age: 35, city: "Los Angeles" }
+];
+
+// Only display the 'name' and 'city' columns
+console.table(people, ["name", "city"]);
+```
+
+In this example, the table will only display the `name` and `city` columns, ignoring the `age` property. This is useful when you want to focus on specific pieces of information.
+
+These examples demonstrate how `console.table()` can be used effectively to display structured data in the console.

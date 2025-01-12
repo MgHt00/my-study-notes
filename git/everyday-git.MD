@@ -73,3 +73,9 @@ This command create a new branch `fix01` starting from the end of `bugfix` branc
 ```bash
 git branch fix01 bugfix
 ```
+
+### Set the Correct Upstream Branch
+To set the upstream branch for your local `develop` branch correctly, use the following command:
+```bash
+git branch --set-upstream-to=origin/develop develop
+```

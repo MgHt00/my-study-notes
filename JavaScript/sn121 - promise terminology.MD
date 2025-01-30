@@ -157,9 +157,9 @@ fetchDataFromAPI()
   .catch(error => {
     console.error("Error:", error);
   });
+```
 
 With this code, can we say the the first Promise has been fulfilled when it reaches the line `.then(upperCaseData => ...`?
-```
 
 ---
 

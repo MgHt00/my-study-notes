@@ -143,25 +143,23 @@ JavaScript's Promise implementation is designed to handle the Promises returned 
 
 ```javascript
 fetchDataFromAPI()
-
-.then(data => {
-
-console.log("First then:", data); // Handles the result of fetchDataFromAPI
-
-return data.toUpperCase(); // Returns a value (not a Promise)
-
-})
-
-.then(upperCaseData => {
-
-console.log("Second then:", upperCaseData); // Handles the uppercased data
-
-return Promise.resolve(upperCaseData + "!"); // Returns a resolved promise
-
-})
-```
+  .then(data => {
+    console.log("First then:", data); // Handles the result of fetchDataFromAPI
+    return data.toUpperCase(); // Returns a value (not a Promise)
+  })
+  .then(upperCaseData => {
+    console.log("Second then:", upperCaseData); // Handles the uppercased data
+    return Promise.resolve(upperCaseData + "!"); // Returns a resolved promise
+  })
+  .then(finalData => {
+    console.log("Third then:", finalData); // Handles the value from the resolved promise
+  })
+  .catch(error => {
+    console.error("Error:", error);
+  });
 
 With this code, can we say the the first Promise has been fulfilled when it reaches the line `.then(upperCaseData => ...`?
+```
 
 ---
 

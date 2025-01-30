@@ -141,8 +141,7 @@ JavaScript's Promise implementation is designed to handle the Promises returned 
 
 ---
 
-```
-
+```javascript
 fetchDataFromAPI()
 
 .then(data => {
@@ -160,7 +159,6 @@ console.log("Second then:", upperCaseData); // Handles the uppercased data
 return Promise.resolve(upperCaseData + "!"); // Returns a resolved promise
 
 })
-
 ```
 
 With this code, can we say the the first Promise has been fulfilled when it reaches the line `.then(upperCaseData => ...`?

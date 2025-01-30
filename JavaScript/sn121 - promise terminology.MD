@@ -183,3 +183,43 @@ The first Promise (`Promise A`, returned by `fetchDataFromAPI()`) is fulfilled *
 
 It's essential to understand that even though the code is written sequentially, the asynchronous operations and Promise resolutions happen over time.  The `.then()` methods set up a chain of callbacks that will execute *when* the corresponding Promises resolve.
 
+---
+
+In this code, if promise B, the one from the first then returns an error object, this program will skip the second and third then and run the `.catch` statement, am I right?
+
+---
+
+Yes, you are absolutely correct.
+
+If the first `.then()` callback (which results in Promise B) throws an error, or if the Promise returned by the first `.then()` rejects (for example, if the `return data.toUpperCase();` line were inside a `try...catch` block and the `try` part throws and is caught in `catch` which returns `Promise.reject(error)`), the chain of `.then()` callbacks *after* that point will be skipped.  The JavaScript engine will immediately jump to the nearest `.catch()` handler in the chain.
+
+Let's illustrate with a modified version of your code:
+
+```javascript
+fetchDataFromAPI()
+  .then(data => {
+    console.log("First then:", data);
+    if (data === "some condition") {
+      throw new Error("Something went wrong in first then!");  // Error thrown
+    }
+    return data.toUpperCase(); 
+  })
+  .then(upperCaseData => {
+    console.log("Second then:", upperCaseData); // This will be SKIPPED
+    return Promise.resolve(upperCaseData + "!"); 
+  })
+  .then(finalData => {
+    console.log("Third then:", finalData); // This will also be SKIPPED
+  })
+  .catch(error => {
+    console.error("Error:", error); // This will be executed
+  });
+```
+
+In this scenario, if the condition `data === "some condition"` becomes true, an error is thrown within the first `.then()` callback. This will cause Promise B to reject with that error.  As a result:
+
+1. The second and third `.then()` callbacks will *not* be executed.
+2. The `.catch()` handler will be called, and the `error` object (the `Error` instance you created) will be passed as an argument to the `.catch()` callback.
+
+This is a crucial aspect of Promise error handling.  The `.catch()` provides a way to handle errors that might occur at any point in the Promise chain, preventing errors from going unhandled and potentially crashing your application.
+

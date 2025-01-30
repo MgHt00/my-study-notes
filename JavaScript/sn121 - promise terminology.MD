@@ -139,3 +139,51 @@ In this example:
 
 JavaScript's Promise implementation is designed to handle the Promises returned by `.then()` to facilitate asynchronous programming. The new Promise is resolved or rejected based on the callback's return value, which enables the chaining of asynchronous operations.  The event loop handles the execution of the callbacks when the Promises resolve or reject.
 
+---
+
+```
+
+fetchDataFromAPI()
+
+.then(data => {
+
+console.log("First then:", data); // Handles the result of fetchDataFromAPI
+
+return data.toUpperCase(); // Returns a value (not a Promise)
+
+})
+
+.then(upperCaseData => {
+
+console.log("Second then:", upperCaseData); // Handles the uppercased data
+
+return Promise.resolve(upperCaseData + "!"); // Returns a resolved promise
+
+})
+
+```
+
+With this code, can we say the the first Promise has been fulfilled when it reaches the line `.then(upperCaseData => ...`?
+
+---
+
+Not quite. Let's break down the Promise states at each step:
+
+1. **`fetchDataFromAPI()`:** This function returns a Promise (let's call it `Promise A`).  Initially, `Promise A` is in the *pending* state.
+
+2. **`.then(data => { ... })` (First `.then`):**  This attaches a callback to `Promise A`.  The callback will *not* execute yet because `Promise A` is still pending.  The `.then()` method itself *immediately* returns a *new* Promise (let's call it `Promise B`). `Promise B` is also initially pending.
+
+3. **Inside the first `.then` callback:** *Eventually*, `Promise A` will either fulfill or reject.  Let's assume it fulfills with the value `"Data fetched successfully!"`.  *Now* the first `.then()` callback will execute.
+
+4. **`return data.toUpperCase();`:** Inside the callback, the data is uppercased.  Crucially, this `return` statement *does not* directly fulfill `Promise B`.  Instead, it provides a value that will be used to fulfill `Promise B` *later*.
+
+5. **`.then(upperCaseData => { ... })` (Second `.then`):** This `.then()` is attached to `Promise B`.  `Promise B` is still pending at this point. The second `.then()` immediately returns a *new* Promise (let's call it `Promise C`). `Promise C` is also pending.
+
+6. **Execution of the second `.then`:**  *Only after* the first `.then()` callback has completed, and the value of `data.toUpperCase()` has been used to fulfill `Promise B`, will the second `.then()` callback execute.
+
+**So, to answer your question directly:**
+
+The first Promise (`Promise A`, returned by `fetchDataFromAPI()`) is fulfilled *before* the second `.then()` callback starts executing. It is fulfilled when the *first* `.then()` callback has finished and the value `data.toUpperCase()` is used to fulfill `Promise B`.  When the execution reaches the *beginning* of the line `.then(upperCaseData => ...`, `Promise B` is still pending.  It gets fulfilled *after* the first `.then()` callback is done.
+
+It's essential to understand that even though the code is written sequentially, the asynchronous operations and Promise resolutions happen over time.  The `.then()` methods set up a chain of callbacks that will execute *when* the corresponding Promises resolve.
+

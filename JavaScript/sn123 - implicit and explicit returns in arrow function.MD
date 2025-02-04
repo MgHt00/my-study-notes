@@ -1,4 +1,5 @@
-[G]* **Concise Form:** When an arrow function has only one expression, you can omit the curly braces `{}` and the `return` keyword. The expression itself is implicitly returned.
+[G]
+* **Concise Form:** When an arrow function has only one expression, you can omit the curly braces `{}` and the `return` keyword. The expression itself is implicitly returned.
 
 * **Curly Braces and Explicit Return:** When you use curly braces `{}` within an arrow function, it signifies a block of code. In this case, you **must** use the `return` keyword to explicitly specify the value that the function should return.
 

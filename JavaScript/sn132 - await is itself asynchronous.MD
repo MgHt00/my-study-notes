@@ -10,7 +10,7 @@ let value2 = await getJSON(url2);
 
 The problem with this code is that it is unnecessarily sequential. the fetch of the second URL will not begin until the first fetch is complete."
 
-For me that 2 statements contradict each other, one states "do no cause your program to block" and the other states "the second function will not begin until the first fetch is complete". Can you explain it to me?
+For me that 2 statements contradict each other, one states "do not cause your program to block" and the other states "the second function will not begin until the first fetch is complete". Can you explain it to me?
 
 ---
 

@@ -49,3 +49,53 @@ const mappedOtherArray = myOtherArray.map(x => x * 2); // mappedOtherArray will 
 **In summary:** `Symbol.species` is a mechanism that allows subclasses to control the type of objects created by methods that return new collections. By default, subclasses inherit the `Array` constructor's `Symbol.species` property, ensuring that methods like `map` and `filter` return instances of the subclass itself.  This behavior can be overridden if needed.
 
 I hope this clarifies the concept of `Symbol.species`! It's a powerful feature for class inheritance and maintaining object types.
+
+---
+
+You're right to ask about the `static` keyword! It's crucial for understanding how `Symbol.species` works in this context.
+
+**What `static` Means:**
+
+The `static` keyword in a class definition in JavaScript defines a *static method* or *static property*.  These members belong to the *class itself*, not to instances (objects) of the class.
+
+**Key Differences Between Static and Instance Members:**
+
+1. **Belonging:**
+   - **Static members:** Belong to the class. You access them using the class name (e.g., `MyOtherArray.species`).
+   - **Instance members:** Belong to instances (objects) of the class. You access them using an object of the class (e.g., `myArray.map()`).
+
+2. **Access:**
+   - **Static members:** You call static methods directly on the class (e.g., `MyOtherArray.species`). You can access static properties directly on the class (e.g., `MyOtherArray.someStaticProperty`).
+   - **Instance members:** You call instance methods on an instance of the class (e.g., `myArray.map()`). You access instance properties on an instance of the class (e.g., `myArray.someProperty`).
+
+3. **Inheritance:**
+   - **Static members:** Are inherited by subclasses.
+   - **Instance members:** Are also inherited by subclasses.
+
+**In the `Symbol.species` Example:**
+
+```javascript
+class MyOtherArray extends Array {
+    static get [Symbol.species]() { return Array; }
+}
+```
+
+* `static get [Symbol.species]() { ... }`: This defines a *static getter* for the `Symbol.species` property.
+* Because it's `static`, it belongs to the `MyOtherArray` *class itself*, not to instances of `MyOtherArray`.
+* When methods like `map()` are called on an instance of `MyOtherArray`, they internally access the `Symbol.species` property of the `MyOtherArray` *class* to determine which constructor to use for the new array.
+
+**Why `static` is Important Here:**
+
+`Symbol.species` needs to be defined as a *static member* because it's a property of the *constructor* (the class itself), not a property of the instances.  The methods that use `Symbol.species` (like `map`, `filter`, etc.) need to access the constructor to create new objects of the correct type.
+
+**Simplified Analogy:**
+
+Imagine a blueprint for a house (the class).
+
+* **Static properties:** Are things written on the blueprint itself, like the architect's name or the building code. These belong to the blueprint, not to the houses built from it.
+* **Instance properties:** Are features of the individual houses, like the number of rooms or the color of the walls. These belong to each house, not the blueprint.
+
+`Symbol.species` is like information on the blueprint (the class) that tells you what kind of house (object) to build when you make changes to the original house (object).
+
+I hope this clarifies the role of `static` in the context of `Symbol.species`! Let me know if you have any other questions.
+

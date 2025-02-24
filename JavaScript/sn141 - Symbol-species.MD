@@ -99,3 +99,26 @@ Imagine a blueprint for a house (the class).
 
 I hope this clarifies the role of `static` in the context of `Symbol.species`! Let me know if you have any other questions.
 
+---
+
+Yes, you're absolutely correct. The line of code:
+
+```javascript
+static get [Symbol.species]() { return Array; }
+```
+
+* **Overrides** the inherited `[Symbol.species]` property.
+
+Here's why:
+
+1. **Inheritance:** `MyOtherArray` inherits the `[Symbol.species]` property from the `Array` class.  By default, this inherited property would point to the `MyOtherArray` constructor itself (because, as we discussed earlier, `Array[Symbol.species]` returns `this`, and in the subclass context, `this` would be `MyOtherArray`).
+
+2. **Overriding:** The `static get [Symbol.species]() { return Array; }` line *redefines* the `[Symbol.species]` property for the `MyOtherArray` class.  Because it's a `static` property, it belongs to the class itself.
+
+3. **Effect:** Now, when methods like `map()`, `filter()`, or `slice()` are called on an instance of `MyOtherArray`, they will use the *overridden* `[Symbol.species]` property, which now returns the `Array` constructor.  This means that these methods will create and return *plain `Array` instances*, not `MyOtherArray` instances.
+
+**In essence:** The subclass is intentionally changing the default behavior of `[Symbol.species]` to control what kind of object is created when methods like `map()` are used. It's saying, "When you call `map()` on a `MyOtherArray`, don't give me back another `MyOtherArray`; give me a regular `Array` instead."
+
+This is a powerful mechanism for customizing the behavior of built-in methods in subclasses.  It allows you to control the type of objects that are created when operations are performed on instances of your subclass.
+
+

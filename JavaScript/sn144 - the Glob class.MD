@@ -23,6 +23,56 @@
 
 **In short:** `docs/*.txt` matches all files with the ".txt" extension that are located directly inside the "docs" directory.
 
+---
+
+Absolutely! Let's break down `let regexText = glob.replace("?", "([^/])").replace("*", "([^/]*)");` in detail:
+
+**Purpose:**
+
+This line of code takes a glob pattern stored in the `glob` variable and converts it into a regular expression pattern that can be used for string matching.
+
+**Step-by-Step Breakdown:**
+
+1.  **`glob.replace("?", "([^/])")`:**
+    * **`glob.replace(...)`**: This calls the `replace()` method on the `glob` string. The `replace()` method searches for a pattern and replaces it with another string.
+    * **`"?"`**: This is the pattern to search for. In this case, it's the literal question mark character (`?`), which is a wildcard in glob patterns.
+    * **`"([^/])"`**: This is the replacement string. It's a regular expression character class.
+        * **`(...)`**: This creates a capturing group in the regular expression. Capturing groups allow you to extract parts of the matched string.
+        * **`[^/]`**: This is a negated character class. It means "match any single character *except* a forward slash (`/`)".
+        * **Effect:** This part of the code replaces every `?` in the glob pattern with a regular expression that matches any single character except a directory separator.
+
+2.  **`.replace("*", "([^/]*)")`:**
+    * **`.replace(...)`**: This is another call to the `replace()` method, but this time it's called on the *result* of the previous `replace()` call. This allows you to chain `replace()` calls together.
+    * **`"*"`**: This is the pattern to search for. In this case, it's the literal asterisk character (`*`), which is another wildcard in glob patterns.
+    * **`"([^/]*)"`**: This is the replacement string.
+        * **`(...)`**: Again, a capturing group.
+        * **`[^/]`**: The same negated character class as before.
+        * **`*`**: This is a quantifier in regular expressions. It means "match zero or more occurrences" of the preceding character or group.
+        * **Effect:** This part of the code replaces every `*` in the glob pattern with a regular expression that matches zero or more characters except a directory separator.
+
+3.  **`let regexText = ...`:**
+    * The result of the chained `replace()` calls is assigned to the `regexText` variable. This variable now holds the converted regular expression pattern as a string.
+
+**Why `[^/]`?**
+
+The reason for using `[^/]` (match any character except a forward slash) is that glob patterns are typically used to match filenames or paths within a directory, but they usually don't cross directory boundaries. By excluding `/`, the regular expression ensures that the wildcards don't match across directories.
+
+**Example:**
+
+Let's say `glob` is "file?.txt".
+
+1.  After `glob.replace("?", "([^/])")`, `regexText` becomes "file([^/]).txt".
+2.  After `.replace("*", "([^/]*)")`, `regexText` remains "file([^/]).txt" (because there was no `*`).
+
+If `glob` was "file*.txt".
+
+1.  After `glob.replace("?", "([^/])")`, `regexText` becomes "file*.txt".
+2.  After `.replace("*", "([^/]*)")`, `regexText` becomes "file([^/]*)".txt".
+
+I hope this detailed explanation is helpful!
+
+---
+
 You're right to ask for a deeper explanation! Let's break down the `Glob` class and how it works step-by-step.
 
 **Overall Purpose:**

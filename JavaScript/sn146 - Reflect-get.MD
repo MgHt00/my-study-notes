@@ -71,3 +71,57 @@ console.log("Reflect.get parent.value:", child.getValueWithReflect(child));
 * **Avoiding `this` Binding Issues:** It helps you avoid potential issues with `this` binding when working with getters.
 
 In this example, `Reflect.get()` allows us to explicitly call the parent's getter from the child class, bypassing the child's own getter and demonstrating the control you gain when using it.
+
+---
+
+You're right to ask for clarification on that statement! While `Reflect.get(o, name, receiver)` and `o[name]` seem similar, there are crucial differences, particularly regarding the `receiver` argument and how they handle getters.
+
+**Similarities:**
+
+* **Basic Property Access:** In the simplest case, if `o` is a plain object and `name` is a simple property, both `Reflect.get(o, name, receiver)` and `o[name]` will return the value of that property.
+
+    ```javascript
+    const obj = { x: 10 };
+    console.log(obj.x); // Output: 10
+    console.log(Reflect.get(obj, "x", obj)); // Output: 10
+    ```
+
+**Differences:**
+
+1.  **The `receiver` Argument:**
+    * `Reflect.get(o, name, receiver)`: The `receiver` argument specifies the `this` value that should be used when accessing a getter or a method. This is where the crucial difference lies.
+    * `o[name]`: With `o[name]`, the `this` value is determined by the context in which the property is accessed.
+
+2.  **Getters and Setters:**
+    * `Reflect.get()`: When `name` refers to a getter, `Reflect.get()` calls the getter with the specified `receiver` as the `this` value. This gives you explicit control over the `this` binding.
+    * `o[name]`: The `this` value in `o[name]` is determined by how the getter is accessed. If the getter is called within a method of the object `o`, `this` will be `o`. But if the getter is extracted and called separately, `this` might be `undefined` (in strict mode) or the global object (in non-strict mode).
+
+3.  **Proxy Objects:**
+    * `Reflect.get()` is essential when working with proxy objects. Proxies intercept property access, and `Reflect.get()` allows you to forward property access to the original object or its prototype while maintaining the correct `this` binding.
+    * `o[name]` does not provide a mechanism to easily forward property access through proxies.
+
+**Example with Getters:**
+
+```javascript
+const obj = {
+  _x: 20,
+  get x() {
+    console.log("Getter called");
+    return this._x;
+  },
+};
+
+const anotherObj = { _x: 30 };
+
+console.log(obj.x); // "Getter called", 20 (this is obj)
+console.log(Reflect.get(obj, "x", anotherObj)); // "Getter called", 30 (this is anotherObj)
+```
+
+In this example, `Reflect.get()` allows you to call the `obj.x` getter with `anotherObj` as the `this` value. This is something you cannot easily achieve with `obj.x` alone.
+
+**In summary:**
+
+* For simple property access, `Reflect.get(o, name, receiver)` and `o[name]` are similar.
+* `Reflect.get()` provides more control over the `this` value, especially when working with getters and proxy objects.
+* `Reflect.get()` is a fundamental part of the reflection API, and it's designed to provide a more robust and consistent way to access object properties.
+

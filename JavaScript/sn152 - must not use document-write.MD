@@ -113,3 +113,37 @@ In this example, the deferred script will execute after the HTML document has be
 
 In essence, the author is emphasizing that `deferred` scripts are intended to work with the fully parsed DOM. Using `document.write()` would interfere with this and is therefore strongly discouraged.
 
+---
+
+You're right to ask for clarification! I apologize for any ambiguity in my previous response.
+
+**Using `async` is NOT discouraged.** In fact, it's a very valuable tool in modern web development.
+
+What I meant to convey was that **`document.write()` is discouraged, and that `async` and `defer` should be used instead of relying on `document.write()`.**
+
+Let's clarify the purpose and usage of `async`:
+
+**Purpose of `async`:**
+
+* **Non-Blocking Script Loading:** The `async` attribute allows the browser to download a script in the background without blocking the parsing of the HTML document.
+* **Improved Performance:** This improves page load performance by allowing the browser to continue parsing and rendering the page while the script is being downloaded.
+
+**When to Use `async`:**
+
+* **Independent Scripts:** Use `async` when the script is independent and doesn't rely on other scripts or the DOM being fully loaded.
+* **Analytics Scripts:** Scripts like Google Analytics or other tracking scripts are often good candidates for `async`.
+* **Scripts That Don't Modify the DOM Immediately:** if a script does not need to manipulate the DOM right away, then async is a good option.
+
+**Key Points About `async`:**
+
+* **Execution Order:** `async` scripts execute as soon as they are downloaded, which means they might execute in any order.
+* **DOM Availability:** The script might execute before the DOM is fully loaded.
+* **No Dependency Guarantee:** `async` scripts should not rely on other scripts being loaded or executed first.
+
+**In summary:**
+
+* `async` is a valuable tool for improving page load performance.
+* It's used for scripts that are independent and don't rely on the DOM being fully loaded.
+* It is document.write() that is discouraged, not the async attribute.
+
+

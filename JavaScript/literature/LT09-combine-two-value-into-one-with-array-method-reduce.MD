@@ -1,4 +1,4 @@
-#### Any function that can cmbined tow values (such as tow objects) into one value of the same type can be used as a reduction function (with array methods `reduce()` and `reduceRight()`.
+#### Any function that can combined two values (such as two objects) into one value of the same type can be used as a reduction function (with array methods `reduce()` and `reduceRight()`.
 
 You can combine two or more objects using several methods in JavaScript, such as `Object.assign()`, spread syntax, or even using `reduce()` if you want to merge multiple objects from an array. Here's how:
 

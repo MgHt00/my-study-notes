@@ -12,7 +12,8 @@ What are Array-Like Objects?
    * Only reads the elements of the array-like object (doesn't modify them).
    * Or, modifies the elements but doesn't change the length property.
  * Example:
-   function printElements(arrayLike) {
+   ```
+function printElements(arrayLike) {
     for (let i = 0; i < arrayLike.length; i++) {
         console.log(arrayLike[i]); // Read-only
     }
@@ -20,6 +21,7 @@ What are Array-Like Objects?
 
 const args = { 0: 'a', 1: 'b', 2: 'c', length: 3 };
 printElements(args); // Works fine!
+```
 
  * Why it Works: In such cases, your algorithm only relies on the length property and the numeric indices. Since array-like objects have these properties, your algorithm works correctly.
 Limitations of Array-Like Objects

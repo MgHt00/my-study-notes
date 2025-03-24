@@ -32,15 +32,20 @@ Limitations of Array-Like Objects
  * Flexibility of JavaScript: JavaScript is very flexible. It often allows you to treat objects in ways that are similar to other data structures.
  * Optimization: In some cases, it might be more efficient to use array-like objects than to convert them to real arrays.
  * Understanding Built-in Objects: It's important to understand how built-in objects like arguments and NodeList work.
-How to Convert Array-Like Objects to Real Arrays
+
+### How to Convert Array-Like Objects to Real Arrays
 If you need to use array methods or modify the length property, you can convert an array-like object to a real array using:
  * Array.from():
+  ```javascript
    const nodeList = document.querySelectorAll('p');
-const realArray = Array.from(nodeList);
+   const realArray = Array.from(nodeList);
+  ```
 
  * Spread Syntax (...):
+  ```javascript
    const args = { 0: 'a', 1: 'b', 2: 'c', length: 3 };
-const realArray = [...args];
+   const realArray = [...args];
+  ```
 
 In essence:
 The author is emphasizing that array-like objects can often be treated like real arrays when your algorithms are read-only or don't change the length property. However, it's important to be aware of their limitations and convert them to real arrays when necessary.

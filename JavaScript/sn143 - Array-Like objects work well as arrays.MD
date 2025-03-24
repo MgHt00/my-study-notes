@@ -6,7 +6,8 @@ What are Array-Like Objects?
    * arguments object (within functions)
    * NodeList (returned by document.querySelectorAll())
    * Strings (you can access characters using numeric indices)
-Why They "Work Like Real Arrays"
+
+## Why They "Work Like Real Arrays"
  * Read-Only or Length-Preserving Algorithms: If you have an algorithm that:
    * Only reads the elements of the array-like object (doesn't modify them).
    * Or, modifies the elements but doesn't change the length property.

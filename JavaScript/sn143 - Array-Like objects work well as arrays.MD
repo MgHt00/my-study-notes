@@ -27,7 +27,8 @@ What are Array-Like Objects?
 Limitations of Array-Like Objects
  * Missing Array Methods: Array-like objects don't have access to array methods like map(), filter(), push(), pop(), etc.
  * Modification Issues: If your algorithm tries to modify the length property or use array methods, it won't work correctly with array-like objects.
-Why the Author Stresses This Point
+
+### Why the Author Stresses This Point
  * Flexibility of JavaScript: JavaScript is very flexible. It often allows you to treat objects in ways that are similar to other data structures.
  * Optimization: In some cases, it might be more efficient to use array-like objects than to convert them to real arrays.
  * Understanding Built-in Objects: It's important to understand how built-in objects like arguments and NodeList work.

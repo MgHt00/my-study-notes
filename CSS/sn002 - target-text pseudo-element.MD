@@ -66,4 +66,23 @@ Let's say you have the following HTML:
 
 `::target-text` is a CSS pseudo-element that allows you to style the text content of the HTML element that is the current target of the URL fragment identifier. It provides a way to visually emphasize the specific section of a page that a user has navigated to using a fragment link.
 
-Do you have any specific scenarios or questions about how `::target-text` might behave in different situations? I'd be happy to explore them with you!
+---
+
+Yes, `::target-text` enjoys good support in recent versions of major browsers.
+
+According to the data from "Can I Use..." and MDN Web Docs (as of late April/early May 2025):
+
+* **Chrome:** Full support since version 89 (released March 2021).
+* **Edge:** Full support since version 89 (released March 2021).
+* **Firefox:** Full support since version 131 (released October 2024).
+* **Safari:** Full support since version 18.2 (released December 2024) on both macOS and iOS.
+* **Opera:** Full support since version 75 (released March 2021).
+* **Chrome for Android:** Full support since version 89.
+* **Firefox for Android:** Full support since version 131.
+* **Opera Android:** Full support since version 63.
+* **Safari on iOS:** Full support since version 18.2.
+* **Samsung Internet:** Full support since version 15.
+
+**In summary, as of May 2025, `::target-text` is widely supported across the latest versions of all major desktop and mobile browsers.** You can generally use it with confidence in modern web development.
+
+However, as always, if you need to support older browser versions, it's wise to check the specific support tables on resources like "Can I Use..." to ensure compatibility with your target audience's browsers.

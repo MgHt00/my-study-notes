@@ -24,4 +24,28 @@ Imagine you have a row of words (like people standing in a line).
 
 Therefore, you can certainly use `word-spacing` with `text-align: left;` or `right;` to control the spacing between words. The authors' comment is specifically about how the justification algorithm in `text-align: justify;` can alter the effect of `word-spacing`.
 
+--
+
+You've picked up on another important distinction between `word-spacing` and `letter-spacing`! The authors are highlighting that once you set `letter-spacing` to a specific length value (like `1px`, `0.5em`, etc.), that spacing between individual letters will generally **not** be overridden by the `text-align: justify;` property in the same way that `word-spacing` can be.
+
+Here's why:
+
+* **`word-spacing` affects the spaces *between* words.** When text is justified, the browser has the flexibility to adjust these inter-word spaces (making some wider than others) to make the lines fill the available width.
+
+* **`letter-spacing` affects the space *between* each individual character (letters, punctuation, etc.).** If the browser were to override a fixed `letter-spacing` to achieve justification, it would likely result in text that looks very distorted and unreadable, with inconsistent and unnatural gaps within words.
+
+**The browser's priority with `text-align: justify;` is to adjust the inter-word spaces to fill the line.** It doesn't typically manipulate the spacing *within* words (controlled by `letter-spacing` when set to a length) to achieve this.
+
+**Think of it this way:**
+
+Imagine the letters in a word are tightly linked. `letter-spacing` lets you put a consistent gap between these linked units. When justifying text, the browser can stretch the gaps *between* these groups of linked letters (the words) but generally won't try to pull apart the individual links *within* the words.
+
+**Therefore, if you set `letter-spacing: 1px;`, you will have a 1-pixel space between each letter in the text, regardless of whether `text-align` is `left`, `right`, or `justify`. The justification algorithm will primarily work on the spaces between the words.**
+
+**Important Note:**
+
+While a length value for `letter-spacing` is generally not overridden by `text-align: justify;`, if `letter-spacing` is set to its initial value (`normal`), the browser *might* make very minor adjustments to letter spacing as part of sophisticated justification algorithms, especially in complex typography scenarios. However, a specific length value enforces a consistent space that the browser will typically respect.
+
+**In summary, the authors are pointing out the robustness of `letter-spacing` (when set to a length) in maintaining consistent spacing between characters, even when text is justified. The justification process focuses on the more flexible inter-word spaces.**
+
 [G] 

@@ -1,3 +1,20 @@
+## `Promise.all()`
+`Promise.all()` **returns a single Promise**. This returned Promise will resolve to an **array of the fulfillment values** from the input promises, not the promises themselves. The order of the values in the array will match the order of the promises you provided. If *any* of the input promises reject, the `Promise.all()` Promise immediately rejects with the reason of the first rejected promise.
+
+## `Promise.allSettled()`
+`Promise.allSettled()` also **returns a single Promise**. This returned Promise always resolves, regardless of whether the input promises were fulfilled or rejected. It resolves to an **array of objects**. Each object in the array represents the final status of each input promise and has two properties:
+* **`status`**: A string, either `"fulfilled"` or `"rejected"`.
+* **`value`**: The fulfillment value (if the status is `"fulfilled"`).
+* **`reason`**: The rejection reason (if the status is `"rejected"`).
+
+## Summary
+| Method | What it Returns | Key Behavior |
+| :--- | :--- | :--- |
+| `Promise.all()` | A **Promise** that resolves to an **array of values**. | **Fails fast.** It rejects as soon as any of the input promises reject. |
+| `Promise.allSettled()` | A **Promise** that resolves to an **array of objects**. | **Never fails.** It always resolves after all input promises have settled (either fulfilled or rejected). |
+
+---
+
 [G] You're right to be curious! There's a slight nuance in how `Promise.all()` is described. Here's the breakdown:
 
 * **"Returns a Promise"**: 

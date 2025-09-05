@@ -7,6 +7,30 @@ Here's a breakdown of the two outcomes for `Promise.all()`:
 
 2.  **One or More Promises Rejected**: The returned promise from `Promise.all()` **rejects** as soon as the **first** promise in the input array rejects. The rejection reason of the returned promise is the same as the reason of that first rejected promise. Subsequent rejections from other promises in the input array are ignored. 
 
+Here's the key point: `Promise.all()` is a "fail-fast" mechanism. It doesn't wait for everything to finish if one thing fails. Once a promise in the input array rejects, the `Promise.all()` promise immediately rejects as well, and that's the end of its execution. It doesn't collect any of the successful values from promises that would have fulfilled after the first rejection.
+
+The state of the promises before the first rejection is irrelevant to the final outcome of the `Promise.all()` promise. The `Promise.all()` promise will never resolve to an array of values in this scenario, as it will have already rejected with the reason of the first rejected promise.
+
+For example, consider the following code:
+
+```javascript
+const p1 = Promise.resolve('Success 1');
+const p2 = Promise.reject('Failure 2');
+const p3 = Promise.resolve('Success 3');
+
+Promise.all([p1, p2, p3])
+  .then(values => {
+    console.log('All promises fulfilled:', values);
+  })
+  .catch(reason => {
+    console.log('One or more promises rejected:', reason);
+  });
+```
+
+In this case, the output will be "One or more promises rejected: Failure 2". The `Promise.all()` promise rejected as soon as `p2` rejected, and the value from `p1` was never collected in a final resolved array. `p3`'s outcome is also ignored.
+
+This is the fundamental difference from `Promise.allSettled()`, which would wait for all promises to either fulfill or reject, and then return an array of objects describing the outcome of each one.
+
 ## `Promise.allSettled()`
 `Promise.allSettled()` also **returns a single Promise**. This returned Promise always resolves, regardless of whether the input promises were fulfilled or rejected. It resolves to an **array of objects**. Each object in the array represents the final status of each input promise and has two properties:
 * **`status`**: A string, either `"fulfilled"` or `"rejected"`.

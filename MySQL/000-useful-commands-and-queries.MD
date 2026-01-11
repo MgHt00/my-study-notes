@@ -16,7 +16,7 @@ Now, pour the data into that empty structure:
 INSERT INTO language_clone SELECT * FROM sakila.language;
 ```
 
-#### To create a table and copy (without indexex)
+To create a table and copy (without indexex)
 ```SQL
 CREATE TABLE language_clone LIKE sakila.language;
 ```

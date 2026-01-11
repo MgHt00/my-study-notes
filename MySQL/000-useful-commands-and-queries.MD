@@ -21,3 +21,10 @@ _To create a table and copy (without indexex)_
 CREATE TABLE language_clone LIKE sakila.language;
 ```
 ---
+
+### Primary and Secondary sort
+```SQL
+SELECT address, district FROM address ORDER BY district ASC, address DESC LIMIT 10;
+```
+---
+
